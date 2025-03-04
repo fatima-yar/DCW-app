@@ -46,3 +46,12 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
     <4> push your codes to specific GitHub branch.
         git push origin feature/navbar (for example)
 
+
+## Git for references
+git init  # if not init, then run
+git add .  # add all files
+git commit -m "Initial commit"
+git branch -M main  # confirm the branch name main or other
+git remote add origin https://github.com/........git  # replace git url
+git push -u origin main
+git pull -rebase origin main # pull first then push command
