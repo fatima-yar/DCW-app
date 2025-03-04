@@ -2,13 +2,23 @@ provider "aws" {
   region = var.aws_region
 }
 
-# create ECR
-resource "aws_ecr_repository" "nextjs_ecr" {
+# detect whether ecr exist, otherwise to create ECR
+
+data "aws_ecr_repository" "existing_ecr" {
   name = "dcw-web-repo"
 }
+resource "aws_ecr_repository" "nextjs_ecr" {
+  name = "dcw-web-repo"
+  force_delete = true 
+}
+
 
 # create ECS task execution role
+data "aws_iam_role" "existing_role" {
+  name = "ecsTaskExecutionRole"
+}
 resource "aws_iam_role" "ecsTaskExecutionRole" {
+  count = length(data.aws_iam_role.existing_role.name) > 0 ? 0 : 1  # if exist, then don't create
   name = "ecsTaskExecutionRole"
 
   assume_role_policy = jsonencode({
@@ -22,6 +32,7 @@ resource "aws_iam_role" "ecsTaskExecutionRole" {
 
 # create ECS task execution policy
 resource "aws_iam_role_policy_attachment" "ecsTaskExecutionRole_policy" {
+  count      = length(data.aws_iam_role.existing_role.name) > 0 ? 0 : 1  # if exist, then don't create
   role       = aws_iam_role.ecsTaskExecutionRole.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
 }
@@ -34,9 +45,8 @@ resource "aws_ecs_cluster" "nextjs_cluster" {
 # create ECS task definition
 resource "aws_ecs_task_definition" "nextjs_task" {
   family                   = "nextjs-task"
-  network_mode             = "awsvpc"
+  execution_role_arn       = "arn:aws:iam::123456789012:role/ecsTaskExecutionRole"
   requires_compatibilities = ["FARGATE"]
-  execution_role_arn       = aws_iam_role.ecsTaskExecutionRole.arn
   cpu                      = "256"
   memory                   = "512"
 
@@ -57,15 +67,15 @@ resource "aws_ecs_task_definition" "nextjs_task" {
 
 # create ECS service
 resource "aws_ecs_service" "nextjs_service" {
-  name            = "DCW-service"
+  name            = "nextjs-service"
   cluster         = aws_ecs_cluster.nextjs_cluster.id
   task_definition = aws_ecs_task_definition.nextjs_task.arn
   desired_count   = 1
   launch_type     = "FARGATE"
 
   network_configuration {
-    subnets         = ["subnet-05108f306a429e1ee"]  # Subnet ID
-    security_groups = ["sg-0610fd10b324c4dec"]     # New SG ID
+    subnets         = var.subnets
+    security_groups = var.security_groups
     assign_public_ip = true
   }
 }
