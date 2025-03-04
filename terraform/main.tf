@@ -58,6 +58,8 @@ resource "aws_ecs_task_definition" "nextjs_task" {
   requires_compatibilities = ["FARGATE"]
   cpu                      = "256"
   memory                   = "512"
+  network_mode             = "awsvpc"  # ✅  Fargate only compatible with aswvpc
+
 
   container_definitions = jsonencode([
     {

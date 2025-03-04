@@ -1,2 +1,2 @@
-subnets = ["subnet-05108f306a429e1ee"]  # Subnet ID
-security_groups = ["sg-0610fd10b324c4dec"]  #  Security Group ID
+subnets = ["subnet-06c2d86955f37fd89"]  # Subnet ID
+security_groups = ["sg-0b2eb18c8f4351515"]  #  Security Group ID
