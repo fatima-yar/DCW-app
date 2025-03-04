@@ -2,26 +2,32 @@ provider "aws" {
   region = var.aws_region
 }
 
-# detect whether ecr exist, otherwise to create ECR
-
+# =====================================
+# 1️⃣ Amazon ECR Repository (Check before creating)
+# =====================================
 data "aws_ecr_repository" "existing_ecr" {
   name = "dcw-web-repo"
 }
+
 resource "aws_ecr_repository" "nextjs_ecr" {
-  name = "dcw-web-repo"
-  force_delete = true 
+  count = length(data.aws_ecr_repository.existing_ecr.id) > 0 ? 0 : 1  # ✅ If exists, don't create
+  name  = "dcw-web-repo"
+  force_delete = true
 }
 
-
-# create ECS task execution role
+# =====================================
+# 2️⃣ IAM Role for ECS Task Execution
+# =====================================
 data "aws_iam_role" "existing_role" {
   name = "ecsTaskExecutionRole"
 }
+
 resource "aws_iam_role" "ecsTaskExecutionRole" {
-  count = length(data.aws_iam_role.existing_role.name) > 0 ? 0 : 1  # if exist, then don't create
-  name = "ecsTaskExecutionRole"
+  count = length(data.aws_iam_role.existing_role.name) > 0 ? 0 : 1  # ✅ If exists, don't create
+  name  = "ecsTaskExecutionRole"
 
   assume_role_policy = jsonencode({
+    Version = "2012-10-17"
     Statement = [{
       Effect = "Allow"
       Principal = { Service = "ecs-tasks.amazonaws.com" }
@@ -30,22 +36,25 @@ resource "aws_iam_role" "ecsTaskExecutionRole" {
   })
 }
 
-# create ECS task execution policy
 resource "aws_iam_role_policy_attachment" "ecsTaskExecutionRole_policy" {
-  count      = length(data.aws_iam_role.existing_role.name) > 0 ? 0 : 1  # if exist, then don't create
-  role       = aws_iam_role.ecsTaskExecutionRole.name
+  count      = length(data.aws_iam_role.existing_role.name) > 0 ? 0 : 1
+  role       = length(data.aws_iam_role.existing_role.name) > 0 ? data.aws_iam_role.existing_role.name : aws_iam_role.ecsTaskExecutionRole[0].name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
 }
 
-# create ECS cluster
+# =====================================
+# 3️⃣ Create ECS Cluster
+# =====================================
 resource "aws_ecs_cluster" "nextjs_cluster" {
   name = "nextjs-cluster"
 }
 
-# create ECS task definition
+# =====================================
+# 4️⃣ Create ECS Task Definition
+# =====================================
 resource "aws_ecs_task_definition" "nextjs_task" {
   family                   = "nextjs-task"
-  execution_role_arn       = "arn:aws:iam::123456789012:role/ecsTaskExecutionRole"
+  execution_role_arn       = length(data.aws_iam_role.existing_role.name) > 0 ? data.aws_iam_role.existing_role.arn : aws_iam_role.ecsTaskExecutionRole[0].arn
   requires_compatibilities = ["FARGATE"]
   cpu                      = "256"
   memory                   = "512"
@@ -53,7 +62,7 @@ resource "aws_ecs_task_definition" "nextjs_task" {
   container_definitions = jsonencode([
     {
       name      = "nextjs-app"
-      image     = "${aws_ecr_repository.nextjs_ecr.repository_url}:latest"
+      image     = "dcw-web-repo:latest"  # ✅ Dynamically use ECR image
       cpu       = 256
       memory    = 512
       essential = true
@@ -65,7 +74,9 @@ resource "aws_ecs_task_definition" "nextjs_task" {
   ])
 }
 
-# create ECS service
+# =====================================
+# 5️⃣ Create ECS Service
+# =====================================
 resource "aws_ecs_service" "nextjs_service" {
   name            = "nextjs-service"
   cluster         = aws_ecs_cluster.nextjs_cluster.id
