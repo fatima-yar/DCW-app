@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write # This allow GitHub Actions to push tags (fixing issues)
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -52,6 +55,8 @@ jobs:
 
       - name: Automatic Tagging of Releases
         id: increment-git-tag
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # ✅ Pass authentication token
         run: |
           bash ./build/git_update.sh -v major
       # above can change the patch to major, then change the major tag
