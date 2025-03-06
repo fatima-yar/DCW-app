@@ -6,6 +6,8 @@ nano .gitignore
 .terraform.lock.hcl
 terraform.tfstate
 terraform.tfstate.backup
+echo ".terraform/" >> .gitignore
+
 
 # Node.js Dependencies
 node_modules/
