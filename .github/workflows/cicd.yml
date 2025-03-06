@@ -60,12 +60,12 @@ jobs:
         run: |
           # Build Docker images with the dynamically determined version tag and latest tag
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:${NEW_VERSION} -t $DOCKER_HUB_REPOSITORY:${NEW_VERSION} -f frontend/Dockerfile frontend/
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest -t $DOCKER_HUB_REPOSITORY:latest -f frontend/Dockerfile frontend/
+          # docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest -t $DOCKER_HUB_REPOSITORY:latest -f frontend/Dockerfile frontend/
   
           # Push the new versioned image to AWS ECR
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:${NEW_VERSION}
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest  # Update the latest tag
+          # docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest  # Update the latest tag
   
           # Push the new versioned image to Docker Hub
           docker push $DOCKER_HUB_REPOSITORY:${NEW_VERSION}
-          docker push $DOCKER_HUB_REPOSITORY:latest  # Update the latest tag
+          # docker push $DOCKER_HUB_REPOSITORY:latest  # Update the latest tag
