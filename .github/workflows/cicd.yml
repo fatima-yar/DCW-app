@@ -28,21 +28,44 @@ jobs:
         run: |
           aws ecr describe-repositories --repository-names ${{ secrets.ECR_REPOSITORY }} || \
           aws ecr create-repository --repository-name ${{ secrets.ECR_REPOSITORY }}
+
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
+      - name: Determine Version Number
+        id: versioning
+        run: |
+          # Fetch existing image tags in ECR that match the format "dcw-repo-vX"
+          EXISTING_VERSIONS=$(aws ecr list-images --repository-name ${{ secrets.ECR_REPOSITORY }} --query 'imageIds[*].imageTag' --output text | grep -o 'dcw-repo-v[0-9]*' | sort -V | tail -n1)
+            
+          # Extract the last version number and increment it
+          if [[ -z "$EXISTING_VERSIONS" ]]; then
+            NEW_VERSION=1  # If no versions exist, start with v1
+          else
+            NEW_VERSION=$(( ${EXISTING_VERSIONS##*-v} + 1 ))  # Extract the last version number and increment it
+          fi
+  
+          # Store the new version as an environment variable
+          echo "NEW_VERSION=dcw-repo-v${NEW_VERSION}" >> $GITHUB_ENV
+          echo "NEW_VERSION_NUMBER=${NEW_VERSION}" >> $GITHUB_ENV
+  
       - name: Build and push Docker image to AWS ECR and Docker Hub
         env:
-          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}
-          DOCKER_HUB_REPOSITORY: ${{ secrets.DOCKER_HUB_USERNAME }}/dcw-nextjs-app  # Change to your Docker Hub repo
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}  # AWS ECR registry URL
+          ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}  # ECR repository name
+          DOCKER_HUB_REPOSITORY: ${{ secrets.DOCKER_HUB_USERNAME }}/dcw-nextjs-app  # Docker Hub repository name
         run: |
-          # Build Docker Image
+          # Build Docker images with the dynamically determined version tag and latest tag
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:${NEW_VERSION} -t $DOCKER_HUB_REPOSITORY:${NEW_VERSION} -f frontend/Dockerfile frontend/
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest -t $DOCKER_HUB_REPOSITORY:latest -f frontend/Dockerfile frontend/
-          # Push to AWS ECR
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
-          # Push to Docker Hub
-          docker push $DOCKER_HUB_REPOSITORY:latest
+  
+          # Push the new versioned image to AWS ECR
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:${NEW_VERSION}
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest  # Update the latest tag
+  
+          # Push the new versioned image to Docker Hub
+          docker push $DOCKER_HUB_REPOSITORY:${NEW_VERSION}
+          docker push $DOCKER_HUB_REPOSITORY:latest  # Update the latest tag
