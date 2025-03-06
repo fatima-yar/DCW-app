@@ -49,12 +49,15 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: frontend # correct working directory for npm install, cos package.json is under frontend
 
       - name: Run tests
         run: npm test
+        working-directory: frontend
 
       - name: Build Next.js app
         run: npm run build
+        working-directory: frontend
 
   docker-build-and-push:
     needs: build-and-test
