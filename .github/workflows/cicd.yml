@@ -1,4 +1,4 @@
-name: Deploy DCW Next.js App to AWS ECR and ECS with Terraform
+name: Push Docker Image to AWS ECR and Docker Hub
 
 on:
   push:
@@ -6,61 +6,7 @@ on:
       - main
 
 jobs:
-  terraform:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
-
-      - name: Install Terraform
-        uses: hashicorp/setup-terraform@v2
-        with:
-          terraform_version: 1.11.0  # Ensure Terraform is installed correctly
-
-      - name: Initialize Terraform
-        run: |
-          cd terraform
-          terraform init
-
-      - name: Apply Terraform changes
-        run: |
-          cd terraform
-          terraform apply -auto-approve  # Apply Terraform BEFORE Docker build to avoid unnecessary recreation
-
-  build-and-test:
-    needs: terraform  # Ensure Terraform runs before the build step
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
-        run: npm install
-        working-directory: frontend  # ✅ Fixed working directory for package.json
-
-      - name: Run tests
-        run: npm test
-        working-directory: frontend  # ✅ Ensures tests are run in the correct directory
-
-      - name: Build Next.js app
-        run: npm run build
-        working-directory: frontend  # ✅ Fixes build location
-
   docker-build-and-push:
-    needs: build-and-test  # Ensures Next.js is built before Docker image creation
     runs-on: ubuntu-latest
 
     steps:
@@ -82,30 +28,24 @@ jobs:
         run: |
           aws ecr describe-repositories --repository-names ${{ secrets.ECR_REPOSITORY }} || \
           aws ecr create-repository --repository-name ${{ secrets.ECR_REPOSITORY }}
-      
 
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
-      - name: Build and push Docker image to Amazon ECR
+      - name: Build and push Docker image to AWS ECR and Docker Hub
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}
+          DOCKER_HUB_REPOSITORY: ${{ secrets.DOCKER_HUB_USERNAME }}/dcw-nextjs-app  # Change to your Docker Hub repo
         run: |
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest -f frontend/Dockerfile frontend/  # ✅ Fixed Docker build context
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest  # ✅ Pushes the latest image
+          # Build Docker Image
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest -t $DOCKER_HUB_REPOSITORY:latest -f frontend/Dockerfile frontend/
 
-  deploy:
-    needs: docker-build-and-push  # Ensures Docker image is pushed before ECS update
-    runs-on: ubuntu-latest
+          # Push to AWS ECR
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
 
-    steps:
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
-
-      - name: Force ECS Service Update
-        run: |
-          aws ecs update-service --cluster nextjs-cluster --service nextjs-service --force-new-deployment
-        
+          # Push to Docker Hub
+          docker push $DOCKER_HUB_REPOSITORY:latest
