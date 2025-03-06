@@ -10,10 +10,10 @@ data "aws_ecr_repository" "existing_ecr" {
 }
 
 resource "aws_ecr_repository" "nextjs_ecr" {
-  count = length(data.aws_ecr_repository.existing_ecr.id) > 0 ? 0 : 1  # ✅ If exists, don't create
-  name  = "dcw-web-repo"
+  name = "dcw-web-repo"
   force_delete = true
 }
+
 
 # =====================================
 # 2️⃣ IAM Role for ECS Task Execution
