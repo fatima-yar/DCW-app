@@ -98,6 +98,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Force update ECS service
+      - name: Force ECS Service Update
         run: |
-          aws ecs update-service --cluster nextjs-cluster --service nextjs-service --force-new-deployment  # ✅ Ensures ECS always deploys the latest image
+          aws ecs update-service --cluster nextjs-cluster --service nextjs-service --force-new-deployment
+        

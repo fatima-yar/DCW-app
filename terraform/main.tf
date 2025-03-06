@@ -63,7 +63,7 @@ resource "aws_ecs_task_definition" "nextjs_task" {
   container_definitions = jsonencode([
     {
       name      = "nextjs-app"
-      image     = "${data.aws_ecr_repository.existing_ecr.repository_url}:latest"  # ✅ Use full ECR URL dynamically
+      image     = "${data.aws_ecr_repository.existing_ecr.repository_url}:latest"  # ✅ Always pull latest image
       cpu       = 256
       memory    = 512
       essential = true
@@ -75,17 +75,18 @@ resource "aws_ecs_task_definition" "nextjs_task" {
   ])
 }
 
+
 # =====================================
 # 5️⃣ Create ECS Service (Fix idempotency issues)
 # =====================================
 resource "aws_ecs_service" "nextjs_service" {
   name            = "nextjs-service"
   cluster         = aws_ecs_cluster.nextjs_cluster.id
-  task_definition = "${aws_ecs_task_definition.nextjs_task.family}:${aws_ecs_task_definition.nextjs_task.revision}" # ✅ Ensure latest task revision
+  task_definition = "${aws_ecs_task_definition.nextjs_task.family}:${aws_ecs_task_definition.nextjs_task.revision}" # ✅ Always use latest task revision
   desired_count   = 1
   launch_type     = "FARGATE"
 
-  force_new_deployment = true  # ✅ Ensures ECS does not recreate the service, just updates it
+  force_new_deployment = true  # ✅ Ensures ECS updates instead of recreates
 
   network_configuration {
     subnets         = var.subnets
@@ -97,3 +98,4 @@ resource "aws_ecs_service" "nextjs_service" {
     ignore_changes = [desired_count]  # ✅ Prevent Terraform from replacing the service due to count changes
   }
 }
+
