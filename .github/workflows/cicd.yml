@@ -15,14 +15,14 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }} # apply access right
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v2
         with:
-          terraform_version: 1.11.0  # latest Terraform version
+          terraform_version: 1.11.0  # Ensure Terraform is installed correctly
 
       - name: Initialize Terraform
         run: |
@@ -32,10 +32,10 @@ jobs:
       - name: Apply Terraform changes
         run: |
           cd terraform
-          terraform apply -auto-approve
+          terraform apply -auto-approve  # Apply Terraform BEFORE Docker build to avoid unnecessary recreation
 
   build-and-test:
-    needs: terraform  # Build Docker only after execution of Terraform
+    needs: terraform  # Ensure Terraform runs before the build step
     runs-on: ubuntu-latest
 
     steps:
@@ -49,18 +49,18 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: frontend # correct working directory for npm install, cos package.json is under frontend
+        working-directory: frontend  # ✅ Fixed working directory for package.json
 
       - name: Run tests
         run: npm test
-        working-directory: frontend
+        working-directory: frontend  # ✅ Ensures tests are run in the correct directory
 
       - name: Build Next.js app
         run: npm run build
-        working-directory: frontend
+        working-directory: frontend  # ✅ Fixes build location
 
   docker-build-and-push:
-    needs: build-and-test
+    needs: build-and-test  # Ensures Next.js is built before Docker image creation
     runs-on: ubuntu-latest
 
     steps:
@@ -78,19 +78,26 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
-      - name: Build, tag, and push image to Amazon ECR
+      - name: Build and push Docker image to Amazon ECR
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}
         run: |
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest -f frontend/Dockerfile frontend/  # ✅ Fixed Docker build context
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest  # ✅ Pushes the latest image
 
   deploy:
-    needs: docker-build-and-push
+    needs: docker-build-and-push  # Ensures Docker image is pushed before ECS update
     runs-on: ubuntu-latest
 
     steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
       - name: Force update ECS service
         run: |
-          aws ecs update-service --cluster nextjs-cluster --service nextjs-service --force-new-deployment
+          aws ecs update-service --cluster nextjs-cluster --service nextjs-service --force-new-deployment  # ✅ Ensures ECS always deploys the latest image
