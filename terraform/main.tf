@@ -50,7 +50,7 @@ resource "aws_ecs_cluster" "nextjs_cluster" {
 }
 
 # =====================================
-# 4️⃣ Create ECS Task Definition
+# 4️⃣ Create ECS Task Definition (Fix image URI)
 # =====================================
 resource "aws_ecs_task_definition" "nextjs_task" {
   family                   = "nextjs-task"
@@ -58,13 +58,12 @@ resource "aws_ecs_task_definition" "nextjs_task" {
   requires_compatibilities = ["FARGATE"]
   cpu                      = "256"
   memory                   = "512"
-  network_mode             = "awsvpc"  # ✅  Fargate only compatible with aswvpc
-
+  network_mode             = "awsvpc"
 
   container_definitions = jsonencode([
     {
       name      = "nextjs-app"
-      image     = "dcw-web-repo:latest"  # ✅ Dynamically use ECR image
+      image     = "${data.aws_ecr_repository.existing_ecr.repository_url}:latest"  # ✅ Use full ECR URL dynamically
       cpu       = 256
       memory    = 512
       essential = true
@@ -77,18 +76,24 @@ resource "aws_ecs_task_definition" "nextjs_task" {
 }
 
 # =====================================
-# 5️⃣ Create ECS Service
+# 5️⃣ Create ECS Service (Fix idempotency issues)
 # =====================================
 resource "aws_ecs_service" "nextjs_service" {
   name            = "nextjs-service"
   cluster         = aws_ecs_cluster.nextjs_cluster.id
-  task_definition = aws_ecs_task_definition.nextjs_task.arn
+  task_definition = "${aws_ecs_task_definition.nextjs_task.family}:${aws_ecs_task_definition.nextjs_task.revision}" # ✅ Ensure latest task revision
   desired_count   = 1
   launch_type     = "FARGATE"
+
+  force_new_deployment = true  # ✅ Ensures ECS does not recreate the service, just updates it
 
   network_configuration {
     subnets         = var.subnets
     security_groups = var.security_groups
     assign_public_ip = true
+  }
+
+  lifecycle {
+    ignore_changes = [desired_count]  # ✅ Prevent Terraform from replacing the service due to count changes
   }
 }
