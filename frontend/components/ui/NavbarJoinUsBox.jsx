@@ -1,4 +1,4 @@
-export default function NavbarHomeBox() {
+export default function NavbarJoinUsBox() {
   return (
     <div className="mx-16 sm:mx-16 lg:mx-40 bg-[#CADEE2] p-4 sm:p-6 mt-2">
       <div className="flex flex-wrap sm:flex-nowrap">
@@ -15,33 +15,18 @@ export default function NavbarHomeBox() {
         {/* Middle Column - Larger Size */}
         <div className="flex-1 p-2 sm:p-4 font-[Convergence]">
           <h2 className="text-lg sm:text-xl text-[#986100] mt-6 sm:mt-8">
-            Home
+            Join Us
           </h2>
           <div className="mt-6 sm:mt-8">
             <ul className="space-y-3 sm:space-y-4 text-xs sm:text-sm">
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
                 <a href="#" className="text-black">
-                  About Us
+                  Volunteer
                 </a>
               </li>
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
                 <a href="#" className="text-black">
-                  Our Team
-                </a>
-              </li>
-              <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="#" className="text-black">
-                  Mission Statement
-                </a>
-              </li>
-              <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="#" className="text-black">
-                  Privacy Policy
-                </a>
-              </li>
-              <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="#" className="text-black">
-                  Contact Us
+                  Newsletter
                 </a>
               </li>
             </ul>

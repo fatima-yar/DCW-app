@@ -1,4 +1,4 @@
-export default function NavbarHomeBox() {
+export default function NavbarJoinUsBox() {
   return (
     <div className="mx-16 sm:mx-16 lg:mx-40 bg-[#CADEE2] p-4 sm:p-6 mt-2">
       <div className="flex flex-wrap sm:flex-nowrap">
@@ -15,31 +15,33 @@ export default function NavbarHomeBox() {
         {/* Middle Column - Larger Size */}
         <div className="flex-1 p-2 sm:p-4 font-[Convergence]">
           <h2 className="text-lg sm:text-xl text-[#986100] mt-6 sm:mt-8">
-            What We Do
-          </h2>
-          <h2 className="text-lg sm:text-xl text-[#986100] mt-6 sm:mt-8">
-            Projects
+            Donate
           </h2>
           <div className="mt-6 sm:mt-8">
             <ul className="space-y-3 sm:space-y-4 text-xs sm:text-sm">
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
                 <a href="#" className="text-black">
-                  Stretch and Flex (Yoga)
+                  Givealittle
                 </a>
               </li>
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
                 <a href="#" className="text-black">
-                  Smart Tech for Seniors
+                  Direct donations
                 </a>
               </li>
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
                 <a href="#" className="text-black">
-                  Homework Clubs
+                  Gifts
                 </a>
               </li>
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
                 <a href="#" className="text-black">
-                  Dance Classes
+                  Partnerships
+                </a>
+              </li>
+              <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
+                <a href="#" className="text-black">
+                  Sponsorships (CSR)
                 </a>
               </li>
             </ul>
@@ -50,32 +52,7 @@ export default function NavbarHomeBox() {
         <div className="border-l-2 sm:border-l-3 border-white h-auto my-4 sm:my-0 sm:mr-8"></div>
 
         {/* Right Column - Larger Size */}
-        <div className="flex-1 p-2 sm:p-4">
-          <div className="flex-1 p-2 sm:p-4 font-[Convergence]">
-            <h2 className="text-lg sm:text-xl text-[#986100] mt-6 sm:mt-19">
-              Events
-            </h2>
-            <div className="mt-6 sm:mt-8">
-              <ul className="space-y-3 sm:space-y-4 text-xs sm:text-sm">
-                <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                  <a href="#" className="text-black">
-                    Feed4All
-                  </a>
-                </li>
-                <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                  <a href="#" className="text-black">
-                    Foreign Exchange NZ
-                  </a>
-                </li>
-                <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                  <a href="#" className="text-black">
-                    House Dance NZ
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <div className="flex-1 p-2 sm:p-4">{/* Empty column */}</div>
       </div>
     </div>
   )
