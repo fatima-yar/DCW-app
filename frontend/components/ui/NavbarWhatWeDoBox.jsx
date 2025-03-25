@@ -15,33 +15,31 @@ export default function NavbarHomeBox() {
         {/* Middle Column - Larger Size */}
         <div className="flex-1 p-2 sm:p-4 font-[Convergence]">
           <h2 className="text-lg sm:text-xl text-[#986100] mt-6 sm:mt-8">
-            Home
+            What We Do
+          </h2>
+          <h2 className="text-lg sm:text-xl text-[#986100] mt-6 sm:mt-8">
+            Projects
           </h2>
           <div className="mt-6 sm:mt-8">
             <ul className="space-y-3 sm:space-y-4 text-xs sm:text-sm">
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
                 <a href="#" className="text-black">
-                  About Us
+                  Stretch and Flex (Yoga)
                 </a>
               </li>
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
                 <a href="#" className="text-black">
-                  Our Team
+                  Smart Tech for Seniors
                 </a>
               </li>
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
                 <a href="#" className="text-black">
-                  Mission Statement
+                  Homework Clubs
                 </a>
               </li>
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
                 <a href="#" className="text-black">
-                  Privacy Policy
-                </a>
-              </li>
-              <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="#" className="text-black">
-                  Contact Us
+                  Dance Classes
                 </a>
               </li>
             </ul>
@@ -52,7 +50,32 @@ export default function NavbarHomeBox() {
         <div className="border-l-2 sm:border-l-3 border-white h-auto my-4 sm:my-0 sm:mr-8"></div>
 
         {/* Right Column - Larger Size */}
-        <div className="flex-1 p-2 sm:p-4">{/* Empty column */}</div>
+        <div className="flex-1 p-2 sm:p-4">
+          <div className="flex-1 p-2 sm:p-4 font-[Convergence]">
+            <h2 className="text-lg sm:text-xl text-[#986100] mt-6 sm:mt-19">
+              Events
+            </h2>
+            <div className="mt-6 sm:mt-8">
+              <ul className="space-y-3 sm:space-y-4 text-xs sm:text-sm">
+                <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
+                  <a href="#" className="text-black">
+                    Feed4All
+                  </a>
+                </li>
+                <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
+                  <a href="#" className="text-black">
+                    Foreign Exchange NZ
+                  </a>
+                </li>
+                <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
+                  <a href="#" className="text-black">
+                    House Dance NZ
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
