@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar'
+import NavbarHomeBox from '../components/ui/NavbarHomeBox'
 
 export default function Home() {
   return (
@@ -6,9 +7,10 @@ export default function Home() {
       className="min-h-screen bg-white"
       style={{
         backgroundImage: 'url(/bg-pattern.png)',
-        backgroundSize: 'auto 150%', // Adjust this value to control the size of the background image
+        backgroundSize: 'cover', // Use cover to make sure it stays consistent
         backgroundPosition: 'center',
         backgroundRepeat: 'repeat',
+        backgroundAttachment: 'fixed', // This keeps the background fixed
       }}
     >
       {/* White space above Navbar */}
