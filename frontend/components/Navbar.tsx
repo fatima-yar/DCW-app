@@ -30,55 +30,78 @@ export default function Navbar() {
   return (
     <>
       {/* Full-width gradient bar */}
-      <div className="sticky top-0 z-50 pt-2 pb-2  bg-gradient-to-r from-[#8A5082] to-[#A5CAD2] w-full overflow-x-hidden">
+      <div className="sticky top-0 z-50 pt-2 pb-2 bg-gradient-to-r from-[#8A5082] to-[#A5CAD2] w-full overflow-x-hidden">
         {/* Navbar content with 40px margin on both sides and evenly spaced items */}
-        <nav className="flex justify-center md:space-x-20 lg:space-x-50 text-md">
+        <nav className="flex justify-center md:space-x-20 lg:space-x-50 text-md relative">
           {/* First Navbar item */}
-          <NavbarHome
-            isOpen={openBox === 'home'}
-            handleClick={handleHomeClick}
-          />
+          <div className="relative">
+            <NavbarHome
+              isOpen={openBox === 'home'}
+              handleClick={handleHomeClick}
+            />
+            {openBox === 'home'}
+          </div>
+
           {/* Second Navbar item */}
-          <NavbarWhatWeDo
-            isOpen={openBox === 'WhatWeDo'}
-            handleClick={handleWhatWeDoClick}
-          />
+          <div className="relative">
+            <NavbarWhatWeDo
+              isOpen={openBox === 'WhatWeDo'}
+              handleClick={handleWhatWeDoClick}
+            />
+            {openBox === 'WhatWeDo'}
+          </div>
+
           {/* Third Navbar item */}
-          <NavbarJoinUs
-            isOpen={openBox === 'JoinUs'}
-            handleClick={handleJoinUsClick}
-          />
+          <div className="relative">
+            <NavbarJoinUs
+              isOpen={openBox === 'JoinUs'}
+              handleClick={handleJoinUsClick}
+            />
+            {openBox === 'JoinUs'}
+          </div>
+
           {/* Fourth Navbar item */}
-          <NavbarDonate
-            isOpen={openBox === 'Donate'}
-            handleClick={handleDonateClick}
-          />
+          <div className="relative">
+            <NavbarDonate
+              isOpen={openBox === 'Donate'}
+              handleClick={handleDonateClick}
+            />
+            {openBox === 'Donate'}
+          </div>
         </nav>
       </div>
 
-      {/* Conditionally render below the navbar */}
+      {/* Conditionally render content for selected box */}
       {openBox === 'home' && (
-        <div className="w-full">
-          <NavbarHomeBox />
-        </div>
+        <>
+          <div className="w-full">
+            <NavbarHomeBox />
+          </div>
+        </>
       )}
 
       {openBox === 'WhatWeDo' && (
-        <div className="w-full">
-          <NavbarWhatWeDoBox />
-        </div>
+        <>
+          <div className="w-full">
+            <NavbarWhatWeDoBox />
+          </div>
+        </>
       )}
 
       {openBox === 'JoinUs' && (
-        <div className="w-full">
-          <NavbarJoinUsBox />
-        </div>
+        <>
+          <div className="w-full">
+            <NavbarJoinUsBox />
+          </div>
+        </>
       )}
 
       {openBox === 'Donate' && (
-        <div className="w-full">
-          <NavbarDonateBox />
-        </div>
+        <>
+          <div className="w-full">
+            <NavbarDonateBox />
+          </div>
+        </>
       )}
     </>
   )
