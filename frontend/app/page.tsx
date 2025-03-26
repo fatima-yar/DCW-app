@@ -9,8 +9,9 @@ export default function Home() {
         backgroundImage: 'url(/bg-pattern.png)',
         backgroundSize: 'cover', // Use cover to make sure it stays consistent
         backgroundPosition: 'center',
-        backgroundRepeat: 'repeat',
-        backgroundAttachment: 'fixed', // This keeps the background fixed
+        backgroundRepeat: 'no-repeat', // Disable repeating to avoid gaps
+        backgroundAttachment: 'fixed', // Keep the background fixed during scroll
+        // overflowX: 'hidden',
       }}
     >
       {/* White space above Navbar */}

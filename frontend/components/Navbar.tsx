@@ -29,32 +29,31 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Navbar bar */}
-      <div className="w-full h-12 bg-gradient-to-r from-[#8A5082] to-[#A5CAD2]">
-        <div className="flex items-center justify-center h-full mx-40">
+      {/* Full-width gradient bar */}
+      <div className="sticky top-0 z-50 pt-2 pb-2  bg-gradient-to-r from-[#8A5082] to-[#A5CAD2] w-full overflow-x-hidden">
+        {/* Navbar content with 40px margin on both sides and evenly spaced items */}
+        <nav className="flex justify-center md:space-x-20 lg:space-x-50 text-md">
           {/* First Navbar item */}
           <NavbarHome
             isOpen={openBox === 'home'}
             handleClick={handleHomeClick}
           />
-
           {/* Second Navbar item */}
           <NavbarWhatWeDo
             isOpen={openBox === 'WhatWeDo'}
             handleClick={handleWhatWeDoClick}
           />
-
           {/* Third Navbar item */}
           <NavbarJoinUs
             isOpen={openBox === 'JoinUs'}
             handleClick={handleJoinUsClick}
           />
-          {/* Forth Navbar item */}
+          {/* Fourth Navbar item */}
           <NavbarDonate
             isOpen={openBox === 'Donate'}
             handleClick={handleDonateClick}
           />
-        </div>
+        </nav>
       </div>
 
       {/* Conditionally render below the navbar */}
@@ -66,7 +65,7 @@ export default function Navbar() {
 
       {openBox === 'WhatWeDo' && (
         <div className="w-full">
-          <NavbarWhatWeDoBox />{' '}
+          <NavbarWhatWeDoBox />
         </div>
       )}
 

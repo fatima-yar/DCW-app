@@ -1,16 +1,16 @@
 export default function NavbarHomeBox() {
   return (
-    <div className="mx-16 sm:mx-16 lg:mx-40 bg-[#CADEE2] p-4 sm:p-6 mt-2">
+    <div className="mx-16 sm:mx-16 lg:mx-60 bg-[#CADEE2] p-4 sm:p-6 mt-2 h-90">
       <div className="flex flex-wrap sm:flex-nowrap">
         {/* Left Column - Smaller Size */}
         <div className="flex-[0.5] p-2 sm:p-4">
-          <h2 className="text-xl sm:text-2xl font-[Convergence] text-black">
+          <h2 className="text-xl sm:text-xl font-[Convergence] text-black">
             Overview
           </h2>
         </div>
 
         {/* Vertical Line 1 (between left and middle) */}
-        <div className="border-l-2 sm:border-l-3 border-white h-auto my-4 sm:my-0 sm:mr-8"></div>
+        <div className="border-l-2 sm:border-l-3 border-white h-80 my-4 sm:my-0 sm:mr-8"></div>
 
         {/* Middle Column - Larger Size */}
         <div className="flex-1 p-2 sm:p-4 font-[Convergence]">
@@ -49,7 +49,7 @@ export default function NavbarHomeBox() {
         </div>
 
         {/* Vertical Line 2 (between middle and right) */}
-        <div className="border-l-2 sm:border-l-3 border-white h-auto my-4 sm:my-0 sm:mr-8"></div>
+        <div className="border-l-2 sm:border-l-3 border-white h-80 my-4 sm:my-0 sm:mr-8 mx-7"></div>
 
         {/* Right Column - Larger Size */}
         <div className="flex-1 p-2 sm:p-4">{/* Empty column */}</div>
