@@ -75,9 +75,46 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* <div className="block md:hidden sticky top-0 z-50 ">
-        <HamburgerMenu />
-      </div> */}
+      {openBox === 'home' && (
+        <div
+          className="w-full"
+          onMouseEnter={() => setOpenBox('home')} // Trigger hover on Home
+          onMouseLeave={() => setOpenBox('')} // Hide on hover out
+        >
+          <NavbarHomeBox />
+        </div>
+      )}
+
+      {openBox === 'WhatWeDo' && (
+        <div
+          className="w-full"
+          onMouseEnter={() => setOpenBox('home')} // Trigger hover on Home
+          onMouseLeave={() => setOpenBox('')} // Hide on hover out
+        >
+          <NavbarWhatWeDoBox />
+        </div>
+      )}
+
+      {openBox === 'JoinUs' && (
+        <div
+          className="w-full"
+          onMouseEnter={() => setOpenBox('home')}
+          onMouseLeave={() => setOpenBox('')}
+        >
+          <NavbarJoinUsBox />
+        </div>
+      )}
+
+      {openBox === 'Donate' && (
+        <div
+          className="w-full"
+          onMouseEnter={() => setOpenBox('home')}
+          onMouseLeave={() => setOpenBox('')}
+        >
+          <NavbarDonateBox />
+        </div>
+      )}
+
       <div>
         {/* Hamburger icon to toggle the menu */}
         <div className="block md:hidden sticky top-0 z-50 ml-4">
@@ -96,30 +133,6 @@ export default function Navbar() {
         {/* Use HamburgerMenu component */}
         {isMenuOpen && <HamburgerMenu />}
       </div>
-
-      {openBox === 'home' && (
-        <div className="w-full">
-          <NavbarHomeBox />
-        </div>
-      )}
-
-      {openBox === 'WhatWeDo' && (
-        <div className="w-full">
-          <NavbarWhatWeDoBox />
-        </div>
-      )}
-
-      {openBox === 'JoinUs' && (
-        <div className="w-full">
-          <NavbarJoinUsBox />
-        </div>
-      )}
-
-      {openBox === 'Donate' && (
-        <div className="w-full">
-          <NavbarDonateBox />
-        </div>
-      )}
     </>
   )
 }
