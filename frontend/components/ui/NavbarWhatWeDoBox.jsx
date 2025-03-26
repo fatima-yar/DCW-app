@@ -1,6 +1,6 @@
 export default function NavbarHomeBox() {
   return (
-    <div className="mx-16 sm:mx-16 lg:mx-60 bg-[#CADEE2] p-4 sm:p-6 mt-2 h-90">
+    <div className="mx-16 sm:mx-8 lg:mx-50 bg-[#CADEE2] p-4 sm:p-6 mt-2 h-100">
       <div className="flex flex-wrap sm:flex-nowrap">
         {/* Left Column - Smaller Size */}
         <div className="flex-[0.5] p-2 sm:p-4">
@@ -14,10 +14,10 @@ export default function NavbarHomeBox() {
 
         {/* Middle Column - Larger Size */}
         <div className="flex-1 p-2 sm:p-4 font-[Convergence]">
-          <h2 className="text-lg sm:text-xl text-[#986100] mt-6 sm:mt-8">
+          <h2 className="text-lg sm:text-xl text-[#986100] mt-4 sm:mt-8">
             What We Do
           </h2>
-          <h2 className="text-lg sm:text-xl text-[#986100] mt-6 sm:mt-8">
+          <h2 className="text-lg sm:text-xl text-[#986100] mt-4 sm:mt-8">
             Projects
           </h2>
           <div className="mt-6 sm:mt-8">

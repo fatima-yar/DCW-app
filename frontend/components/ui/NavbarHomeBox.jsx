@@ -1,6 +1,6 @@
 export default function NavbarHomeBox() {
   return (
-    <div className="mx-16 sm:mx-16 lg:mx-60 bg-[#CADEE2] p-4 sm:p-6 mt-2 h-90">
+    <div className="mx-16 sm:mx-8 lg:mx-50 bg-[#CADEE2] p-4 sm:p-6 mt-2 h-100">
       <div className="flex flex-wrap sm:flex-nowrap">
         {/* Left Column - Smaller Size */}
         <div className="flex-[0.5] p-2 sm:p-4">

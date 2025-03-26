@@ -1,6 +1,6 @@
 export default function NavbarJoinUsBox() {
   return (
-    <div className="mx-60 sm:mx-8 lg:mx-60 bg-[#CADEE2] p-4 sm:p-6 mt-2 h-90">
+    <div className="mx-16 sm:mx-8 lg:mx-50 bg-[#CADEE2] p-4 sm:p-6 mt-2 h-100">
       <div className="flex flex-wrap sm:flex-nowrap">
         {/* Left Column - Smaller Size */}
         <div className="flex-[0.5] p-2 sm:p-4">
@@ -34,7 +34,7 @@ export default function NavbarJoinUsBox() {
         </div>
 
         {/* Vertical Line 2 (between middle and right) */}
-        <div className="border-l-2 sm:border-l-3 border-white h-80 my-4 sm:my-0 sm:mr-8 mx-7"></div>
+        <div className="border-l-2 sm:border-l-3 border-white h-80 my-4 sm:my-0 sm:mr-8 "></div>
 
         {/* Right Column - Larger Size */}
         <div className="flex-1 p-2 sm:p-4">{/* Empty column */}</div>
