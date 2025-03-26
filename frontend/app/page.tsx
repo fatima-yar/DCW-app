@@ -27,7 +27,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="py-4 text-center text-sm text-gray-500">
-        &copy; 2025 My Website. All rights reserved.
+        &copy; 2025 DreamCatchersWorldwide. All rights reserved.
       </footer>
     </div>
   )
