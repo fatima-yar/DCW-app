@@ -1,4 +1,4 @@
-export default function NavbarJoinUsBox() {
+export default function NavbarHomeBox() {
   return (
     <div className="mx-16 sm:mx-8 lg:mx-50 bg-[#CADEE2] p-4 sm:p-6 mt-0 h-100">
       <div className="flex flex-wrap sm:flex-nowrap">
@@ -10,7 +10,7 @@ export default function NavbarJoinUsBox() {
         </div>
 
         {/* Vertical Line 1 (between left and middle) */}
-        <div className="border-l-2 sm:border-l-3 border-white h-80 my-4 sm:my-0 sm:mr-8 "></div>
+        <div className="border-l-2 sm:border-l-3 border-white h-80 my-4 sm:my-0 sm:mr-8"></div>
 
         {/* Middle Column - Larger Size */}
         <div className="flex-1 p-2 sm:p-4 font-[Convergence]">
@@ -29,12 +29,17 @@ export default function NavbarJoinUsBox() {
                   Newsletter
                 </a>
               </li>
+              <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
+                <a href="#" className="text-black">
+                  Mission Statement
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
         {/* Vertical Line 2 (between middle and right) */}
-        <div className="border-l-2 sm:border-l-3 border-white h-80 my-4 sm:my-0 sm:mr-8 "></div>
+        <div className="border-l-2 sm:border-l-3 border-white h-80 my-4 sm:my-0 sm:mr-8 mx-7"></div>
 
         {/* Right Column - Larger Size */}
         <div className="flex-1 p-2 sm:p-4">{/* Empty column */}</div>
