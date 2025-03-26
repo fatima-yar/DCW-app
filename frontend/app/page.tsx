@@ -1,5 +1,5 @@
 import Navbar from '../components/Navbar'
-import NavbarHomeBox from '../components/ui/NavbarHomeBox'
+import HamburgerMenu from '../components/ui/HamburgerMenu'
 
 export default function Home() {
   return (
@@ -22,7 +22,7 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="flex items-center justify-center min-h-[calc(100vh-120px)]">
-        <h1 className="text-5xl font-bold">Welcome to My Website</h1>
+        <h1 className="text-5xl font-bold">Dream Catcher</h1>
       </main>
 
       {/* Footer */}
