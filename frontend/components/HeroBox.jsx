@@ -1,7 +1,7 @@
 import React from 'react'
 import MaoriStrip from './ui/MaoriStrip'
 import BgImage from './ui/BgImage'
-import DonateButton from './ui/DonateButton'
+import HeroBoxContent from './ui/HeroBoxContent'
 
 export default function HeroBox() {
   return (
@@ -9,7 +9,6 @@ export default function HeroBox() {
       <MaoriStrip />
 
       <BgImage />
-      <DonateButton />
       <MaoriStrip />
     </>
   )
