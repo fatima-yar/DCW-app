@@ -11,7 +11,11 @@ export default {
       fontFamily: {
         lora: ['var(--font-lora)', 'serif'],
         convergence: ['var(--font-convergence)', 'sans-serif'],
+<<<<<<< HEAD
         dosis: ['Dosis', 'sans-serif'],
+=======
+        sansation: ['Sansation', 'sans-serif'],
+>>>>>>> 87ea3b5288b12ea0ce8b68e75997745c4fe23367
       },
       colors: {
         background: 'hsl(var(--background))',
