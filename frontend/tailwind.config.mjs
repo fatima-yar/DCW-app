@@ -15,7 +15,6 @@ export default {
         dosis: ['Dosis', 'sans-serif'],
 
         sansation: ['Sansation', 'sans-serif'],
-        dosis: ['Dosis', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',
