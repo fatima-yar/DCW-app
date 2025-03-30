@@ -26,7 +26,7 @@ export default function HeroContent() {
 
           {/* White Text */}
           <div className="col-span-1 md:col-span-2 lg:col-span-2 row-start-2">
-            <p className="pt-2 pl-4 lg:pl-10 lg:pt-20  font-[Sansation] text-white lg:text-2xl md:text-xl sm:text-md ">
+            <p className="pt-2 pl-4 lg:pl-10 lg:pt-20  font-[dosis] text-white lg:text-2xl md:text-xl sm:text-md ">
               Together,&nbsp;we&nbsp;uplift&nbsp;and&nbsp;inspire communities.
             </p>
           </div>

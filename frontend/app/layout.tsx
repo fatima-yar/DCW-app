@@ -2,6 +2,7 @@ import { Lora, Convergence, Dosis } from 'next/font/google' // Import the fonts
 import './globals.css'
 
 // Load the Google fonts
+// Load the Google fonts
 const lora = Lora({
   variable: '--font-lora',
   subsets: ['latin'],
