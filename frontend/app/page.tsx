@@ -1,6 +1,7 @@
 import Footer from '@/components/Footer'
 import Navbar from '../components/Navbar'
-import HamburgerMenu from '../components/ui/HamburgerMenu'
+import Motto from '../components/Motto'
+import HeroBox from '../components/HeroBox'
 
 export default function Home() {
   return (
@@ -22,6 +23,8 @@ export default function Home() {
       </div>
 
       {/* Main Content */}
+      <Motto />
+      <HeroBox />
       <main className="flex items-center justify-center min-h-[calc(100vh-120px)]">
         <h1 className="text-5xl font-bold">Dream Catcher</h1>
       </main>
