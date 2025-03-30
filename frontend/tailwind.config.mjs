@@ -12,6 +12,7 @@ export default {
         lora: ['var(--font-lora)', 'serif'],
         convergence: ['var(--font-convergence)', 'sans-serif'],
         sansation: ['Sansation', 'sans-serif'],
+        dosis: ['Dosis', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',

@@ -1,4 +1,4 @@
-import { Lora, Convergence } from 'next/font/google' // Import the fonts
+import { Lora, Convergence, Dosis } from 'next/font/google' // Import the fonts
 import './globals.css'
 
 // Load the Google fonts
@@ -14,6 +14,12 @@ const convergence = Convergence({
   weight: ['400'], // Add weights you need (Convergence has a default weight of 400)
 })
 
+const dosis = Dosis({
+  variable: '--font-dosis',
+  subsets: ['latin'],
+  weight: ['200', '400', '600', '800'], // Include desired weights
+})
+
 export const metadata = {
   title: 'Your App Title',
   description: 'Your app description',
@@ -26,7 +32,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* Use the head export to add the Sansation font */}
       <head>
         <link
           href="https://fonts.cdnfonts.com/css/sansation?styles=756"
@@ -34,7 +39,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${lora.variable} ${convergence.variable} font-sansation antialiased`}
+        className={`${lora.variable} ${convergence.variable} ${dosis.variable} font-sansation antialiased`} // Added Dosis variable
       >
         {children}
       </body>
