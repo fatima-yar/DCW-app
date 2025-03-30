@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer'
 import Navbar from '../components/Navbar'
 import HamburgerMenu from '../components/ui/HamburgerMenu'
 
@@ -26,9 +27,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="py-4 text-center text-sm text-gray-500">
-        &copy; 2025 DreamCatchersWorldwide. All rights reserved.
-      </footer>
+      <Footer />
     </div>
   )
 }

@@ -1,9 +1,7 @@
-import type { Metadata } from 'next'
 import { Lora, Convergence } from 'next/font/google' // Import the fonts
 import './globals.css'
-import Footer from '../components/Footer'
 
-// Load the fonts
+// Load the Google fonts
 const lora = Lora({
   variable: '--font-lora',
   subsets: ['latin'],
@@ -16,9 +14,9 @@ const convergence = Convergence({
   weight: ['400'], // Add weights you need (Convergence has a default weight of 400)
 })
 
-export const metadata: Metadata = {
-  title: 'SERVICES | DreamCatchersWorldwide',
-  description: 'We build dream together',
+export const metadata = {
+  title: 'Your App Title',
+  description: 'Your app description',
 }
 
 export default function RootLayout({
@@ -28,9 +26,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lora.variable} ${convergence.variable} antialiased`}>
+      {/* Use the head export to add the Sansation font */}
+      <head>
+        <link
+          href="https://fonts.cdnfonts.com/css/sansation?styles=756"
+          rel="stylesheet"
+        />
+      </head>
+      <body
+        className={`${lora.variable} ${convergence.variable} font-sansation antialiased`}
+      >
         {children}
-        <Footer />
       </body>
     </html>
   )
