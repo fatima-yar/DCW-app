@@ -109,7 +109,7 @@ export default function Navbar() {
       {openBox === 'WhatWeDo' && (
         <div
           className="w-full"
-          onMouseEnter={() => setOpenBox('home')} // Trigger hover on Home
+          onMouseEnter={() => setOpenBox('WhatWeDo')} // Trigger hover on Home
           onMouseLeave={() => setOpenBox('')} // Hide on hover out
         >
           <NavbarWhatWeDoBox />
@@ -119,7 +119,7 @@ export default function Navbar() {
       {openBox === 'JoinUs' && (
         <div
           className="w-full"
-          onMouseEnter={() => setOpenBox('home')}
+          onMouseEnter={() => setOpenBox('JoinUs')}
           onMouseLeave={() => setOpenBox('')}
         >
           <NavbarJoinUsBox />
@@ -129,7 +129,7 @@ export default function Navbar() {
       {openBox === 'Donate' && (
         <div
           className="w-full"
-          onMouseEnter={() => setOpenBox('home')}
+          onMouseEnter={() => setOpenBox('Donate')}
           onMouseLeave={() => setOpenBox('')}
         >
           <NavbarDonateBox />
