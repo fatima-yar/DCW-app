@@ -2,6 +2,7 @@ import Footer from '@/components/Footer'
 import Navbar from '../components/Navbar'
 import Motto from '../components/Motto'
 import HeroBox from '../components/HeroBox'
+import InfoBox from '../components/InfoBox'
 
 export default function Home() {
   return (
@@ -25,10 +26,9 @@ export default function Home() {
       {/* Main Content */}
       <Motto />
       <HeroBox />
-      <main className="flex items-center justify-center min-h-[calc(100vh-120px)]">
-        <h1 className="text-5xl font-bold">Dream Catcher</h1>
-      </main>
 
+      {/* Info Box */}
+      <InfoBox />
       {/* Footer */}
       <Footer />
     </div>
