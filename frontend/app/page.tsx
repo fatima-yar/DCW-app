@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer'
 import Navbar from '../components/Navbar'
 import Motto from '../components/Motto'
 import HeroBox from '../components/HeroBox'
@@ -29,9 +30,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="py-4 text-center text-sm text-gray-500">
-        &copy; 2025 My Website. All rights reserved.
-      </footer>
+      <Footer />
     </div>
   )
 }
