@@ -6,9 +6,9 @@ import { ChevronDown, ChevronUp } from 'lucide-react'
 const Footer = () => {
   const [openSection, setOpenSection] = useState(null)
 
-  const toggleSection = (section) => {
-    setOpenSection(openSection === section ? null : section)
-  }
+  const toggleSection = (section: any) => {
+    setOpenSection(openSection === section ? null : section);
+  };
 
   return (
     <footer className="bg-gradient-to-r from-[#8A5082] to-[#A5CAD2] text-whi50 pt-10">
