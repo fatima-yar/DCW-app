@@ -7,8 +7,8 @@ const Footer = () => {
   const [openSection, setOpenSection] = useState(null)
 
   const toggleSection = (section: any) => {
-    setOpenSection(openSection === section ? null : section);
-  };
+    setOpenSection(openSection === section ? null : section)
+  }
 
   return (
     <footer className="bg-gradient-to-r from-[#8A5082] to-[#A5CAD2] text-whi50 pt-10">
@@ -213,21 +213,58 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="x.svg" alt="Logo" className="w-8 h-auto" />
+                <img src="x.svg" alt="xLogo" className="w-8 h-auto" />
               </a>
               <a
                 href="https://www.instagram.com/dreamcatchersworldwide/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="instagram.svg" alt="Logo" className="w-8 h-auto" />
+                <img
+                  src="instagram.svg"
+                  alt="instagramLogo"
+                  className="w-8 h-auto"
+                />
               </a>
               <a
                 href="https://www.facebook.com/dreamcatchersworldwide"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="facebook.svg" alt="Logo" className="w-8 h-auto" />
+                <img
+                  src="facebook.svg"
+                  alt="facebookLogo"
+                  className="w-8 h-auto"
+                />
+              </a>
+              <a
+                href="https://www.tiktok.com/@dreamcatchersworldwide"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="tiktok.svg" alt="tiktokLogo" className="w-8 h-auto" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/dreamcatchers-worldwide"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="linkedin.svg"
+                  alt="linkedinLogo"
+                  className="w-8 h-auto"
+                />
+              </a>
+              <a
+                href="+44 7516 016 779"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="whatsapp.svg"
+                  alt="whatsappLogo"
+                  className="w-8 h-auto"
+                />
               </a>
             </div>
           </div>
@@ -266,37 +303,3 @@ const Footer = () => {
 }
 
 export default Footer
-
-/* <div className="flex space-x-1 pt-2">
-                <img src="x.svg" alt="Logo" className="w-8 h-auto" />
-                <img src="instagram.svg" alt="Logo" className="w-8 h-auto" />
-                <img src="facebook.svg" alt="Logo" className="w-8 h-auto" />
-              </div>
-            </div>
-          </div>
-          <div className="grid lg:grid-cols-3 grid-rows-1 gap-1 pb-1 pt-10">
-            <div className="flex flex-col justify-between">
-              <p className="font-[sansation] text-sm font-bold text-gray-100"></p>
-              <p className="font-[sansation] text-xs text-gray-100 pb-4">
-                <span className="font-bold pr-2">Privacy Policy</span>
-                <br />
-                <span className="pt-2 block">
-                  © 2024 by DreamCatchers WorldWide
-                </span>
-              </p>
-            </div>
-            <div>
-              <a href="/">
-                <img src="DCWhite.png" alt="Logo" />
-              </a>
-            </div>
-            <div className="flex justify-end pb-4">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.1445188974503!2d174.71483327580063!3d-36.910808882974756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d469094cec093%3A0x86d308f9515f9645!2s272%20New%20Windsor%20Road%2C%20New%20Windsor%2C%20Auckland%200600!5e0!3m2!1sen!2snz!4v1743383379092!5m2!1sen!2snz"
-                width="250"
-                height="150"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              /> */
