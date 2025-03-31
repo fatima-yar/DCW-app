@@ -1,10 +1,5 @@
 'use client'
 
-import React, { useState } from 'react'
-import Image from 'next/image'
-import NavbarHome from './ui/NavbarHome-NoMaori'
-import NavbarWhatWeDo from './ui/NavbarWhatWeDo-NoMaori'
-
 const Footer = () => {
   return (
     <>
@@ -14,7 +9,10 @@ const Footer = () => {
             <p className="font-bold pb-4 ">Home</p>
             <ul className=" space-y-1 ">
               <li>
-                <a href="/about-us" className=" ">
+                <a
+                  href="/about-us"
+                  className=" hover:text-xl transition-all duration-200 "
+                >
                   About Us
                 </a>
               </li>
@@ -122,7 +120,10 @@ const Footer = () => {
             <p className="font-bold pb-4 ">Join Us</p>
             <ul className=" space-y-1 ">
               <li>
-                <a href="/#" className=" ">
+                <a
+                  href="/#"
+                  className="hover:text-xl transition-all duration-200 "
+                >
                   Volunteer
                 </a>
               </li>
@@ -188,6 +189,11 @@ const Footer = () => {
             <p className="pt-2">
               272 New Windor Road, New Windsor, Auckland, 0600
             </p>
+            <div className="flex space-x-1 pt-2">
+              <img src="x.svg" alt="Logo" className="w-8 h-auto" />
+              <img src="instagram.svg" alt="Logo" className="w-8 h-auto" />
+              <img src="facebook.svg" alt="Logo" className="w-8 h-auto" />
+            </div>
           </div>
         </div>
       </footer>
