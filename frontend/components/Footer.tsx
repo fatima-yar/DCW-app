@@ -262,7 +262,7 @@ const Footer = () => {
               >
                 <img
                   src="whatsapp.svg"
-                  alt="whatsappLogo"
+                  alt="linkedinLogo"
                   className="w-8 h-auto"
                 />
               </a>
