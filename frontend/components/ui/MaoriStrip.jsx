@@ -1,8 +1,12 @@
 export default function MaoriStrip() {
   return (
     <>
-      <div className="lg:mx-50 md:mx-30 sm:mx:10 text-black">
-        <img src="/strip.jpg" alt="Maori Strip Pattern" className="" />
+      <div className="w-full lg:h-8 h-4 text-black">
+        <img
+          src="/strip2.jpg"
+          alt="Maori Strip Pattern"
+          className="object-cover w-full h-full"
+        />
       </div>
     </>
   )

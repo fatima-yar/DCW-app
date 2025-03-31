@@ -5,10 +5,14 @@ import HeroBoxContent from './ui/HeroBoxContent'
 export default function HeroBox() {
   return (
     <>
-      <MaoriStrip />
+      <div className="lg:mx-50 md:mx-30 sm:mx:10 ">
+        <MaoriStrip />
+      </div>
 
       <HeroBoxContent />
-      <MaoriStrip />
+      <div className="lg:mx-50 md:mx-30 sm:mx:10 ">
+        <MaoriStrip />
+      </div>
     </>
   )
 }
