@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import Motto from '../components/Motto'
 import HeroBox from '../components/HeroBox'
 import InfoBox from '../components/InfoBox'
+import TopLogos from '../components/TopLogos'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         // overflowX: 'hidden',
       }}
     >
+      <TopLogos />
       {/* White space above Navbar */}
       <div className="pt-20">
         {/* Navbar */}
