@@ -208,9 +208,27 @@ const Footer = () => {
               272 New Windor Road, New Windsor, Auckland, 0600
             </p>
             <div className="flex space-x-1 pt-2">
-              <img src="x.svg" alt="Logo" className="w-8 h-auto" />
-              <img src="instagram.svg" alt="Logo" className="w-8 h-auto" />
-              <img src="facebook.svg" alt="Logo" className="w-8 h-auto" />
+              <a
+                href="https://x.com/i/flow/login?redirect_after_login=%2Fdreamcatchersnz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="x.svg" alt="Logo" className="w-8 h-auto" />
+              </a>
+              <a
+                href="https://www.instagram.com/dreamcatchersworldwide/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="instagram.svg" alt="Logo" className="w-8 h-auto" />
+              </a>
+              <a
+                href="https://www.facebook.com/dreamcatchersworldwide"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="facebook.svg" alt="Logo" className="w-8 h-auto" />
+              </a>
             </div>
           </div>
         </div>
