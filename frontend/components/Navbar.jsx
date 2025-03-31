@@ -58,7 +58,7 @@ export default function Navbar() {
   return (
     <>
       <div className="sticky top-0 z-50 pt-2 pb-2 bg-gradient-to-r from-[#8A5082] to-[#A5CAD2] w-full overflow-x-hidden hidden md:block">
-        <div className="hidden md:flex justify-center space-x-40 lg:space-x-65 text-md relative">
+        <div className="hidden md:flex justify-center space-x-40 lg:space-x-60 text-md relative">
           <div className="relative">
             <NavbarHome
               isOpen={openBox === 'home'}
