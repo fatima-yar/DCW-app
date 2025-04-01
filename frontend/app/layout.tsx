@@ -40,7 +40,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${lora.variable} ${convergence.variable} ${dosis.variable} font-sansation antialiased`} // Added Dosis variable
+        className={`${lora.variable} ${convergence.variable} ${dosis.variable} font-sansation antialiased`}
       >
         {children}
       </body>

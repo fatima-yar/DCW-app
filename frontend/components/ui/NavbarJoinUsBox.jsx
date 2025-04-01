@@ -29,11 +29,6 @@ export default function NavbarHomeBox() {
                   Newsletter
                 </a>
               </li>
-              <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="#" className="text-black">
-                  Mission Statement
-                </a>
-              </li>
             </ul>
           </div>
         </div>
