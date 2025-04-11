@@ -1,0 +1,15 @@
+{
+    "collectionName": "components_blocks_team_photos",
+    "info": {
+        "displayName": "Team Photo",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "photo": {
+            "type": "component",
+            "repeatable": false,
+            "component": "elements.team-photo"
+        }
+    }
+}

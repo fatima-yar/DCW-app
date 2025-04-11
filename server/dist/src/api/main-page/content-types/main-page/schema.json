@@ -1,0 +1,23 @@
+{
+    "kind": "singleType",
+    "collectionName": "main_pages",
+    "info": {
+        "singularName": "main-page",
+        "pluralName": "main-pages",
+        "displayName": "main page",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "attributes": {
+        "blocks": {
+            "type": "dynamiczone",
+            "components": [
+                "blocks.motto",
+                "blocks.hero-box",
+                "blocks.info-box"
+            ]
+        }
+    }
+}
