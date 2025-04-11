@@ -4,7 +4,7 @@ const ContactUs = () => {
   return (
     <div className="font-[Convergence]">
       <h2 className="text-lg mt-10 font-semibold  mb-4 text-black">
-        Contact Us Now!
+        We’d Love to Hear From You!
       </h2>
       <form className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-4">

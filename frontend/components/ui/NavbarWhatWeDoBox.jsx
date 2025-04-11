@@ -1,4 +1,4 @@
-export default function NavbarHomeBox() {
+export default function NavbarWhatWeDo() {
   return (
     <div className="mx-16 sm:mx-8 lg:mx-50 bg-[#CADEE2] p-4 sm:p-6 mt-0 h-100">
       <div className="flex flex-wrap sm:flex-nowrap">
@@ -14,31 +14,39 @@ export default function NavbarHomeBox() {
 
         {/* Middle Column - Larger Size */}
         <div className="flex-1 p-2 sm:p-4 font-[Convergence]">
-          <h2 className="text-lg sm:text-xl text-[#986100] mt-4 sm:mt-8">
-            What We Do
-          </h2>
-          <h2 className="text-lg sm:text-xl text-[#986100] mt-4 sm:mt-8">
-            Projects
-          </h2>
+          <div className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
+            <a
+              href="what-we-do"
+              className="text-lg sm:text-xl text-[#986100] mt-6 sm:mt-8 "
+            >
+              What We Do
+            </a>
+          </div>
+          <a href="what-we-do#projects" className="block">
+            <h2 className="text-lg sm:text-xl text-[#986100] mt-4 sm:mt-8 hover:underline cursor-pointer hover:scale-105 hover:translate-x-1 transition-transform duration-200">
+              Projects
+            </h2>
+          </a>
+
           <div className="mt-6 sm:mt-8">
             <ul className="space-y-3 sm:space-y-4 text-xs sm:text-sm">
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="#" className="text-black">
+                <a href="#projects" className="text-black">
                   Stretch and Flex (Yoga)
                 </a>
               </li>
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="#" className="text-black">
+                <a href="#projects" className="text-black">
                   Smart Tech for Seniors
                 </a>
               </li>
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="#" className="text-black">
+                <a href="#projects" className="text-black">
                   Homework Clubs
                 </a>
               </li>
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="#" className="text-black">
+                <a href="#projects" className="text-black">
                   Dance Classes
                 </a>
               </li>
@@ -52,23 +60,26 @@ export default function NavbarHomeBox() {
         {/* Right Column - Larger Size */}
         <div className="flex-1 p-2 sm:p-4">
           <div className="flex-1 p-2 sm:p-4 font-[Convergence]">
-            <h2 className="text-lg sm:text-xl text-[#986100] mt-6 sm:mt-19">
-              Events
-            </h2>
+            <a href="what-we-do#events" className="block">
+              <h2 className="text-lg sm:text-xl text-[#986100] mt-6 sm:mt-19 hover:underline cursor-pointer hover:scale-105 hover:translate-x-1 transition-transform duration-200">
+                Events
+              </h2>
+            </a>
+
             <div className="mt-6 sm:mt-8">
               <ul className="space-y-3 sm:space-y-4 text-xs sm:text-sm">
                 <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                  <a href="#" className="text-black">
+                  <a href="#events" className="text-black">
                     Feed4All
                   </a>
                 </li>
                 <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                  <a href="#" className="text-black">
+                  <a href="#events" className="text-black">
                     Foreign Exchange NZ
                   </a>
                 </li>
                 <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                  <a href="#" className="text-black">
+                  <a href="#events" className="text-black">
                     House Dance NZ
                   </a>
                 </li>

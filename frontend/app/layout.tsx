@@ -1,8 +1,12 @@
+// RootLayout.tsx
 import { Lora, Convergence, Dosis } from 'next/font/google' // Import the fonts
 import './globals.css'
 
-// Load the Google fonts
-// Load the Google fonts
+import Footer from '@/components/Footer'
+import Navbar from '@/components/Navbar'
+import TopLogos from '@/components/TopLogos'
+import Toggle from '@/components/Toggle'
+
 const lora = Lora({
   variable: '--font-lora',
   subsets: ['latin'],
@@ -32,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
         <link
           href="https://fonts.cdnfonts.com/css/sansation?styles=756"
@@ -41,8 +45,21 @@ export default function RootLayout({
       </head>
       <body
         className={`${lora.variable} ${convergence.variable} ${dosis.variable} font-sansation antialiased`}
+        style={{
+          backgroundImage: 'url(/bg-pattern.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed',
+        }}
       >
-        {children}
+        <TopLogos />
+        <div className="pt-5">
+          <Toggle />
+          <Navbar />
+        </div>
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   )
