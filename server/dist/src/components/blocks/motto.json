@@ -1,0 +1,14 @@
+{
+    "collectionName": "components_blocks_mottos",
+    "info": {
+        "displayName": "motto",
+        "icon": "",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "motto": {
+            "type": "string"
+        }
+    }
+}

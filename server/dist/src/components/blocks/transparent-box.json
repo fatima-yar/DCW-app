@@ -1,0 +1,12 @@
+{
+    "collectionName": "components_blocks_transparent_boxes",
+    "info": {
+        "displayName": "transparentBox"
+    },
+    "options": {},
+    "attributes": {
+        "colorCode": {
+            "type": "text"
+        }
+    }
+}

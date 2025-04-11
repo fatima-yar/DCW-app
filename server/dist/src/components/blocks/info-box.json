@@ -1,0 +1,16 @@
+{
+    "collectionName": "components_blocks_info_boxes",
+    "info": {
+        "displayName": "Info Box",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "aboutUsDescription": {
+            "type": "text"
+        },
+        "WhatWeDoDescription": {
+            "type": "text"
+        }
+    }
+}
