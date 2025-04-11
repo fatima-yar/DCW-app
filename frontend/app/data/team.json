@@ -2,47 +2,47 @@
   {
     "id": 1,
     "name": "Jazmine Cox - Director",
-    "image": "/Jazmine.jpg"
+    "image": "/team/Jazmine.jpg"
   },
   {
     "id": 2,
     "name": "Meema Manaia - Maori Cultural Officer (NZ",
-    "image": "/Meema.jpg"
+    "image": "/team/Meema.jpg"
   },
   {
     "id": 3,
     "name": "Denver MacDonald - Chairman (NZ)",
-    "image": "/Denver.jpeg"
+    "image": "/team/Denver.jpeg"
   },
   {
     "id": 4,
     "name": "Jonathan Monlouis - Secretary (NZ)",
-    "image": "/Jonathan.jpeg"
+    "image": "/team/Jonathan.jpeg"
   },
   {
     "id": 5,
     "name": "Val Maseykin - CFO (NZ)",
-    "image": "/Denver.jpeg"
+    "image": "/team/Denver.jpeg"
   },
   {
     "id": 6,
     "name": "Kevin Cui - DevOps Lead (NZ)",
-    "image": "/Kevin.jpeg"
+    "image": "/team/Kevin.jpeg"
   },
   {
     "id": 7,
     "name": "Fatima Yarhamidi - Web Developer & UI Designer (NZ)",
-    "image": "/Fatima.jpg"
+    "image": "/team/Fatima.jpg"
   },
   {
     "id": 8,
     "name": "Kanchana G N W Rampatabandige - Stretch and Flex (Yoga) Instructor",
-    "image": "/Kanchana.jpeg"
+    "image": "/team/Kanchana.jpeg"
   },
   {
     "id": 9,
     "name": "Fatima Qureshi - Web Developer (NZ)",
-    "image": "/FatimaQ.png"
+    "image": "/team/FatimaQ.png"
   }
 
 ]
