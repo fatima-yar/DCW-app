@@ -49,24 +49,27 @@ export default function HamburgerMenu() {
         {/* Added margin-top to give space */}
         {activeMenu === 'home' && (
           <div className="bg-[#CADEE2] w-50 p-4 mt-0">
-            <h3 className="text-[#986100] text-md font-[Convergence] mb-2  font-bold">
+            <a
+              href="/"
+              className="text-[#986100] text-md font-[Convergence] mb-2  font-bold"
+            >
               Home
-            </h3>
+            </a>
             <ul className="text-black text-sm font-[Convergence] space-y-2">
               <li>
-                <a href="#">About Us</a>
+                <a href="about-us">About Us</a>
               </li>
               <li>
-                <a href="#">Our Team</a>
+                <a href="our-team">Our Team</a>
               </li>
               <li>
-                <a href="#">Mission Statement</a>
+                <a href="mission-statement">Mission Statement</a>
               </li>
               <li>
-                <a href="#">Privacy Policy</a>
+                <a href="privacy-policy">Privacy Policy</a>
               </li>
               <li>
-                <a href="#">Contact Us</a>
+                <a href="contact-us">Contact Us</a>
               </li>
             </ul>
           </div>

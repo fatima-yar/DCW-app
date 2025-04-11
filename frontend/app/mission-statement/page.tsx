@@ -3,8 +3,7 @@ import Navbar from '@/components/Navbar'
 
 import TopLogos from '@/components/TopLogos'
 import Toggle from '@/components/Toggle'
-import { notFound } from 'next/navigation'
-import { OurTeam } from '@/components/OurTeam'
+import MissionStatement from '@/components/MissionStatement'
 
 export default async function ourTeam() {
   return (
@@ -16,26 +15,22 @@ export default async function ourTeam() {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'fixed',
-        // overflowX: 'hidden',
       }}
     >
       <div>
         <TopLogos />
       </div>
 
-      {/* White space above Navbar */}
       <div className="pt-5">
         <Toggle />
-        {/* Navbar */}
+
         <Navbar />
       </div>
 
       {/* Main Content */}
 
-      <OurTeam />
-      {/* <BlockRenderer blocks={blocks} /> */}
+      <MissionStatement />
 
-      {/* Footer */}
       <Footer />
     </div>
   )

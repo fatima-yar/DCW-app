@@ -2,7 +2,7 @@ import team from '../app/data/team.json'
 
 export function OurTeam() {
   return (
-    <section className="px-10 sm:px-10 md:px-10 lg:px-25 xl:px-50 m">
+    <section className="px-10 sm:px-10 md:px-10 lg:px-25 xl:px-50 ">
       <div className="text-black bg-white pt-10 font-[Convergence] pl-12 text-3xl">
         Our Team
       </div>
