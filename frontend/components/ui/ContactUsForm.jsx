@@ -2,8 +2,8 @@ import React from 'react'
 
 const ContactUs = () => {
   return (
-    <div className="">
-      <h2 className="text-lg mt-10 font-semibold text-center mb-4 text-black">
+    <div className="font-[Convergence]">
+      <h2 className="text-lg mt-10 font-semibold  mb-4 text-black">
         Contact Us Now!
       </h2>
       <form className="grid grid-cols-1 sm:grid-cols-2 gap-4">
