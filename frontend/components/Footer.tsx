@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 import GoogleMapEmbed from './ui/GoogleMapEmbed'
+import Link from 'next/link'
 
 const Footer = () => {
   const [openSection, setOpenSection] = useState(null)
@@ -21,7 +22,38 @@ const Footer = () => {
                 className="flex justify-between items-center cursor-pointer lg:cursor-default"
                 onClick={() => toggleSection(section)}
               >
-                <p className="font-bold pb-4">{section}</p>
+                {section === 'Home' ? (
+                  <a
+                    href="/"
+                    className="font-bold pb-4 hover:text-xl transition-all duration-200"
+                  >
+                    {section}
+                  </a>
+                ) : section === 'What We Do' ? (
+                  <a
+                    href="/what-we-do"
+                    className="font-bold pb-4 hover:text-xl transition-all duration-200"
+                  >
+                    {section}
+                  </a>
+                ) : section === 'Join Us' ? (
+                  <a
+                    href="/join-us"
+                    className="font-bold pb-4 hover:text-xl transition-all duration-200"
+                  >
+                    {section}
+                  </a>
+                ) : section === 'Donate' ? (
+                  <a
+                    href="/donate"
+                    className="font-bold pb-4 hover:text-xl transition-all duration-200"
+                  >
+                    {section}
+                  </a>
+                ) : (
+                  <p className="font-bold pb-4">{section}</p>
+                )}
+
                 <span className="lg:hidden">
                   {openSection === section ? <ChevronUp /> : <ChevronDown />}
                 </span>
@@ -77,10 +109,17 @@ const Footer = () => {
                 )}
                 {section === 'What We Do' && (
                   <>
-                    <p className="font-bold pb-4">Projects</p>
+                    <div className=" pb-2">
+                      <a
+                        href="what-we-do#projects"
+                        className="font-bold hover:text-xl transition-all duration-200 "
+                      >
+                        Projects
+                      </a>
+                    </div>
                     <li>
                       <a
-                        href="/#"
+                        href="what-we-do#projects"
                         className="hover:text-xl transition-all duration-200"
                       >
                         Stretch and Flex (Yoga)
@@ -88,7 +127,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <a
-                        href="/#"
+                        href="what-we-do#projects"
                         className="hover:text-xl transition-all duration-200"
                       >
                         Smart Tech for Seniors
@@ -96,7 +135,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <a
-                        href="/#"
+                        href="what-we-do#projects"
                         className="hover:text-xl transition-all duration-200"
                       >
                         Homework Clubs
@@ -104,16 +143,23 @@ const Footer = () => {
                     </li>
                     <li>
                       <a
-                        href="/#"
+                        href="what-we-do#projects"
                         className="hover:text-xl transition-all duration-200"
                       >
                         Dance Classes
                       </a>
                     </li>
-                    <p className="font-bold pb-4 pt-4">Events</p>
+                    <div className="pt-4 pb-2">
+                      <a
+                        href="what-we-do#events"
+                        className="font-bold hover:text-xl transition-all duration-200 "
+                      >
+                        Events
+                      </a>
+                    </div>
                     <li>
                       <a
-                        href="/#"
+                        href="what-we-do#events"
                         className="hover:text-xl transition-all duration-200"
                       >
                         Feed4All
@@ -121,7 +167,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <a
-                        href="/#"
+                        href="what-we-do#events"
                         className="hover:text-xl transition-all duration-200"
                       >
                         Foreign Exchange NZ
@@ -129,7 +175,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <a
-                        href="/#"
+                        href="what-we-do#events"
                         className="hover:text-xl transition-all duration-200"
                       >
                         House Dance NZ
@@ -208,7 +254,7 @@ const Footer = () => {
             <p className="pt-2">
               272 New Windor Road, New Windsor, Auckland, 0600
             </p>
-            <div className="flex space-x-1 pt-2">
+            <div className="flex space-x-1 pt-2  ">
               <a
                 href="https://x.com/i/flow/login?redirect_after_login=%2Fdreamcatchersnz"
                 target="_blank"
