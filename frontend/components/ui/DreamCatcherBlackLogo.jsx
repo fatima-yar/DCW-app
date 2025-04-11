@@ -1,8 +1,12 @@
 export default function DreamCatcherBlackLogo() {
   return (
-    <div>
-      <a href="/" target="_blank" rel="noopener noreferrer">
-        <img src="DCBlack.png" className="h-15 w-auto" />
+    <div className="w-full h-auto">
+      <a href="/" rel="noopener noreferrer">
+        <img
+          src="DCBlack.png"
+          alt="Dream Catcher Logo"
+          className="w-full h-auto"
+        />
       </a>
     </div>
   )
