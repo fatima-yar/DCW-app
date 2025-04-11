@@ -76,40 +76,53 @@ export default function HamburgerMenu() {
         )}
         {activeMenu === 'whatWeDo' && (
           <div className="bg-[#CADEE2] w-50 p-4 mt-0">
-            <h3 className="text-[#986100] text-md font-[Convergence] mb-2 font-bold">
+            <a
+              href="what-we-do"
+              className="text-[#986100] text-md font-[Convergence] mb-2 font-bold"
+            >
               What We Do
-            </h3>
-            <h3 className="text-[#986100] text-md font-[Convergence] mb-2">
-              Projects
-            </h3>
+            </a>
+            <div className="py-2">
+              <a
+                href="what-we-do#projects"
+                className="text-[#986100] text-md font-[Convergence] mb-2 "
+              >
+                Projects
+              </a>
+            </div>
 
             <ul className="text-black text-sm font-[Convergence] space-y-2">
               <li>
-                <a href="#">Stretch and Flex (Yoga)</a>
+                <a href="what-we-do#projects">Stretch and Flex (Yoga)</a>
               </li>
               <li>
-                <a href="#">Smart Tech for Seniors</a>
+                <a href="what-we-do#projects">Smart Tech for Seniors</a>
               </li>
               <li>
-                <a href="#">Homework Clubs</a>
+                <a href="what-we-do#projects">Homework Clubs</a>
               </li>
               <li>
-                <a href="#">Dance Classes</a>
+                <a href="what-we-do#projects">Dance Classes</a>
               </li>
             </ul>
-            <h3 className="text-[#986100] text-md font-[Convergence] mb-2 mt-2">
-              Events
-            </h3>
+            <div className="py-2">
+              <a
+                href="what-we-do#events"
+                className="text-[#986100] text-md font-[Convergence] "
+              >
+                Events
+              </a>
+            </div>
 
             <ul className="text-black text-sm font-[Convergence] space-y-2">
               <li>
-                <a href="#">Feed4All</a>
+                <a href="what-we-do#events">Feed4All</a>
               </li>
               <li>
-                <a href="#">Foreign Exchange NZ</a>
+                <a href="what-we-do#events#">Foreign Exchange NZ</a>
               </li>
               <li>
-                <a href="#">House Dance NZ</a>
+                <a href="what-we-do#events">House Dance NZ</a>
               </li>
             </ul>
           </div>
