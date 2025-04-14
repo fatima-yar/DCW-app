@@ -14,18 +14,23 @@ export default function NavbarHomeBox() {
 
         {/* Middle Column - Larger Size */}
         <div className="flex-1 p-2 sm:p-4 font-[Convergence]">
-          <h2 className="text-lg sm:text-xl text-[#986100] mt-6 sm:mt-8">
-            Join Us
-          </h2>
+          <div className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
+            <a
+              href="join-us"
+              className="text-lg sm:text-xl text-[#986100] mt-6 sm:mt-8 "
+            >
+              Join Us
+            </a>
+          </div>
           <div className="mt-6 sm:mt-8">
             <ul className="space-y-3 sm:space-y-4 text-xs sm:text-sm">
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="#" className="text-black">
+                <a href="join-us" className="text-black">
                   Volunteer
                 </a>
               </li>
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="#" className="text-black">
+                <a href="newsletter" className="text-black">
                   Newsletter
                 </a>
               </li>
