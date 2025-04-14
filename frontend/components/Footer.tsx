@@ -187,7 +187,7 @@ const Footer = () => {
                   <>
                     <li>
                       <a
-                        href="/#"
+                        href="/join-us"
                         className="hover:text-xl transition-all duration-200"
                       >
                         Volunteer
@@ -195,7 +195,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <a
-                        href="/#"
+                        href="/newsletter"
                         className="hover:text-xl transition-all duration-200"
                       >
                         Newsletter
