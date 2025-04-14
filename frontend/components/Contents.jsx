@@ -12,8 +12,8 @@ export default function Contents({ header, content, image }) {
 
           if (item.type === 'bullet') {
             return (
-              <div className="pl-8">
-                <ul key={idx} className="list-disc list-inside space-y-1">
+              <div key={idx} className="pl-8">
+                <ul className="list-disc list-inside space-y-1">
                   {item.points.map((point, i) => (
                     <li key={i}>{point}</li>
                   ))}
