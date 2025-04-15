@@ -215,7 +215,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <a
-                        href="/#"
+                        href="donate#direct-donation"
                         className="hover:text-xl transition-all duration-200"
                       >
                         Direct donations
