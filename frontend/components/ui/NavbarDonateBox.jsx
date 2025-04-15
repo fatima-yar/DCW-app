@@ -14,33 +14,38 @@ export default function NavbarJoinUsBox() {
 
         {/* Middle Column - Larger Size */}
         <div className="flex-1 p-2 sm:p-4 font-[Convergence]">
-          <h2 className="text-lg sm:text-xl text-[#986100] mt-6 sm:mt-8">
-            Donate
-          </h2>
+          <div className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
+            <a
+              href="donate"
+              className="text-lg sm:text-xl text-[#986100] mt-6 sm:mt-8 "
+            >
+              Donate
+            </a>
+          </div>
           <div className="mt-6 sm:mt-8">
             <ul className="space-y-3 sm:space-y-4 text-xs sm:text-sm">
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="#" className="text-black">
+                <a href="donate#givealittle" className="text-black">
                   Give a little
                 </a>
               </li>
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="#" className="text-black">
+                <a href="donate#direct-donation" className="text-black">
                   Direct donations
                 </a>
               </li>
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="#" className="text-black">
+                <a href="donate#gifts" className="text-black">
                   Gifts
                 </a>
               </li>
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="#" className="text-black">
+                <a href="donate#partnerships" className="text-black">
                   Partnerships
                 </a>
               </li>
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="#" className="text-black">
+                <a href="donate#sponsorships" className="text-black">
                   Sponsorships (CSR)
                 </a>
               </li>

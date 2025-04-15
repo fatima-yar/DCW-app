@@ -129,39 +129,45 @@ export default function HamburgerMenu() {
         )}
         {activeMenu === 'joinUs' && (
           <div className="bg-[#CADEE2] w-50 p-4 mt-0">
-            <h3 className="text-[#986100] text-md font-[Convergence] mb-2 font-bold">
+            <a
+              href="join-us"
+              className="text-[#986100] text-md font-[Convergence] mb-2 font-bold"
+            >
               Join Us
-            </h3>
+            </a>
             <ul className="text-black text-sm font-[Convergence] space-y-2">
               <li>
-                <a href="#">Volunteer</a>
+                <a href="join-us">Volunteer</a>
               </li>
               <li>
-                <a href="#">Newsletter</a>
+                <a href="newsletter">Newsletter</a>
               </li>
             </ul>
           </div>
         )}
         {activeMenu === 'donate' && (
           <div className="bg-[#CADEE2] w-50 p-4 mt-0">
-            <h3 className="text-[#986100] text-md font-[Convergence] mb-2 font-bold">
+            <a
+              href="donate"
+              className="text-[#986100] text-md font-[Convergence] mb-2 font-bold"
+            >
               Donate
-            </h3>
+            </a>
             <ul className="text-black text-sm font-[Convergence] space-y-2">
               <li>
-                <a href="#">Give a little</a>
+                <a href="donate#givealittle">Give a little</a>
               </li>
               <li>
-                <a href="#">Direct donations</a>
+                <a href="donate#direct-donation">Direct donations</a>
               </li>
               <li>
-                <a href="#">Gifts</a>
+                <a href="donate#gifts">Gifts</a>
               </li>
               <li>
-                <a href="#">Partnerships</a>
+                <a href="donate#partnerships">Partnerships</a>
               </li>
               <li>
-                <a href="#">Sponsorships (CSR)</a>
+                <a href="donate#sponsorships">Sponsorships (CSR)</a>
               </li>
             </ul>
           </div>

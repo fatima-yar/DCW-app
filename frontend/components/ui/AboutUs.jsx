@@ -1,5 +1,6 @@
 import OurMissionPhoto from './OurMissionPhoto'
-import LearnMoreButton from './LearnMoreButton'
+
+import Button from './Button'
 
 export default function AboutUs() {
   return (
@@ -17,7 +18,7 @@ export default function AboutUs() {
             to vulnerable community groups.
           </p>
           <div className="pt-8">
-            <LearnMoreButton link="/#" />
+            <Button text="Learn more" link="/mission-statement" />
           </div>
         </div>
         <div className="lg:pr-20 pr-4 pl-4 lg:pl-0">

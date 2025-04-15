@@ -1,5 +1,5 @@
 import WhatWeDoPhoto3in1 from './WhatWeDoPhoto3in1'
-import LearnMoreButton from './LearnMoreButton'
+import Button from './Button'
 
 export default function AboutUs() {
   return (
@@ -23,7 +23,7 @@ export default function AboutUs() {
             arts sector to those in need.
           </p>
           <div className="pt-8">
-            <LearnMoreButton link="/#" />
+            <Button text="Learn more" link="/what-we-do" />
           </div>
         </div>
       </div>
