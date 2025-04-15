@@ -15,6 +15,7 @@ export default function DirectDonation() {
         'DreamCatchers WorldWide',
         '272 New Windsor Road, New Windsor, Auckland 0600',
       ]}
+      image="/donate.jpg"
     />
   )
 }

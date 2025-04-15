@@ -17,6 +17,7 @@ export default function GeneralPolicies() {
         'DreamCatchers WorldWide is a charitable organization that provides essential services to vulnerable community groups in New Zealand. Your donation will help us continue to support those in need. Every dollar makes a difference in the lives of those we serve.',
         'Please consider making a donation today and help us make a positive impact in our community. You can make a one-time donation or become a monthly donor to help sustain our programs and services.',
       ]}
+      bgColor="gray"
     />
   )
 }

@@ -25,27 +25,27 @@ export default function NavbarJoinUsBox() {
           <div className="mt-6 sm:mt-8">
             <ul className="space-y-3 sm:space-y-4 text-xs sm:text-sm">
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="#" className="text-black">
+                <a href="donate#givealittle" className="text-black">
                   Give a little
                 </a>
               </li>
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="#" className="text-black">
+                <a href="donate#direct-donation" className="text-black">
                   Direct donations
                 </a>
               </li>
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="#" className="text-black">
+                <a href="donate#gifts" className="text-black">
                   Gifts
                 </a>
               </li>
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="#" className="text-black">
+                <a href="donate#partnerships" className="text-black">
                   Partnerships
                 </a>
               </li>
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="#" className="text-black">
+                <a href="donate#sponsorships" className="text-black">
                   Sponsorships (CSR)
                 </a>
               </li>
