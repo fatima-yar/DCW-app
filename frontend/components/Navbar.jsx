@@ -11,43 +11,47 @@ import NavbarDonate from './ui/NavbarDonate'
 import NavbarDonateBox from './ui/NavbarDonateBox'
 import HamburgerMenu from './ui/HamburgerMenu'
 
+const navItems = [
+  {
+    key: 'home',
+    Component: NavbarHome,
+    BoxComponent: NavbarHomeBox,
+  },
+  {
+    key: 'WhatWeDo',
+    Component: NavbarWhatWeDo,
+    BoxComponent: NavbarWhatWeDoBox,
+  },
+  {
+    key: 'JoinUs',
+    Component: NavbarJoinUs,
+    BoxComponent: NavbarJoinUsBox,
+  },
+  {
+    key: 'Donate',
+    Component: NavbarDonate,
+    BoxComponent: NavbarDonateBox,
+  },
+]
+
 export default function Navbar() {
   const [openBox, setOpenBox] = useState('')
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const handleHomeClick = () => {
-    setOpenBox(openBox === 'home' ? '' : 'home')
+  const handleClick = (key) => {
+    setOpenBox((prev) => (prev === key ? '' : key))
   }
 
-  const handleWhatWeDoClick = () => {
-    setOpenBox(openBox === 'WhatWeDo' ? '' : 'WhatWeDo')
-  }
-
-  const handleJoinUsClick = () => {
-    setOpenBox(openBox === 'JoinUs' ? '' : 'JoinUs')
-  }
-
-  const handleDonateClick = () => {
-    setOpenBox(openBox === 'Donate' ? '' : 'Donate')
-  }
-
-  // Toggle the hamburger menu
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
+    setIsMenuOpen((prev) => !prev)
   }
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setOpenBox('') // Close any open box when switching to mobile view
-      } else {
-        setOpenBox('') // Optionally reset openBox when switching to larger screen
-      }
+      setOpenBox('')
     }
 
     window.addEventListener('resize', handleResize)
-
-    // Initial check for window size
     handleResize()
 
     return () => {
@@ -57,91 +61,41 @@ export default function Navbar() {
 
   return (
     <>
+      {/* Desktop Navbar */}
       <div className="sticky top-0 z-50 pt-2 pb-2 bg-gradient-to-r from-[#8A5082] to-[#A5CAD2] w-full overflow-x-hidden hidden md:block">
         <div className="hidden md:flex justify-center space-x-40 lg:space-x-60 text-md relative">
-          <div className="relative">
-            <NavbarHome
-              isOpen={openBox === 'home'}
-              handleClick={handleHomeClick}
-            />
-            {openBox === 'home'}
-          </div>
-
-          {/* Second Navbar item */}
-          <div className="relative">
-            <NavbarWhatWeDo
-              isOpen={openBox === 'WhatWeDo'}
-              handleClick={handleWhatWeDoClick}
-            />
-            {openBox === 'WhatWeDo'}
-          </div>
-
-          {/* Third Navbar item */}
-          <div className="relative">
-            <NavbarJoinUs
-              isOpen={openBox === 'JoinUs'}
-              handleClick={handleJoinUsClick}
-            />
-            {openBox === 'JoinUs'}
-          </div>
-
-          {/* Fourth Navbar item */}
-          <div className="relative">
-            <NavbarDonate
-              isOpen={openBox === 'Donate'}
-              handleClick={handleDonateClick}
-            />
-            {openBox === 'Donate'}
-          </div>
+          {navItems.map(({ key, Component }) => (
+            <div className="relative" key={key}>
+              <Component
+                isOpen={openBox === key}
+                handleClick={() => handleClick(key)}
+              />
+            </div>
+          ))}
         </div>
       </div>
 
-      {openBox === 'home' && (
-        <div
-          className="w-full"
-          onMouseEnter={() => setOpenBox('home')} // Trigger hover on Home
-          onMouseLeave={() => setOpenBox('')} // Hide on hover out
-        >
-          <NavbarHomeBox />
-        </div>
+      {/* Dropdown Boxes */}
+      {navItems.map(
+        ({ key, BoxComponent }) =>
+          openBox === key && (
+            <div
+              key={key}
+              className="w-full"
+              onMouseEnter={() => setOpenBox(key)}
+              onMouseLeave={() => setOpenBox('')}
+            >
+              <BoxComponent />
+            </div>
+          )
       )}
 
-      {openBox === 'WhatWeDo' && (
-        <div
-          className="w-full"
-          onMouseEnter={() => setOpenBox('WhatWeDo')} // Trigger hover on Home
-          onMouseLeave={() => setOpenBox('')} // Hide on hover out
-        >
-          <NavbarWhatWeDoBox />
-        </div>
-      )}
-
-      {openBox === 'JoinUs' && (
-        <div
-          className="w-full"
-          onMouseEnter={() => setOpenBox('JoinUs')}
-          onMouseLeave={() => setOpenBox('')}
-        >
-          <NavbarJoinUsBox />
-        </div>
-      )}
-
-      {openBox === 'Donate' && (
-        <div
-          className="w-full"
-          onMouseEnter={() => setOpenBox('Donate')}
-          onMouseLeave={() => setOpenBox('')}
-        >
-          <NavbarDonateBox />
-        </div>
-      )}
-
+      {/* Mobile Hamburger Menu */}
       <div>
-        {/* Hamburger icon to toggle the menu */}
         <div className="block md:hidden sticky top-0 z-50 ml-4 pb-4">
           <div className="cursor-pointer" onClick={toggleMenu}>
             <svg
-              className="block h-6 w-6 fill-current text-black "
+              className="block h-6 w-6 fill-current text-black"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -151,7 +105,6 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Use HamburgerMenu component */}
         {isMenuOpen && <HamburgerMenu />}
       </div>
     </>
