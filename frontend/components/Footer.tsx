@@ -239,7 +239,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <a
-                        href="/#"
+                        href="donate#sponsorships"
                         className="hover:text-xl transition-all duration-200"
                       >
                         Sponsorships (CSR)
