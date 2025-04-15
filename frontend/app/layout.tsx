@@ -6,6 +6,7 @@ import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import TopLogos from '@/components/TopLogos'
 import Toggle from '@/components/Toggle'
+import PageWrapper from '@/components/PageWrapper'
 
 const lora = Lora({
   variable: '--font-lora',
@@ -58,7 +59,8 @@ export default function RootLayout({
           <Toggle />
           <Navbar />
         </div>
-        <main>{children}</main>
+        {/* <main>{children}</main> */}
+        <PageWrapper>{children}</PageWrapper>
         <Footer />
       </body>
     </html>
