@@ -206,7 +206,12 @@ const Footer = () => {
                 {section === 'Donate' && (
                   <>
                     <li>
-                      <a href="/#">Givealittle</a>
+                      <a
+                        href="donate#givealittle"
+                        className="hover:text-xl transition-all duration-200"
+                      >
+                        Givealittle
+                      </a>
                     </li>
                     <li>
                       <a
