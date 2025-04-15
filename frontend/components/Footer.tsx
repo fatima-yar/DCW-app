@@ -223,7 +223,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <a
-                        href="/#"
+                        href="donate#gifts"
                         className="hover:text-xl transition-all duration-200"
                       >
                         Gifts
