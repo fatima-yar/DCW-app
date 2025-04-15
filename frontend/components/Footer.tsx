@@ -187,7 +187,7 @@ const Footer = () => {
                   <>
                     <li>
                       <a
-                        href="/#"
+                        href="/join-us"
                         className="hover:text-xl transition-all duration-200"
                       >
                         Volunteer
@@ -195,7 +195,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <a
-                        href="/#"
+                        href="/newsletter"
                         className="hover:text-xl transition-all duration-200"
                       >
                         Newsletter
@@ -206,11 +206,16 @@ const Footer = () => {
                 {section === 'Donate' && (
                   <>
                     <li>
-                      <a href="/#">Givealittle</a>
+                      <a
+                        href="donate#givealittle"
+                        className="hover:text-xl transition-all duration-200"
+                      >
+                        Givealittle
+                      </a>
                     </li>
                     <li>
                       <a
-                        href="/#"
+                        href="donate#direct-donation"
                         className="hover:text-xl transition-all duration-200"
                       >
                         Direct donations
@@ -218,7 +223,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <a
-                        href="/#"
+                        href="donate#gifts"
                         className="hover:text-xl transition-all duration-200"
                       >
                         Gifts
@@ -226,7 +231,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <a
-                        href="/#"
+                        href="donate#partnerships"
                         className="hover:text-xl transition-all duration-200"
                       >
                         Partnerships
@@ -234,7 +239,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <a
-                        href="/#"
+                        href="donate#sponsorships"
                         className="hover:text-xl transition-all duration-200"
                       >
                         Sponsorships (CSR)
