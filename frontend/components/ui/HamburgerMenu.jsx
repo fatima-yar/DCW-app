@@ -129,12 +129,14 @@ export default function HamburgerMenu() {
         )}
         {activeMenu === 'joinUs' && (
           <div className="bg-[#CADEE2] w-50 p-4 mt-0">
-            <a
-              href="join-us"
-              className="text-[#986100] text-md font-[Convergence] mb-2 font-bold"
-            >
-              Join Us
-            </a>
+            <div className="py-2">
+              <a
+                href="join-us"
+                className="text-[#986100] text-md font-[Convergence] mb-2 font-bold"
+              >
+                Join Us
+              </a>
+            </div>
             <ul className="text-black text-sm font-[Convergence] space-y-2">
               <li>
                 <a href="join-us">Volunteer</a>
@@ -147,12 +149,14 @@ export default function HamburgerMenu() {
         )}
         {activeMenu === 'donate' && (
           <div className="bg-[#CADEE2] w-50 p-4 mt-0">
-            <a
-              href="donate"
-              className="text-[#986100] text-md font-[Convergence] mb-2 font-bold"
-            >
-              Donate
-            </a>
+            <div className="py-2">
+              <a
+                href="donate"
+                className="text-[#986100] text-md font-[Convergence] mb-2 font-bold"
+              >
+                Donate
+              </a>
+            </div>
             <ul className="text-black text-sm font-[Convergence] space-y-2">
               <li>
                 <a href="donate#givealittle">Give a little</a>
