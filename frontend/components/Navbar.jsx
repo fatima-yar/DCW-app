@@ -138,7 +138,7 @@ export default function Navbar() {
 
       <div>
         {/* Hamburger icon to toggle the menu */}
-        <div className="block md:hidden sticky top-0 z-50 ml-4">
+        <div className="block md:hidden sticky top-0 z-50 ml-4 pb-4">
           <div className="cursor-pointer" onClick={toggleMenu}>
             <svg
               className="block h-6 w-6 fill-current text-black "
