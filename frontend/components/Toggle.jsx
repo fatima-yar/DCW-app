@@ -16,11 +16,11 @@ export default function ToggleSwitch() {
   }
 
   return (
-    <div className="pl-2 flex items-center space-x-4 relative  lg:mx-50 md:mx-30 sm:mx-10  text-black overflow-hidden pb-4">
-      {/* Uk Flag */}
+    <div className="pl-20 flex items-center space-x-4 relative  lg:mx-50 md:mx-30 sm:mx-10  text-black overflow-hidden pb-4">
+      {/* NZ Flag */}
       <img
-        src="/ukFlag.svg"
-        alt="NUKFlag"
+        src="/nzFlag.svg"
+        alt="New Zealand Flag"
         className={`w-10 h-10 md:w-8 md:h-8 transition-opacity duration-300 ${
           isUK ? 'opacity-0' : 'opacity-100'
         }`}
@@ -37,7 +37,7 @@ export default function ToggleSwitch() {
               isUK ? 'right-0 text-right pr-2' : 'left-0 text-left pl-2'
             }`}
           >
-            {isUK ? 'NZ' : 'UK'}
+            {isUK ? 'UK' : 'NZ'}
           </span>
 
           {/* Circle */}
@@ -52,8 +52,8 @@ export default function ToggleSwitch() {
 
       {/* UK Flag */}
       <img
-        src="/nzFlag.svg"
-        alt="NZ Flag"
+        src="/ukFlag.svg"
+        alt="UK Flag"
         className={`w-10 h-10 md:w-8 md:h-8 transition-opacity duration-300 ${
           isUK ? 'opacity-100' : 'opacity-0'
         }`}
