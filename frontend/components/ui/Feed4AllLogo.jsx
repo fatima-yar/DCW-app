@@ -6,7 +6,7 @@ export default function Feed4AllLogo() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src="/feed4all.jpg" className="h-15 w-auto" />
+        <img src="/feed4all.png" className="h-30 w-auto" />
       </a>
     </div>
   )

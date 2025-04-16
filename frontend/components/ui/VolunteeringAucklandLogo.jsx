@@ -6,7 +6,7 @@ export default function VolunteeringAucklandLogo() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src="/volAuck.jpg" className="h-15 w-auto" />
+        <img src="/VolunteeringAuckland.png" className="h-30 w-auto" />
       </a>
     </div>
   )
