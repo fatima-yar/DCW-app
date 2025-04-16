@@ -17,6 +17,15 @@ export default function ToggleSwitch() {
 
   return (
     <div className="flex items-center space-x-4 relative  lg:mx-50 md:mx-30 sm:mx-10  text-black overflow-hidden pb-4">
+      {/* NZ Flag - Show only when isUK is false */}
+      {!isUK && (
+        <img
+          src="/nzFlag.svg"
+          alt="New Zealand Flag"
+          className="w-6 h-6 md:w-8 md:h-8"
+        />
+      )}
+
       {/* Toggle Button */}
       <div
         onClick={toggleSwitch}
