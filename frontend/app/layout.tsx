@@ -47,7 +47,7 @@ export default function RootLayout({
       <body
         className={`${lora.variable} ${convergence.variable} ${dosis.variable} font-sansation antialiased`}
         style={{
-          backgroundImage: 'url(/bg-pattern.png)',
+          backgroundImage: 'url(/bg-pattern-symmetrical.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
