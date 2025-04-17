@@ -12,10 +12,13 @@ export default function AboutUs() {
             Our Mission
           </p>
           <p className="text-md text-black lg:text-lg pr-10">
-            At DreamCatchers WorldWide, we believe that everyone has the power
-            to make a difference. Whether you are a volunteer, donor, or
-            supporter, you can help us achieve our mission of providing services
-            to vulnerable community groups.
+            At DreamCatchers WorldWide, we believe that everyone deserves access
+            to life’s essentials — quality education, meaningful support, and
+            the chance to thrive. Whether you're a volunteer, donor, or
+            advocate, you have the power to make a lasting impact. Together, we
+            can ensure that vulnerable communities aren’t left behind, but
+            lifted up with the tools, care, and opportunities they need to
+            succeed.
           </p>
           <div className="pt-8">
             <Button text="Learn more" link="/mission-statement" />

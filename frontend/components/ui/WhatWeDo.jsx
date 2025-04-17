@@ -17,10 +17,12 @@ export default function AboutUs() {
             Our Projects
           </p>
           <p className="text-md text-black lg:text-lg pr-10">
-            DreamCatchers WorldWide is a charitable organization that provides
-            services to vulnerable community groups. Our services include
-            providing high quality community services across the education and
-            arts sector to those in need.
+            At DreamCatchers WorldWide, we’re committed to creating inclusive,
+            accessible, and high-quality services that uplift vulnerable
+            communities. Our projects span education, the arts, and community
+            support — all designed to break down barriers and ensure everyone,
+            regardless of age or background, has the opportunity to learn, grow,
+            and thrive.
           </p>
           <div className="pt-8">
             <Button text="Learn more" link="/what-we-do" />
