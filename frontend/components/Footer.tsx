@@ -325,14 +325,14 @@ const Footer = () => {
           <div className="flex flex-col justify-between">
             <p className="font-[sansation] text-sm font-bold text-gray-100"></p>
             <p className="font-[sansation] text-xs text-gray-100 pb-4">
-              <span className="font-bold pr-2">Privacy Policy</span>
+              <span className="font-bold pr-2"></span>
               <br />
               <span className="pt-2 block">
-                © 2024 by DreamCatchers WorldWide
+                © 2025 by DreamCatchers WorldWide
               </span>
             </p>
           </div>
-          <div>
+          <div className="">
             <a href="/">
               <img src="DCWhite.png" alt="Logo" />
             </a>
