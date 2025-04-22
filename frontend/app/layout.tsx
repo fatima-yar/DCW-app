@@ -55,7 +55,7 @@ export default function RootLayout({
         }}
       >
         <TopLogos />
-        <div className="pt-5">
+        <div className="lg:py-5 py-2  ">
           <Toggle />
           <Navbar />
         </div>
