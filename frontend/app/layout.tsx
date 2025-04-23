@@ -47,7 +47,7 @@ export default function RootLayout({
       <body
         className={`${lora.variable} ${convergence.variable} ${dosis.variable} font-sansation antialiased`}
         style={{
-          backgroundImage: 'url(/bg-pattern.png)',
+          backgroundImage: 'url(/bg-pattern-symmetrical.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
@@ -55,7 +55,7 @@ export default function RootLayout({
         }}
       >
         <TopLogos />
-        <div className="pt-5">
+        <div className="lg:pt-5 pt-2  ">
           <Toggle />
           <Navbar />
         </div>

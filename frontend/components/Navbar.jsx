@@ -1,35 +1,36 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import NavbarHome from './ui/NavbarHome'
 import NavbarHomeBox from './ui/NavbarHomeBox'
-import NavbarWhatWeDo from './ui/NavbarWhatWeDo'
 import NavbarWhatWeDoBox from './ui/NavbarWhatWeDoBox'
-import NavbarJoinUs from './ui/NavbarJoinUs'
 import NavbarJoinUsBox from './ui/NavbarJoinUsBox'
-import NavbarDonate from './ui/NavbarDonate'
 import NavbarDonateBox from './ui/NavbarDonateBox'
 import HamburgerMenu from './ui/HamburgerMenu'
+import NavbarButton from './NavbarButtons'
 
 const navItems = [
   {
     key: 'home',
-    Component: NavbarHome,
+    label: 'Home',
+    subLabel: 'Kāinga',
     BoxComponent: NavbarHomeBox,
   },
   {
-    key: 'WhatWeDo',
-    Component: NavbarWhatWeDo,
+    key: 'whatWeDo',
+    label: 'What We Do',
+    subLabel: 'He aha ta tatou mahi',
     BoxComponent: NavbarWhatWeDoBox,
   },
   {
-    key: 'JoinUs',
-    Component: NavbarJoinUs,
+    key: 'joinUs',
+    label: 'Join Us',
+    subLabel: 'Hono Mai',
     BoxComponent: NavbarJoinUsBox,
   },
   {
-    key: 'Donate',
-    Component: NavbarDonate,
+    key: 'donate',
+    label: 'Donate',
+    subLabel: 'Koha',
     BoxComponent: NavbarDonateBox,
   },
 ]
@@ -63,12 +64,14 @@ export default function Navbar() {
     <>
       {/* Desktop Navbar */}
       <div className="sticky top-0 z-50 pt-2 pb-2 bg-gradient-to-r from-[#8A5082] to-[#A5CAD2] w-full overflow-x-hidden hidden md:block">
-        <div className="hidden md:flex justify-center space-x-40 lg:space-x-60 text-md relative">
-          {navItems.map(({ key, Component }) => (
+        <div className="hidden md:flex justify-center space-x-40 lg:space-x-62 text-md relative">
+          {navItems.map(({ key, label, subLabel }) => (
             <div className="relative" key={key}>
-              <Component
+              <NavbarButton
                 isOpen={openBox === key}
                 handleClick={() => handleClick(key)}
+                label={label}
+                subLabel={subLabel}
               />
             </div>
           ))}

@@ -31,22 +31,22 @@ export default function NavbarWhatWeDo() {
           <div className="mt-6 sm:mt-8">
             <ul className="space-y-3 sm:space-y-4 text-xs sm:text-sm">
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="#projects" className="text-black">
+                <a href="what-we-do#projects" className="text-black">
                   Stretch and Flex (Yoga)
                 </a>
               </li>
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="#projects" className="text-black">
+                <a href="what-we-do#projects" className="text-black">
                   Smart Tech for Seniors
                 </a>
               </li>
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="#projects" className="text-black">
+                <a href="what-we-do#projects" className="text-black">
                   Homework Clubs
                 </a>
               </li>
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="#projects" className="text-black">
+                <a href="what-we-do#projects" className="text-black">
                   Dance Classes
                 </a>
               </li>
@@ -69,17 +69,17 @@ export default function NavbarWhatWeDo() {
             <div className="mt-6 sm:mt-8">
               <ul className="space-y-3 sm:space-y-4 text-xs sm:text-sm">
                 <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                  <a href="#events" className="text-black">
+                  <a href="what-we-do#events" className="text-black">
                     Feed4All
                   </a>
                 </li>
                 <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                  <a href="#events" className="text-black">
+                  <a href="what-we-do#events" className="text-black">
                     Foreign Exchange NZ
                   </a>
                 </li>
                 <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                  <a href="#events" className="text-black">
+                  <a href="what-we-do#events" className="text-black">
                     House Dance NZ
                   </a>
                 </li>

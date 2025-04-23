@@ -1,12 +1,16 @@
 export default function VolunteeringAucklandLogo() {
   return (
-    <div>
+    <div className="w-full flex justify-start">
       <a
         href="https://volunteeringauckland.org.nz"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src="/volAuck.jpg" className="h-15 w-auto" />
+        <img
+          src="/VolunteeringAuckland.png"
+          alt="Volunteering Auckland"
+          className="h-12 sm:h-16 md:h-20 lg:h-24 xl:h-28 w-auto max-w-full"
+        />
       </a>
     </div>
   )
