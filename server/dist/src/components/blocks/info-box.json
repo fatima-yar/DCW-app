@@ -2,14 +2,15 @@
     "collectionName": "components_blocks_info_boxes",
     "info": {
         "displayName": "Info Box",
+        "icon": "layout",
         "description": ""
     },
     "options": {},
     "attributes": {
-        "aboutUsDescription": {
+        "mission": {
             "type": "text"
         },
-        "WhatWeDoDescription": {
+        "projects": {
             "type": "text"
         }
     }

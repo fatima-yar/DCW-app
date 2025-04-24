@@ -2,33 +2,27 @@
     "collectionName": "components_blocks_hero_boxes",
     "info": {
         "displayName": "Hero Box",
-        "description": ""
+        "icon": "layout"
     },
     "options": {},
     "attributes": {
-        "title": {
+        "headingtext": {
             "type": "string"
         },
-        "followingText": {
+        "folowingText": {
             "type": "string"
         },
-        "image": {
-            "type": "media",
-            "multiple": false,
-            "required": false,
+        "bgImage": {
             "allowedTypes": [
                 "images"
-            ]
+            ],
+            "type": "media",
+            "multiple": false
         },
         "cta": {
             "type": "component",
             "repeatable": false,
-            "component": "elements.link"
-        },
-        "transparentBox": {
-            "type": "component",
-            "repeatable": false,
-            "component": "blocks.transparent-box"
+            "component": "elements.btn"
         }
     }
 }

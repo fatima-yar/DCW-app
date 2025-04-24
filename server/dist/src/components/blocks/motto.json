@@ -2,13 +2,12 @@
     "collectionName": "components_blocks_mottos",
     "info": {
         "displayName": "motto",
-        "icon": "",
-        "description": ""
+        "icon": "pencil"
     },
     "options": {},
     "attributes": {
-        "motto": {
-            "type": "string"
+        "text": {
+            "type": "text"
         }
     }
 }

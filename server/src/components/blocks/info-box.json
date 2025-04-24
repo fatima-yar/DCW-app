@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_blocks_info_boxes",
+  "info": {
+    "displayName": "Info Box",
+    "icon": "layout",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "mission": {
+      "type": "text"
+    },
+    "projects": {
+      "type": "text"
+    }
+  }
+}

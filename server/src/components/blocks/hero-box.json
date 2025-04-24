@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_blocks_hero_boxes",
+  "info": {
+    "displayName": "Hero Box",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "headingtext": {
+      "type": "string"
+    },
+    "folowingText": {
+      "type": "string"
+    },
+    "bgImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.btn"
+    }
+  }
+}

@@ -4,7 +4,7 @@
     "info": {
         "singularName": "main-page",
         "pluralName": "main-pages",
-        "displayName": "main page",
+        "displayName": "Main Page",
         "description": ""
     },
     "options": {
@@ -15,8 +15,8 @@
             "type": "dynamiczone",
             "components": [
                 "blocks.motto",
-                "blocks.hero-box",
-                "blocks.info-box"
+                "blocks.info-box",
+                "blocks.hero-box"
             ]
         }
     }

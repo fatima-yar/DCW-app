@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blocks_mottos",
+  "info": {
+    "displayName": "motto",
+    "icon": "pencil"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    }
+  }
+}
