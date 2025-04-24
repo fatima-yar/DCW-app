@@ -1,0 +1,108 @@
+import qs from 'qs'
+import { fetchAPI } from '../utils/fetch-api'
+import getStrapiURL from '../utils/get-strapi-url'
+
+const mainPageQuery = qs.stringify({
+  populate: {
+    blocks: {
+      on: {
+        'blocks.motto': true,
+        'blocks.hero-box': {
+          populate: {
+            image: {
+              fields: ['url', 'alternativeText'],
+            },
+            cta: true,
+            transparentBox: true,
+          },
+        },
+        'blocks.info-box': true,
+      },
+    },
+  },
+})
+
+const pageBySlugQuery = (slug: string) =>
+  qs.stringify({
+    filters: {
+      slug: {
+        $eq: slug,
+      },
+    },
+    populate: {
+      blocks: {
+        on: {
+          'blocks.hero-section': {
+            populate: {
+              image: {
+                fields: ['url', 'alternativeText'],
+              },
+              logo: {
+                populate: {
+                  image: {
+                    fields: ['url', 'alternativeText'],
+                  },
+                },
+              },
+              cta: true,
+            },
+          },
+          'blocks.info-block': {
+            populate: {
+              image: {
+                fields: ['url', 'alternativeText'],
+              },
+              cta: true,
+            },
+          },
+        },
+      },
+    },
+  })
+
+export async function getMainPage() {
+  const path = '/api/main-page'
+  const BASE_URL = getStrapiURL()
+  const url = new URL(path, BASE_URL)
+  url.search = mainPageQuery
+
+  return await fetchAPI(url.href, { method: 'GET' })
+}
+
+export async function getPageBySlug(slug: string) {
+  const path = '/api/pages'
+  const BASE_URL = getStrapiURL()
+  const url = new URL(path, BASE_URL)
+  url.search = pageBySlugQuery(slug)
+  return await fetchAPI(url.href, { method: 'GET' })
+}
+
+const teamPageQuery = qs.stringify({
+  populate: {
+    blocks: {
+      on: {
+        'blocks.team-photo': {
+          populate: {
+            photo: {
+              populate: {
+                image: {
+                  fields: ['url', 'alternativeText'],
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+})
+
+export async function getOurTeam() {
+  const path = '/api/our-team'
+  const BASE_URL = getStrapiURL()
+
+  const url = new URL(path, BASE_URL)
+  url.search = teamPageQuery
+
+  return await fetchAPI(url.href, { method: 'GET' })
+}

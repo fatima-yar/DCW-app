@@ -2,14 +2,26 @@ import React from 'react'
 import MaoriStrip from './ui/MaoriStrip'
 import HeroBoxContent from './ui/HeroBoxContent'
 
-export default function HeroBox() {
+export default function HeroBox({
+  title,
+  followingText,
+  image,
+  button,
+  transparentBox,
+}) {
   return (
     <>
       <div className="lg:mx-50 md:mx-30 sm:mx:10 ">
         <MaoriStrip />
       </div>
 
-      <HeroBoxContent />
+      <HeroBoxContent
+        title={title}
+        followingText={followingText}
+        image={image}
+        button={button}
+        transparentBox={transparentBox}
+      />
       <div className="lg:mx-50 md:mx-30 sm:mx:10 ">
         <MaoriStrip />
       </div>

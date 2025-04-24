@@ -3,14 +3,15 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface BlocksHeroBox extends Struct.ComponentSchema {
   collectionName: 'components_blocks_hero_boxes';
   info: {
+    description: '';
     displayName: 'Hero Box';
     icon: 'layout';
   };
   attributes: {
-    bgImage: Schema.Attribute.Media<'images'>;
     cta: Schema.Attribute.Component<'elements.btn', false>;
     folowingText: Schema.Attribute.String;
-    headingtext: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -30,11 +31,12 @@ export interface BlocksInfoBox extends Struct.ComponentSchema {
 export interface BlocksMotto extends Struct.ComponentSchema {
   collectionName: 'components_blocks_mottos';
   info: {
+    description: '';
     displayName: 'motto';
     icon: 'pencil';
   };
   attributes: {
-    text: Schema.Attribute.Text;
+    motto: Schema.Attribute.Text;
   };
 }
 

@@ -2,22 +2,24 @@
   "collectionName": "components_blocks_hero_boxes",
   "info": {
     "displayName": "Hero Box",
-    "icon": "layout"
+    "icon": "layout",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "headingtext": {
+    "title": {
       "type": "string"
     },
     "folowingText": {
       "type": "string"
     },
-    "bgImage": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "cta": {
       "type": "component",
