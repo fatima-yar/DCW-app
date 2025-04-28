@@ -76,26 +76,6 @@ export async function getPageBySlug(slug: string) {
   return await fetchAPI(url.href, { method: 'GET' })
 }
 
-const teamPageQuery = qs.stringify({
-  populate: {
-    blocks: {
-      on: {
-        'blocks.photo': {
-          populate: {
-            photo: {
-              populate: {
-                image: {
-                  fields: ['url', 'alternativeText'],
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  },
-})
-
 const contentsQuery = qs.stringify({
   populate: {
     contents: {
@@ -108,12 +88,31 @@ const contentsQuery = qs.stringify({
   },
 })
 
+const photoQuery = qs.stringify(
+  {
+    populate: {
+      blocks: {
+        on: {
+          'blocks.photo': {
+            populate: {
+              image: {
+                fields: ['url', 'alternativeText'],
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+  { encodeValuesOnly: true }
+)
+
 export async function getOurTeam() {
   const path = '/api/our-team'
   const BASE_URL = getStrapiURL()
 
   const url = new URL(path, BASE_URL)
-  url.search = teamPageQuery
+  url.search = photoQuery
 
   return await fetchAPI(url.href, { method: 'GET' })
 }

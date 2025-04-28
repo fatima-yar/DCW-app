@@ -1,8 +1,28 @@
-import team from '../app/data/team.json'
+'use client'
+
+import { useEffect, useState } from 'react'
+import { getOurTeam } from '../app/src/data/loaders'
+import getStrapiURL from '../app/src/utils/get-strapi-url'
 
 export function OurTeam() {
+  const [team, setTeam] = useState([])
+
+  useEffect(() => {
+    async function fetchTeam() {
+      try {
+        const res = await getOurTeam()
+        const blocks = res?.data?.blocks || []
+        setTeam(blocks)
+      } catch (error) {
+        console.error('Failed to fetch team data:', error)
+      }
+    }
+
+    fetchTeam()
+  }, [])
+
   return (
-    <section className="px-10 sm:px-10 md:px-10 lg:px-25 xl:px-50 ">
+    <section className="px-10 sm:px-10 md:px-10 lg:px-25 xl:px-50">
       <div className="text-black bg-white pt-10 font-[Convergence] pl-12 text-3xl">
         Our Team
       </div>
@@ -17,8 +37,8 @@ export function OurTeam() {
               } bg-[#ad9bce65] p-4 inline-block mx-auto transition-all transform hover:scale-110 hover:bg-[#7a9ab465] duration-500 ease-in-out`}
             >
               <img
-                src={member.image}
-                alt={member.name}
+                src={`${getStrapiURL()}${member.image.url}`}
+                alt={member.image.alternativeText || member.description}
                 height={800}
                 width={800}
                 className={`${
@@ -28,7 +48,7 @@ export function OurTeam() {
                 }`}
               />
               <h3 className="mt-4 text-sm text-center text-black w-58 font-[Convergence]">
-                {member.name}
+                {member.description}
               </h3>
             </div>
           </div>

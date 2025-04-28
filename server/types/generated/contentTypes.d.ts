@@ -432,7 +432,8 @@ export interface ApiMainPageMainPage extends Struct.SingleTypeSchema {
 export interface ApiOurTeamOurTeam extends Struct.SingleTypeSchema {
   collectionName: 'our_teams';
   info: {
-    displayName: 'Our-Team';
+    description: '';
+    displayName: 'Our Team';
     pluralName: 'our-teams';
     singularName: 'our-team';
   };
@@ -440,6 +441,7 @@ export interface ApiOurTeamOurTeam extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    blocks: Schema.Attribute.DynamicZone<['blocks.photo']>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -449,9 +451,7 @@ export interface ApiOurTeamOurTeam extends Struct.SingleTypeSchema {
       'api::our-team.our-team'
     > &
       Schema.Attribute.Private;
-    ourteam: Schema.Attribute.DynamicZone<['blocks.photo']>;
     publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
