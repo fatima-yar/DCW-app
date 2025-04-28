@@ -10,7 +10,7 @@ export interface BlocksContent extends Struct.ComponentSchema {
   attributes: {
     content: Schema.Attribute.RichText;
     header: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images'>;
+    image: Schema.Attribute.Media<'images', true>;
   };
 }
 
@@ -54,6 +54,18 @@ export interface BlocksMotto extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksPhoto extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_photos';
+  info: {
+    displayName: 'photo';
+    icon: 'landscape';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
+  };
+}
+
 export interface ElementsBtn extends Struct.ComponentSchema {
   collectionName: 'components_elements_btns';
   info: {
@@ -74,6 +86,7 @@ declare module '@strapi/strapi' {
       'blocks.hero-box': BlocksHeroBox;
       'blocks.info-box': BlocksInfoBox;
       'blocks.motto': BlocksMotto;
+      'blocks.photo': BlocksPhoto;
       'elements.btn': ElementsBtn;
     }
   }

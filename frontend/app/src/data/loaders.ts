@@ -80,7 +80,7 @@ const teamPageQuery = qs.stringify({
   populate: {
     blocks: {
       on: {
-        'blocks.team-photo': {
+        'blocks.photo': {
           populate: {
             photo: {
               populate: {

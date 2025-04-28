@@ -7,7 +7,7 @@ export default function AboutUs({ content }) {
     <Contents
       header={content.header}
       content={content.content}
-      image={content.image}
+      image={content.image?.[0]}
     />
   )
 }

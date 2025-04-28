@@ -429,6 +429,35 @@ export interface ApiMainPageMainPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiOurTeamOurTeam extends Struct.SingleTypeSchema {
+  collectionName: 'our_teams';
+  info: {
+    displayName: 'Our-Team';
+    pluralName: 'our-teams';
+    singularName: 'our-team';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::our-team.our-team'
+    > &
+      Schema.Attribute.Private;
+    ourteam: Schema.Attribute.DynamicZone<['blocks.photo']>;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTestTest extends Struct.SingleTypeSchema {
   collectionName: 'tests';
   info: {
@@ -966,6 +995,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about-us.about-us': ApiAboutUsAboutUs;
       'api::main-page.main-page': ApiMainPageMainPage;
+      'api::our-team.our-team': ApiOurTeamOurTeam;
       'api::test.test': ApiTestTest;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

@@ -10,16 +10,16 @@
     "header": {
       "type": "string"
     },
-    "content": {
-      "type": "richtext"
-    },
     "image": {
       "type": "media",
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "allowedTypes": [
         "images"
       ]
+    },
+    "content": {
+      "type": "richtext"
     }
   }
 }

@@ -36,29 +36,10 @@ export default function Contents({
           </div>
         )}
 
-        <div
-          className={`space-y-3 sm:space-y-4 text-md ${
-            isImageRight || isImageLeft ? 'lg:w-2/3' : ''
-          }`}
-        >
-          {/* {content.map((item, idx) => {
-            if (typeof item === 'string') {
-              return <p key={idx}>{item}</p>
-            }
-
-            if (item.type === 'bullet') {
-              return (
-                <div key={idx} className="pl-8">
-                  <ul className="list-disc list-inside space-y-1">
-                    {item.points.map((point, i) => (
-                      <li key={i}>{point}</li>
-                    ))}
-                  </ul>
-                </div>
-              )
-            }
-          })} */}
-          {content}
+        <div className="space-y-3 sm:space-y-4 text-md">
+          {content.split('\n\n').map((paragraph, idx) => (
+            <p key={idx}>{paragraph}</p>
+          ))}
         </div>
 
         {isImageRight && (
