@@ -146,3 +146,10 @@ export async function getPrivacyPolicy() {
 
   return await fetchAPI(url.href, { method: 'GET' })
 }
+
+export async function getContactUs() {
+  const path = '/api/contact-us'
+  const BASE_URL = getStrapiURL()
+  const url = new URL(path, BASE_URL)
+  return await fetchAPI(url.href, { method: 'GET' })
+}
