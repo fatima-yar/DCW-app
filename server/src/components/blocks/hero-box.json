@@ -10,21 +10,20 @@
     "title": {
       "type": "string"
     },
-    "folowingText": {
+    "followingText": {
       "type": "string"
-    },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
     },
     "cta": {
       "type": "component",
       "repeatable": false,
       "component": "elements.btn"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

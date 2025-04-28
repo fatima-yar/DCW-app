@@ -13,7 +13,6 @@ const mainPageQuery = qs.stringify({
               fields: ['url', 'alternativeText'],
             },
             cta: true,
-            transparentBox: true,
           },
         },
         'blocks.info-box': true,
@@ -97,12 +96,34 @@ const teamPageQuery = qs.stringify({
   },
 })
 
+const contentsQuery = qs.stringify({
+  populate: {
+    contents: {
+      populate: {
+        image: {
+          fields: ['url', 'alternativeText'],
+        },
+      },
+    },
+  },
+})
+
 export async function getOurTeam() {
   const path = '/api/our-team'
   const BASE_URL = getStrapiURL()
 
   const url = new URL(path, BASE_URL)
   url.search = teamPageQuery
+
+  return await fetchAPI(url.href, { method: 'GET' })
+}
+
+export async function getAboutUs() {
+  const path = '/api/about-us'
+  const BASE_URL = getStrapiURL()
+
+  const url = new URL(path, BASE_URL)
+  url.search = contentsQuery
 
   return await fetchAPI(url.href, { method: 'GET' })
 }

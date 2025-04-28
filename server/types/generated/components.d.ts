@@ -1,5 +1,19 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BlocksContent extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_contents';
+  info: {
+    description: '';
+    displayName: 'contents';
+    icon: 'write';
+  };
+  attributes: {
+    content: Schema.Attribute.RichText;
+    header: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
+  };
+}
+
 export interface BlocksHeroBox extends Struct.ComponentSchema {
   collectionName: 'components_blocks_hero_boxes';
   info: {
@@ -9,7 +23,7 @@ export interface BlocksHeroBox extends Struct.ComponentSchema {
   };
   attributes: {
     cta: Schema.Attribute.Component<'elements.btn', false>;
-    folowingText: Schema.Attribute.String;
+    followingText: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String;
   };
@@ -56,6 +70,7 @@ export interface ElementsBtn extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'blocks.content': BlocksContent;
       'blocks.hero-box': BlocksHeroBox;
       'blocks.info-box': BlocksInfoBox;
       'blocks.motto': BlocksMotto;

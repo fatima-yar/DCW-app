@@ -38,7 +38,7 @@ export default function HeroContent({
           {/* Big Text */}
           <div className="col-span-1 md:col-span-2 lg:col-span-2 row-start-1">
             <p
-              className="pl-4 pt-2 lg:pt-10 lg:pl-10 font-[Sansation] text-xl sm:text-xl md:text-3xl lg:text-5xl font-bold text-[#FFB635]"
+              className="pl-4 pt-2 lg:pt-10 lg:pl-10 font-[Sansation] text-xl sm:text-xl md:text-3xl lg:text-4xl font-bold text-[#FFB635]"
               style={{ lineHeight: '1.25' }}
             >
               {/* Empowering&nbsp;Dreams,
@@ -49,7 +49,7 @@ export default function HeroContent({
 
           {/* White Text */}
           <div className="col-span-1 md:col-span-2 lg:col-span-2 row-start-2">
-            <p className="pt-2 pl-4 lg:pl-10 lg:pt-20  font-[dosis] text-white lg:text-2xl md:text-xl sm:text-md ">
+            <p className="pt-2 pl-4 lg:pl-10 lg:pt-20  font-[dosis] text-white lg:text-3xl md:text-xl sm:text-md ">
               {/* Together,&nbsp;we&nbsp;uplift&nbsp;and&nbsp;inspire communities. */}
               {followingText}
             </p>

@@ -1,4 +1,5 @@
 import React from 'react'
+import getStrapiURL from '../app/src/utils/get-strapi-url'
 
 export default function Contents({
   header,
@@ -7,9 +8,9 @@ export default function Contents({
   imagePosition = 'bottom',
   bgColor = 'white',
 }) {
+  const imageUrl = image?.url ? `${getStrapiURL()}${image.url}` : ''
   const isImageRight = image && imagePosition === 'right'
   const isImageLeft = image && imagePosition === 'left'
-
   const bgClass = bgColor === 'gray' ? 'bg-gray-100' : 'bg-white'
 
   return (
@@ -27,7 +28,11 @@ export default function Contents({
       >
         {isImageLeft && (
           <div className="lg:w-1/3">
-            <img src={image} alt={header} className="w-full object-contain" />
+            <img
+              src={imageUrl}
+              alt={header}
+              className="w-full object-contain"
+            />
           </div>
         )}
 
@@ -36,7 +41,7 @@ export default function Contents({
             isImageRight || isImageLeft ? 'lg:w-2/3' : ''
           }`}
         >
-          {content.map((item, idx) => {
+          {/* {content.map((item, idx) => {
             if (typeof item === 'string') {
               return <p key={idx}>{item}</p>
             }
@@ -52,21 +57,24 @@ export default function Contents({
                 </div>
               )
             }
-
-            return null
-          })}
+          })} */}
+          {content}
         </div>
 
         {isImageRight && (
           <div className="lg:w-1/3">
-            <img src={image} alt={header} className="w-full object-contain" />
+            <img
+              src={imageUrl}
+              alt={header}
+              className="w-full object-contain"
+            />
           </div>
         )}
       </div>
 
       {image && imagePosition === 'bottom' && (
         <div className="pb-5 flex justify-center lg:px-36">
-          <img src={image} alt={header} className="object-contain" />
+          <img src={imageUrl} alt={header} className="object-contain" />
         </div>
       )}
     </div>
