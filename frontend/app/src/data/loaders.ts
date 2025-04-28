@@ -136,3 +136,13 @@ export async function getMissionStatement() {
 
   return await fetchAPI(url.href, { method: 'GET' })
 }
+
+export async function getPrivacyPolicy() {
+  const path = '/api/privacy-policy'
+  const BASE_URL = getStrapiURL()
+
+  const url = new URL(path, BASE_URL)
+  url.search = contentsQuery
+
+  return await fetchAPI(url.href, { method: 'GET' })
+}

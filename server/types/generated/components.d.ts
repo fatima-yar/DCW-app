@@ -10,7 +10,7 @@ export interface BlocksContent extends Struct.ComponentSchema {
   attributes: {
     content: Schema.Attribute.RichText;
     header: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images', true>;
+    image: Schema.Attribute.Media<'images'>;
   };
 }
 

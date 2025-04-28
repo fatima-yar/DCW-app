@@ -6,7 +6,7 @@ export default function MissionStatement({ content }) {
     <Contents
       header={content.header}
       content={content.content}
-      image={content.image?.[0]}
+      image={content.image}
     />
   )
 }
