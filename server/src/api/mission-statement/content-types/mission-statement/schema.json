@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "mission_statements",
+  "info": {
+    "singularName": "mission-statement",
+    "pluralName": "mission-statements",
+    "displayName": "Mission Statement",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "contents": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.content"
+    }
+  }
+}

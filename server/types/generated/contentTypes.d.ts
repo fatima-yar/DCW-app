@@ -429,6 +429,36 @@ export interface ApiMainPageMainPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiMissionStatementMissionStatement
+  extends Struct.SingleTypeSchema {
+  collectionName: 'mission_statements';
+  info: {
+    description: '';
+    displayName: 'Mission Statement';
+    pluralName: 'mission-statements';
+    singularName: 'mission-statement';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contents: Schema.Attribute.Component<'blocks.content', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mission-statement.mission-statement'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiOurTeamOurTeam extends Struct.SingleTypeSchema {
   collectionName: 'our_teams';
   info: {
@@ -995,6 +1025,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about-us.about-us': ApiAboutUsAboutUs;
       'api::main-page.main-page': ApiMainPageMainPage;
+      'api::mission-statement.mission-statement': ApiMissionStatementMissionStatement;
       'api::our-team.our-team': ApiOurTeamOurTeam;
       'api::test.test': ApiTestTest;
       'plugin::content-releases.release': PluginContentReleasesRelease;

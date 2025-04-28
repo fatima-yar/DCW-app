@@ -126,3 +126,13 @@ export async function getAboutUs() {
 
   return await fetchAPI(url.href, { method: 'GET' })
 }
+
+export async function getMissionStatement() {
+  const path = '/api/mission-statement'
+  const BASE_URL = getStrapiURL()
+
+  const url = new URL(path, BASE_URL)
+  url.search = contentsQuery
+
+  return await fetchAPI(url.href, { method: 'GET' })
+}
