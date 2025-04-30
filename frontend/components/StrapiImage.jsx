@@ -5,6 +5,13 @@ export function StrapiImage({ src, alt, className, ...rest }) {
   const imageUrl = getStrapiMedia(src)
   if (!imageUrl) return null
 
+  if (process.env.NODE_ENV !== 'production' && (!alt || alt.trim() === '')) {
+    console.warn(
+      '⚠️ StrapiImage: Missing or empty alt text for image source:',
+      src
+    )
+  }
+
   return <Image src={imageUrl} alt={alt} className={className} {...rest} />
 }
 
