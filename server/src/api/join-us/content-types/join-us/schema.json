@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "join_uses",
+  "info": {
+    "singularName": "join-us",
+    "pluralName": "join-uses",
+    "displayName": "Join Us",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "text": {
+      "type": "richtext"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.btn"
+    }
+  }
+}

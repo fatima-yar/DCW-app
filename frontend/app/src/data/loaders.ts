@@ -126,6 +126,21 @@ const whatWeDoQuery = qs.stringify(
   }
 )
 
+const joinUsQuery = qs.stringify(
+  {
+    populate: {
+      image: {
+        fields: ['url', 'alternativeText'],
+      },
+      cta: true,
+    },
+  },
+
+  {
+    encodeValuesOnly: true,
+  }
+)
+
 export async function getOurTeam() {
   const path = '/api/our-team'
   const BASE_URL = getStrapiURL()
@@ -147,6 +162,7 @@ export const getAboutUs = () => fetchContentPage('/api/about-us')
 
 export const getMissionStatement = () =>
   fetchContentPage('/api/mission-statement')
+
 export const getPrivacyPolicy = () => fetchContentPage('/api/privacy-policy')
 
 export async function getContactUs() {
@@ -161,6 +177,15 @@ export async function getWhatWeDo() {
   const BASE_URL = getStrapiURL()
   const url = new URL(path, BASE_URL)
   url.search = whatWeDoQuery
+
+  return await fetchAPI(url.href, { method: 'GET' })
+}
+
+export async function getJoinUs() {
+  const path = '/api/join-us'
+  const BASE_URL = getStrapiURL()
+  const url = new URL(path, BASE_URL)
+  url.search = joinUsQuery
 
   return await fetchAPI(url.href, { method: 'GET' })
 }
