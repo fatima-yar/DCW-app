@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "what_we_dos",
+  "info": {
+    "singularName": "what-we-do",
+    "pluralName": "what-we-dos",
+    "displayName": "What We Do",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "content": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.content"
+    },
+    "projects": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.photo"
+    },
+    "events": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.photo"
+    }
+  }
+}

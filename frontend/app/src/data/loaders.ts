@@ -107,6 +107,25 @@ const photoQuery = qs.stringify(
   { encodeValuesOnly: true }
 )
 
+const whatWeDoQuery = qs.stringify(
+  {
+    populate: {
+      content: {
+        populate: 'image',
+      },
+      projects: {
+        populate: 'image',
+      },
+      events: {
+        populate: 'image',
+      },
+    },
+  },
+  {
+    encodeValuesOnly: true,
+  }
+)
+
 export async function getOurTeam() {
   const path = '/api/our-team'
   const BASE_URL = getStrapiURL()
@@ -117,39 +136,31 @@ export async function getOurTeam() {
   return await fetchAPI(url.href, { method: 'GET' })
 }
 
-export async function getAboutUs() {
-  const path = '/api/about-us'
+async function fetchContentPage(path: string) {
   const BASE_URL = getStrapiURL()
-
   const url = new URL(path, BASE_URL)
   url.search = contentsQuery
-
   return await fetchAPI(url.href, { method: 'GET' })
 }
 
-export async function getMissionStatement() {
-  const path = '/api/mission-statement'
-  const BASE_URL = getStrapiURL()
+export const getAboutUs = () => fetchContentPage('/api/about-us')
 
-  const url = new URL(path, BASE_URL)
-  url.search = contentsQuery
-
-  return await fetchAPI(url.href, { method: 'GET' })
-}
-
-export async function getPrivacyPolicy() {
-  const path = '/api/privacy-policy'
-  const BASE_URL = getStrapiURL()
-
-  const url = new URL(path, BASE_URL)
-  url.search = contentsQuery
-
-  return await fetchAPI(url.href, { method: 'GET' })
-}
+export const getMissionStatement = () =>
+  fetchContentPage('/api/mission-statement')
+export const getPrivacyPolicy = () => fetchContentPage('/api/privacy-policy')
 
 export async function getContactUs() {
   const path = '/api/contact-us'
   const BASE_URL = getStrapiURL()
   const url = new URL(path, BASE_URL)
+  return await fetchAPI(url.href, { method: 'GET' })
+}
+
+export async function getWhatWeDo() {
+  const path = '/api/what-we-do'
+  const BASE_URL = getStrapiURL()
+  const url = new URL(path, BASE_URL)
+  url.search = whatWeDoQuery
+
   return await fetchAPI(url.href, { method: 'GET' })
 }

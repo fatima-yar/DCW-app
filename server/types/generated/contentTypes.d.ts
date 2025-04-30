@@ -571,6 +571,37 @@ export interface ApiTestTest extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiWhatWeDoWhatWeDo extends Struct.SingleTypeSchema {
+  collectionName: 'what_we_dos';
+  info: {
+    description: '';
+    displayName: 'What We Do';
+    pluralName: 'what-we-dos';
+    singularName: 'what-we-do';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.Component<'blocks.content', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    events: Schema.Attribute.Component<'blocks.photo', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::what-we-do.what-we-do'
+    > &
+      Schema.Attribute.Private;
+    projects: Schema.Attribute.Component<'blocks.photo', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1087,6 +1118,7 @@ declare module '@strapi/strapi' {
       'api::our-team.our-team': ApiOurTeamOurTeam;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::test.test': ApiTestTest;
+      'api::what-we-do.what-we-do': ApiWhatWeDoWhatWeDo;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
