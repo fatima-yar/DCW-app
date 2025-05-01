@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_elements_texts",
+  "info": {
+    "displayName": "text"
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "string"
+    }
+  }
+}

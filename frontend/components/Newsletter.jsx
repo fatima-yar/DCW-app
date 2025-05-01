@@ -1,49 +1,63 @@
-export default function Newsletter({ link }) {
-  console.log('lllinkkkk', link)
-  return (
-    <>
+export default function Newsletter({ links }) {
+  console.log('lllinkkkk', links)
+
+  if (!links || links.length === 0) {
+    return (
       <div
         style={{
-          position: 'relative',
           width: '100%',
-          height: 0,
-          paddingTop: '141.4286%',
-          paddingBottom: 0,
-          // boxShadow: '0 2px 8px 0 rgba(63,69,81,0.16)',
-          marginTop: '1.6em',
-          marginBottom: '0.9em',
-          overflow: 'hidden',
+          height: '300px',
+          // backgroundColor: '#f0f0f0',
           borderRadius: '8px',
-          willChange: 'transform',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: '#666',
+          fontSize: '1.2rem',
         }}
       >
-        <iframe
-          loading="lazy"
-          style={{
-            position: 'absolute',
-            width: '100%',
-            height: '100%',
-            top: 0,
-            left: 0,
-            border: 'none',
-            padding: 0,
-            margin: 0,
-          }}
-          src={`${link}?embed`}
-          // src="https://www.canva.com/design/DAGeJvmyQXo/sQA9RwG84mUQQZ7w2yYVcQ/view?embed"
-          // https://www.canva.com/design/DAGeJvmyQXo/sQA9RwG84mUQQZ7w2yYVcQ/view
-          allowFullScreen
-          allow="fullscreen"
-        ></iframe>
+        No newsletter available
       </div>
-      {/* <a
-        href="https://www.canva.com/design/DAGeJvmyQXo/sQA9RwG84mUQQZ7w2yYVcQ/view?utm_content=DAGeJvmyQXo&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
-        target="_blank"
-        rel="noopener"
-      >
-        DCW February Newsletter 2025
-      </a>{' '}
-      by DreamCatchers WW */}
+    )
+  }
+  return (
+    <>
+      {links.map((item, index) => (
+        <div
+          style={{
+            position: 'relative',
+            width: '100%',
+            height: 0,
+            paddingTop: '141.4286%',
+            paddingBottom: 0,
+            // boxShadow: '0 2px 8px 0 rgba(63,69,81,0.16)',
+            marginTop: '1.6em',
+            marginBottom: '0.9em',
+            overflow: 'hidden',
+            borderRadius: '8px',
+            willChange: 'transform',
+          }}
+        >
+          <iframe
+            loading="lazy"
+            style={{
+              position: 'absolute',
+              width: '100%',
+              height: '100%',
+              top: 0,
+              left: 0,
+              border: 'none',
+              padding: 0,
+              margin: 0,
+            }}
+            src={`${link}?embed`}
+            // src="https://www.canva.com/design/DAGeJvmyQXo/sQA9RwG84mUQQZ7w2yYVcQ/view?embed"
+            // https://www.canva.com/design/DAGeJvmyQXo/sQA9RwG84mUQQZ7w2yYVcQ/view
+            allowFullScreen
+            allow="fullscreen"
+          ></iframe>
+        </div>
+      ))}
     </>
   )
 }

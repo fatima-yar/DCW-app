@@ -79,6 +79,16 @@ export interface ElementsBtn extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsText extends Struct.ComponentSchema {
+  collectionName: 'components_elements_texts';
+  info: {
+    displayName: 'text';
+  };
+  attributes: {
+    link: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -88,6 +98,7 @@ declare module '@strapi/strapi' {
       'blocks.motto': BlocksMotto;
       'blocks.photo': BlocksPhoto;
       'elements.btn': ElementsBtn;
+      'elements.text': ElementsText;
     }
   }
 }

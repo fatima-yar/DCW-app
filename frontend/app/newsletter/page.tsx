@@ -17,10 +17,10 @@ async function loader() {
 }
 export default async function newsletter() {
   const data = await loader()
-  console.log('datatattat', data.link)
+  console.log('datatattat', data.links)
   return (
     <div className="relative lg:mx-50 md:mx-30 sm:mx-10 text-black overflow-hidden bg-white font-[Convergence] lg:px-36 px-4">
-      <Newsletter link={data.link} />
+      <Newsletter links={data.link} />
     </div>
   )
 }

@@ -11,8 +11,11 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "link": {
-      "type": "string"
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "elements.text"
+      ]
     }
   }
 }
