@@ -13,6 +13,12 @@
   "attributes": {
     "link": {
       "type": "string"
+    },
+    "archived": {
+      "type": "dynamiczone",
+      "components": [
+        "blocks.archived-newsletter"
+      ]
     }
   }
 }

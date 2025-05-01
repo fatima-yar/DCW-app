@@ -1,5 +1,17 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BlocksArchivedNewsletter extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_archived_newsletters';
+  info: {
+    displayName: 'archivedNewsletter';
+    icon: 'server';
+  };
+  attributes: {
+    date: Schema.Attribute.String;
+    link: Schema.Attribute.String;
+  };
+}
+
 export interface BlocksContent extends Struct.ComponentSchema {
   collectionName: 'components_blocks_contents';
   info: {
@@ -92,6 +104,7 @@ export interface ElementsText extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'blocks.archived-newsletter': BlocksArchivedNewsletter;
       'blocks.content': BlocksContent;
       'blocks.hero-box': BlocksHeroBox;
       'blocks.info-box': BlocksInfoBox;

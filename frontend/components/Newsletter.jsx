@@ -58,10 +58,14 @@ export default function Newsletter({ link, archivedDate, archivedLink }) {
       </div>
       {archivedDate && archivedLink && (
         <>
-          <div className="font-[Convergence] text-xl py-8">
-            Archived Newsletters
+          <div className="bg-gray-200 pl-4">
+            <div className="font-[Convergence] text-lg py-4">
+              Archived Newsletters
+            </div>
+            <div className="font-[Convergence] text-sm pl-4 pb-4">
+              <a href={archivedLink}>&#9654; &nbsp;{archivedDate}</a>
+            </div>
           </div>
-          <a href={archivedLink}>&#9654; {archivedDate}</a>
         </>
       )}
     </>

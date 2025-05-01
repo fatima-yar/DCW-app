@@ -143,9 +143,7 @@ const joinUsQuery = qs.stringify(
 
 const newsletterQuery = qs.stringify({
   populate: {
-    blocks: {
-      populate: '*',
-    },
+    archived: true,
   },
 })
 
@@ -202,6 +200,6 @@ export async function getNewsletter() {
   const path = '/api/newsletter'
   const BASE_URL = getStrapiURL()
   const url = new URL(path, BASE_URL)
-  // url.search = newsletterQuery
+  url.search = newsletterQuery
   return await fetchAPI(url.href, { method: 'GET' })
 }

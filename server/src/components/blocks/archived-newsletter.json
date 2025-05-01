@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_blocks_archived_newsletters",
+  "info": {
+    "displayName": "archivedNewsletter",
+    "icon": "server"
+  },
+  "options": {},
+  "attributes": {
+    "date": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

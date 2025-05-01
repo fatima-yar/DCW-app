@@ -531,6 +531,7 @@ export interface ApiNewsletterNewsletter extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    archived: Schema.Attribute.DynamicZone<['blocks.archived-newsletter']>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
