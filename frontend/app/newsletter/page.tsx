@@ -18,20 +18,11 @@ async function loader() {
 export default async function newsletter() {
   const data = await loader()
 
-  // Extract the archived date
-  const archivedDate =
-    data.archived && data.archived.length > 0 ? data.archived[0].date : null
-  const archivedLink =
-    data.archived && data.archived.length > 0 ? data.archived[0].link : null
-  console.log('Archived Date:', archivedDate)
-  console.log('Archived Link:', archivedLink)
+  const archivedItems = data.archived || []
+
   return (
     <div className="relative lg:mx-50 md:mx-30 sm:mx-10 text-black overflow-hidden bg-white font-[Convergence] lg:px-36 px-4">
-      <Newsletter
-        link={data.link}
-        archivedDate={archivedDate}
-        archivedLink={archivedLink}
-      />
+      <Newsletter link={data.link} archivedItems={archivedItems} />
     </div>
   )
 }

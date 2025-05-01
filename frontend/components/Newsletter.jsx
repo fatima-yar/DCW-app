@@ -1,4 +1,4 @@
-export default function Newsletter({ link, archivedDate, archivedLink }) {
+export default function Newsletter({ link, archivedItems = [] }) {
   console.log('lllinkkkk', link)
 
   if (!link) {
@@ -56,17 +56,19 @@ export default function Newsletter({ link, archivedDate, archivedLink }) {
           allow="fullscreen"
         ></iframe>
       </div>
-      {archivedDate && archivedLink && (
-        <>
-          <div className="bg-gray-200 pl-4">
-            <div className="font-[Convergence] text-lg py-4">
-              Archived Newsletters
-            </div>
-            <div className="font-[Convergence] text-sm pl-4 pb-4">
-              <a href={archivedLink}>&#9654; &nbsp;{archivedDate}</a>
-            </div>
+      {archivedItems.length > 0 && (
+        <div className="bg-gray-200 pl-4">
+          <div className="font-[Convergence] text-lg py-4">
+            Archived Newsletters
           </div>
-        </>
+          <div className="font-[Convergence] text-sm pl-4 pb-4">
+            {archivedItems.map((item) => (
+              <div key={item.id} className="pt-2">
+                <a href={item.link}>&#9654; &nbsp;{item.date}</a>
+              </div>
+            ))}
+          </div>
+        </div>
       )}
     </>
   )
