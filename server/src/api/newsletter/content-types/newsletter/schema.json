@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "newsletters",
+  "info": {
+    "singularName": "newsletter",
+    "pluralName": "newsletters",
+    "displayName": "Newsletter",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "link": {
+      "type": "string"
+    }
+  }
+}

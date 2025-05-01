@@ -9,7 +9,6 @@ async function loader() {
 }
 export default async function joinUsPage() {
   const data = await loader()
-  console.log('gfhlhfdgfdhkfjdhgkhfd', data.cta)
 
   return <JoinUs text={data.text} image={data.image} button={data.cta} />
 }

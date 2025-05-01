@@ -10,8 +10,6 @@ async function loader() {
 export default async function aboutUs() {
   const data = await loader()
   const content = data?.contents
-  console.log(data)
-  console.log('content :', content)
 
   return <AboutUs content={content} />
 }

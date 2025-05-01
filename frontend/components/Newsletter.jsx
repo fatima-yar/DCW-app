@@ -1,4 +1,5 @@
-export default function Newsletter() {
+export default function Newsletter({ link }) {
+  console.log('lllinkkkk', link)
   return (
     <>
       <div
@@ -28,19 +29,21 @@ export default function Newsletter() {
             padding: 0,
             margin: 0,
           }}
-          src="https://www.canva.com/design/DAGeJvmyQXo/sQA9RwG84mUQQZ7w2yYVcQ/view?embed"
+          src={`${link}?embed`}
+          // src="https://www.canva.com/design/DAGeJvmyQXo/sQA9RwG84mUQQZ7w2yYVcQ/view?embed"
+          // https://www.canva.com/design/DAGeJvmyQXo/sQA9RwG84mUQQZ7w2yYVcQ/view
           allowFullScreen
           allow="fullscreen"
         ></iframe>
       </div>
-      <a
+      {/* <a
         href="https://www.canva.com/design/DAGeJvmyQXo/sQA9RwG84mUQQZ7w2yYVcQ/view?utm_content=DAGeJvmyQXo&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
         target="_blank"
         rel="noopener"
       >
         DCW February Newsletter 2025
       </a>{' '}
-      by DreamCatchers WW
+      by DreamCatchers WW */}
     </>
   )
 }

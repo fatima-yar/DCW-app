@@ -189,3 +189,10 @@ export async function getJoinUs() {
 
   return await fetchAPI(url.href, { method: 'GET' })
 }
+
+export async function getNewsletter() {
+  const path = '/api/newsletter'
+  const BASE_URL = getStrapiURL()
+  const url = new URL(path, BASE_URL)
+  return await fetchAPI(url.href, { method: 'GET' })
+}

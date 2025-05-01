@@ -519,6 +519,35 @@ export interface ApiMissionStatementMissionStatement
   };
 }
 
+export interface ApiNewsletterNewsletter extends Struct.SingleTypeSchema {
+  collectionName: 'newsletters';
+  info: {
+    description: '';
+    displayName: 'Newsletter';
+    pluralName: 'newsletters';
+    singularName: 'newsletter';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    link: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::newsletter.newsletter'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiOurTeamOurTeam extends Struct.SingleTypeSchema {
   collectionName: 'our_teams';
   info: {
@@ -1147,6 +1176,7 @@ declare module '@strapi/strapi' {
       'api::join-us.join-us': ApiJoinUsJoinUs;
       'api::main-page.main-page': ApiMainPageMainPage;
       'api::mission-statement.mission-statement': ApiMissionStatementMissionStatement;
+      'api::newsletter.newsletter': ApiNewsletterNewsletter;
       'api::our-team.our-team': ApiOurTeamOurTeam;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::test.test': ApiTestTest;
