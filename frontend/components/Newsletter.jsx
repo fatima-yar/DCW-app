@@ -64,7 +64,9 @@ export default function Newsletter({ link, archivedItems = [] }) {
           <div className="font-[Convergence] text-sm pl-4 pb-4">
             {archivedItems.map((item) => (
               <div key={item.id} className="pt-2">
-                <a href={item.link}>&#9654; &nbsp;{item.date}</a>
+                <a target="_blank" href={item.link}>
+                  &#9654; &nbsp;{item.date}
+                </a>
               </div>
             ))}
           </div>
