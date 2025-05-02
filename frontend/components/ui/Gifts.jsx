@@ -1,13 +1,12 @@
 import Content from '../Contents'
 
-export default function Gifts() {
+export default function Gifts({ content }) {
+  console.log('goidsofodsif', content.header)
   return (
     <Content
-      header="Gifts"
-      content={[
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      ]}
-      image="/gifts.jpg"
+      header={content.header}
+      content={content.content}
+      image={content.image}
       imagePosition="right"
       bgColor="gray"
     />

@@ -26,8 +26,8 @@ export default function Contents({
             : ''
         }`}
       >
-        {isImageLeft && (
-          <div className="lg:w-2/3">
+        {isImageLeft && imageUrl && (
+          <div className="lg:w-4/3">
             <img
               src={imageUrl}
               alt={header}
@@ -46,8 +46,8 @@ export default function Contents({
           )}
         </div>
 
-        {isImageRight && (
-          <div className="lg:w-2/3">
+        {isImageRight && imageUrl && (
+          <div className="lg:w-4/3">
             <img
               src={imageUrl}
               alt={header}
@@ -57,7 +57,7 @@ export default function Contents({
         )}
       </div>
 
-      {image && imagePosition === 'bottom' && (
+      {image && imagePosition === 'bottom' && imageUrl && (
         <div className="pb-5 flex justify-center lg:px-36">
           <img src={imageUrl} alt={header} className="object-contain" />
         </div>

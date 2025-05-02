@@ -10,8 +10,9 @@ export default function Donate({ content }) {
   const donate = content?.donate
   const givealittle = content?.givealittle || []
   const directDonation = content?.directDonation
+  const gifts = content?.gifts || []
 
-  console.log('gal content:', givealittle)
+  console.log('gifts content:', gifts)
   return (
     <>
       <FadeInSection delay={0.1}>
@@ -29,13 +30,13 @@ export default function Donate({ content }) {
           <DirectDonation content={directDonation} />
         </div>
       </FadeInSection>
-      {/* 
 
       <FadeInSection delay={0.7}>
         <div id="gifts">
-          <Gifts />
+          <Gifts content={gifts} />
         </div>
       </FadeInSection>
+      {/* 
 
       <FadeInSection delay={0.9}>
         <div id="partnerships">

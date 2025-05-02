@@ -1,7 +1,7 @@
 import Content from '../Contents'
 
 export default function DirectDonation({ content }) {
-  console.log('directDonatio:', content)
+  // console.log('directDonatio:', content)
 
   return (
     <Content
