@@ -4,7 +4,7 @@ import { getAboutUs } from '../src/data/loaders'
 
 async function loader() {
   const data = await getAboutUs()
-  if (!data) notFound
+  if (!data) notFound()
   return { ...data.data }
 }
 export default async function aboutUs() {

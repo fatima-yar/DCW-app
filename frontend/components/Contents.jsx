@@ -37,9 +37,13 @@ export default function Contents({
         )}
 
         <div className="space-y-3 sm:space-y-4 text-md">
-          {content.split('\n\n').map((paragraph, idx) => (
-            <p key={idx}>{paragraph}</p>
-          ))}
+          {typeof content === 'string' ? (
+            content
+              .split('\n\n')
+              .map((paragraph, idx) => <p key={idx}>{paragraph}</p>)
+          ) : (
+            <p>No textual content available.</p>
+          )}
         </div>
 
         {isImageRight && (

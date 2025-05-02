@@ -147,6 +147,49 @@ const newsletterQuery = qs.stringify({
   },
 })
 
+const donateQuery = qs.stringify({
+  populate: {
+    Givealittle: {
+      on: {
+        'blocks.content': {
+          populate: {
+            image: {
+              fields: ['url', 'alternativeText'],
+            },
+          },
+        },
+        'elements.btn': true,
+      },
+    },
+    Partnrship: {
+      on: {
+        'blocks.content': {
+          populate: {
+            image: {
+              fields: ['url', 'alternativeText'],
+            },
+          },
+        },
+        'elements.btn': true,
+      },
+    },
+    Sponsorships: {
+      on: {
+        'blocks.content': {
+          populate: {
+            image: {
+              fields: ['url', 'alternativeText'],
+            },
+          },
+        },
+      },
+    },
+    Donate: true,
+    DirectDonation: true,
+    Gifts: true,
+  },
+})
+
 export async function getOurTeam() {
   const path = '/api/our-team'
   const BASE_URL = getStrapiURL()
@@ -201,5 +244,15 @@ export async function getNewsletter() {
   const BASE_URL = getStrapiURL()
   const url = new URL(path, BASE_URL)
   url.search = newsletterQuery
+  return await fetchAPI(url.href, { method: 'GET' })
+}
+
+export async function getDonate() {
+  const path = '/api/donate'
+  const BASE_URL = getStrapiURL()
+  const url = new URL(path, BASE_URL)
+  url.search = donateQuery
+  console.log('Donate API URL:', url.href)
+
   return await fetchAPI(url.href, { method: 'GET' })
 }

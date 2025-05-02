@@ -427,6 +427,46 @@ export interface ApiContactUsContactUs extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiDonateDonate extends Struct.SingleTypeSchema {
+  collectionName: 'donates';
+  info: {
+    description: '';
+    displayName: 'Donate';
+    pluralName: 'donates';
+    singularName: 'donate';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    DirectDonation: Schema.Attribute.Component<'blocks.content', false>;
+    Donate: Schema.Attribute.Component<'blocks.content', false>;
+    Gifts: Schema.Attribute.Component<'blocks.content', false>;
+    Givealittle: Schema.Attribute.DynamicZone<
+      ['elements.btn', 'blocks.content']
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::donate.donate'
+    > &
+      Schema.Attribute.Private;
+    Partnrship: Schema.Attribute.DynamicZone<
+      ['elements.btn', 'blocks.content']
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    Sponsorships: Schema.Attribute.DynamicZone<
+      ['elements.btn', 'blocks.content']
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiJoinUsJoinUs extends Struct.SingleTypeSchema {
   collectionName: 'join_uses';
   info: {
@@ -1174,6 +1214,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about-us.about-us': ApiAboutUsAboutUs;
       'api::contact-us.contact-us': ApiContactUsContactUs;
+      'api::donate.donate': ApiDonateDonate;
       'api::join-us.join-us': ApiJoinUsJoinUs;
       'api::main-page.main-page': ApiMainPageMainPage;
       'api::mission-statement.mission-statement': ApiMissionStatementMissionStatement;

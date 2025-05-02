@@ -1,0 +1,51 @@
+{
+  "kind": "singleType",
+  "collectionName": "donates",
+  "info": {
+    "singularName": "donate",
+    "pluralName": "donates",
+    "displayName": "Donate",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Donate": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.content"
+    },
+    "Givealittle": {
+      "type": "dynamiczone",
+      "components": [
+        "elements.btn",
+        "blocks.content"
+      ]
+    },
+    "DirectDonation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.content"
+    },
+    "Gifts": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.content"
+    },
+    "Partnrship": {
+      "type": "dynamiczone",
+      "components": [
+        "elements.btn",
+        "blocks.content"
+      ]
+    },
+    "Sponsorships": {
+      "type": "dynamiczone",
+      "components": [
+        "elements.btn",
+        "blocks.content"
+      ]
+    }
+  }
+}

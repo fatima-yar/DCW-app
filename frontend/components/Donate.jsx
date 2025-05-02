@@ -6,13 +6,15 @@ import Partnerships from './ui/Partnerships'
 import Sponsorships from './ui/Sponsorships'
 import FadeInSection from './FadeInSection'
 
-export default function Donate() {
+export default function Donate({ content }) {
+  const donate = content?.Donate
+  console.log('DonateUi DONATE content:', donate)
   return (
     <>
       <FadeInSection delay={0.1}>
-        <DonateUi />
+        <DonateUi content={donate} />
       </FadeInSection>
-
+      {/* 
       <FadeInSection delay={0.3}>
         <div id="givealittle">
           <Givealittle />
@@ -41,7 +43,7 @@ export default function Donate() {
         <div id="sponsorships">
           <Sponsorships />
         </div>
-      </FadeInSection>
+      </FadeInSection> */}
     </>
   )
 }
