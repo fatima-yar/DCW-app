@@ -27,7 +27,7 @@ export default function Contents({
         }`}
       >
         {isImageLeft && (
-          <div className="lg:w-1/3">
+          <div className="lg:w-2/3">
             <img
               src={imageUrl}
               alt={header}
@@ -42,12 +42,12 @@ export default function Contents({
               .split('\n\n')
               .map((paragraph, idx) => <p key={idx}>{paragraph}</p>)
           ) : (
-            <p>No textual content available.</p>
+            <p>No content available.</p>
           )}
         </div>
 
         {isImageRight && (
-          <div className="lg:w-1/3">
+          <div className="lg:w-2/3">
             <img
               src={imageUrl}
               alt={header}

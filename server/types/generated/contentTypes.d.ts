@@ -442,10 +442,10 @@ export interface ApiDonateDonate extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    DirectDonation: Schema.Attribute.Component<'blocks.content', false>;
-    Donate: Schema.Attribute.Component<'blocks.content', false>;
-    Gifts: Schema.Attribute.Component<'blocks.content', false>;
-    Givealittle: Schema.Attribute.DynamicZone<
+    directDonation: Schema.Attribute.Component<'blocks.content', false>;
+    donate: Schema.Attribute.Component<'blocks.content', false>;
+    gifts: Schema.Attribute.Component<'blocks.content', false>;
+    givealittle: Schema.Attribute.DynamicZone<
       ['elements.btn', 'blocks.content']
     >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -454,11 +454,11 @@ export interface ApiDonateDonate extends Struct.SingleTypeSchema {
       'api::donate.donate'
     > &
       Schema.Attribute.Private;
-    Partnrship: Schema.Attribute.DynamicZone<
+    partnrships: Schema.Attribute.DynamicZone<
       ['elements.btn', 'blocks.content']
     >;
     publishedAt: Schema.Attribute.DateTime;
-    Sponsorships: Schema.Attribute.DynamicZone<
+    sponsorships: Schema.Attribute.DynamicZone<
       ['elements.btn', 'blocks.content']
     >;
     updatedAt: Schema.Attribute.DateTime;

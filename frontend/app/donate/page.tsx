@@ -9,7 +9,7 @@ import { notFound } from 'next/navigation'
 async function loader() {
   const data = await getDonate()
   if (!data) notFound()
-  console.log('getDonate result:', data)
+  // console.log('getDonate result:', data)
   return { ...data.data }
 }
 export default async function donate() {

@@ -11,36 +11,36 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "Donate": {
+    "donate": {
       "type": "component",
       "repeatable": false,
       "component": "blocks.content"
     },
-    "Givealittle": {
+    "givealittle": {
       "type": "dynamiczone",
       "components": [
         "elements.btn",
         "blocks.content"
       ]
     },
-    "DirectDonation": {
+    "directDonation": {
       "type": "component",
       "repeatable": false,
       "component": "blocks.content"
     },
-    "Gifts": {
+    "gifts": {
       "type": "component",
       "repeatable": false,
       "component": "blocks.content"
     },
-    "Partnrship": {
+    "partnrships": {
       "type": "dynamiczone",
       "components": [
         "elements.btn",
         "blocks.content"
       ]
     },
-    "Sponsorships": {
+    "sponsorships": {
       "type": "dynamiczone",
       "components": [
         "elements.btn",

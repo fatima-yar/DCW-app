@@ -7,25 +7,29 @@ import Sponsorships from './ui/Sponsorships'
 import FadeInSection from './FadeInSection'
 
 export default function Donate({ content }) {
-  const donate = content?.Donate
-  console.log('DonateUi DONATE content:', donate)
+  const donate = content?.donate
+  const givealittle = content?.givealittle || []
+  const directDonation = content?.directDonation
+
+  console.log('gal content:', givealittle)
   return (
     <>
       <FadeInSection delay={0.1}>
         <DonateUi content={donate} />
       </FadeInSection>
-      {/* 
+
       <FadeInSection delay={0.3}>
         <div id="givealittle">
-          <Givealittle />
+          <Givealittle content={givealittle} />
         </div>
       </FadeInSection>
 
       <FadeInSection delay={0.5}>
         <div id="direct-donation">
-          <DirectDonation />
+          <DirectDonation content={directDonation} />
         </div>
       </FadeInSection>
+      {/* 
 
       <FadeInSection delay={0.7}>
         <div id="gifts">

@@ -149,7 +149,7 @@ const newsletterQuery = qs.stringify({
 
 const donateQuery = qs.stringify({
   populate: {
-    Givealittle: {
+    givealittle: {
       on: {
         'blocks.content': {
           populate: {
@@ -161,7 +161,7 @@ const donateQuery = qs.stringify({
         'elements.btn': true,
       },
     },
-    Partnrship: {
+    partnrships: {
       on: {
         'blocks.content': {
           populate: {
@@ -173,7 +173,7 @@ const donateQuery = qs.stringify({
         'elements.btn': true,
       },
     },
-    Sponsorships: {
+    sponsorships: {
       on: {
         'blocks.content': {
           populate: {
@@ -184,9 +184,27 @@ const donateQuery = qs.stringify({
         },
       },
     },
-    Donate: true,
-    DirectDonation: true,
-    Gifts: true,
+    donate: {
+      populate: {
+        image: {
+          fields: ['url', 'alternativeText'],
+        },
+      },
+    },
+    directDonation: {
+      populate: {
+        image: {
+          fields: ['url', 'alternativeText'],
+        },
+      },
+    },
+    gifts: {
+      populate: {
+        image: {
+          fields: ['url', 'alternativeText'],
+        },
+      },
+    },
   },
 })
 
