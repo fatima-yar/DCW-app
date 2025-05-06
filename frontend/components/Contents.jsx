@@ -14,7 +14,7 @@ export default function Contents({
 
   return (
     <div
-      className={`text-black ${bgClass} px-20 sm:px-10 md:mx-10 lg:mx-25 xl:mx-50 pt-10`}
+      className={`text-black ${bgClass} px-8 sm:px-10 md:mx-10 lg:mx-25 xl:mx-50 pt-10`}
     >
       <div className="font-[Convergence] text-3xl pl-4 lg:pl-36">{header}</div>
 
