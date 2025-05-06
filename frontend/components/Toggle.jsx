@@ -16,12 +16,12 @@ export default function ToggleSwitch() {
   }
 
   return (
-    <div className="lg:pl-20 pl-4 flex items-center space-x-4 relative  lg:mx-30 md:mx-30 sm:mx-10  text-black overflow-hidden pb-4">
+    <div className="lg:pl-20 pl-4 flex items-center space-x-2 relative  lg:mx-30 md:mx-30 sm:mx-10  text-black overflow-hidden pb-4">
       {/* NZ Flag */}
       <img
         src="/nzFlag.svg"
         alt="New Zealand Flag"
-        className={`w-10 h-10 md:w-8 md:h-8 transition-opacity duration-300 ${
+        className={`w-6 h-6 md:w-10 md:h-8 transition-opacity duration-300 ${
           isUK ? 'opacity-30' : 'opacity-100'
         }`}
       />
@@ -29,7 +29,7 @@ export default function ToggleSwitch() {
         {/* Toggle Button */}
         <div
           onClick={toggleSwitch}
-          className="w-16 h-6 md:w-20 md:h-8 flex items-center border-3 text-black rounded-full p-1 cursor-pointer transition-colors duration-300 relative"
+          className="w-10 h-4 md:w-16 md:h-7 flex items-center border-2  text-black rounded-full p-1 cursor-pointer transition-colors duration-300 relative"
         >
           {/* Text inside the toggle */}
           <span
@@ -42,8 +42,10 @@ export default function ToggleSwitch() {
 
           {/* Circle */}
           <div
-            className={`w-4 h-4 md:w-6 md:h-6 border-2 text-black bg-[#8A5082] rounded-full shadow-md transform transition-transform duration-300 ${
-              !isUK ? 'translate-x-0' : 'translate-x-9 md:translate-x-11 '
+            className={`w-3 h-3 md:w-5 md:h-5 border-1 text-black bg-[#8A5082] rounded-full shadow-md transform transition-transform duration-300 ${
+              !isUK
+                ? '-translate-x-1 md:translate-x-0'
+                : 'translate-x-5 md:translate-x-8 '
             }`}
           />
         </div>
@@ -54,7 +56,7 @@ export default function ToggleSwitch() {
       <img
         src="/ukFlag.svg"
         alt="UK Flag"
-        className={`w-10 h-10 md:w-8 md:h-8 transition-opacity duration-300 ${
+        className={`w-6 h-6 md:w-10 md:h-8 transition-opacity duration-300 ${
           isUK ? 'opacity-100' : 'opacity-30'
         }`}
       />

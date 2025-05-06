@@ -268,7 +268,7 @@ const Footer = () => {
                 <img
                   src="socialMedia/c-x.svg"
                   alt="xLogo"
-                  className="w-8 h-auto rounded-full opacity-80 hover:opacity-100 transform transition-transform duration-300 hover:scale-120"
+                  className="w-8 h-auto rounded-full opacity-60 hover:opacity-100 transform transition-transform duration-300 hover:scale-120"
                 />
               </a>
               <a
@@ -279,7 +279,7 @@ const Footer = () => {
                 <img
                   src="socialMedia/c-instagram.svg"
                   alt="instagramLogo"
-                  className="w-8 h-auto rounded-full opacity-80 hover:opacity-100 transform transition-transform duration-300 hover:scale-120"
+                  className="w-8 h-auto rounded-full opacity-60 hover:opacity-100 transform transition-transform duration-300 hover:scale-120"
                 />
               </a>
               <a
@@ -290,7 +290,7 @@ const Footer = () => {
                 <img
                   src="socialMedia/c-facebook.svg"
                   alt="facebookLogo"
-                  className="w-8 h-auto rounded-full opacity-80 hover:opacity-100 transform transition-transform duration-300 hover:scale-120"
+                  className="w-8 h-auto rounded-full opacity-60 hover:opacity-100 transform transition-transform duration-300 hover:scale-120"
                 />
               </a>
               <a
@@ -301,7 +301,7 @@ const Footer = () => {
                 <img
                   src="socialMedia/c-tiktok.svg"
                   alt="tiktokLogo"
-                  className="w-8 h-auto rounded-full opacity-80 hover:opacity-100 transform transition-transform duration-300 hover:scale-120"
+                  className="w-8 h-auto rounded-full opacity-60 hover:opacity-100 transform transition-transform duration-300 hover:scale-120"
                 />
               </a>
               <a
@@ -312,10 +312,10 @@ const Footer = () => {
                 <img
                   src="socialMedia/c-linkedin.svg"
                   alt="linkedinLogo"
-                  className="w-8 h-auto rounded-full opacity-80 hover:opacity-100 transform transition-transform duration-300 hover:scale-120"
+                  className="w-8 h-auto rounded-full opacity-60 hover:opacity-100 transform transition-transform duration-300 hover:scale-120"
                 />
               </a>
-                            <a
+              <a
                 href="https://wa.me/447516016779"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -323,7 +323,7 @@ const Footer = () => {
                 <img
                   src="socialMedia/c-whatsapp.svg"
                   alt="whatsappLogo"
-                  className="w-8 h-auto rounded-full opacity-80 hover:opacity-100 transform transition-transform duration-300 hover:scale-120"
+                  className="w-8 h-auto rounded-full opacity-60 hover:opacity-100 transform transition-transform duration-300 hover:scale-120"
                 />
               </a>
             </div>
