@@ -315,14 +315,14 @@ const Footer = () => {
                   className="w-8 h-auto rounded-full opacity-80 hover:opacity-100 transform transition-transform duration-300 hover:scale-120"
                 />
               </a>
-              <a
-                href="+44 7516 016 779"
+                            <a
+                href="https://wa.me/447516016779"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img
                   src="socialMedia/c-whatsapp.svg"
-                  alt="linkedinLogo"
+                  alt="whatsappLogo"
                   className="w-8 h-auto rounded-full opacity-80 hover:opacity-100 transform transition-transform duration-300 hover:scale-120"
                 />
               </a>
