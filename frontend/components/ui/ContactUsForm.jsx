@@ -3,14 +3,20 @@ import React from 'react'
 const ContactUs = () => {
   return (
     <div className="font-[Convergence]">
-      <h2 className="text-lg mt-10 font-semibold  mb-4 text-black">
+      <h2 className="text-lg mt-10 font-semibold mb-4 text-black">
         We’d Love to Hear From You!
       </h2>
-      <form className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <form
+        action="https://formspree.io/f/mpwddvzl"
+        method="POST"
+        className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+      >
         <div className="space-y-4">
           <div>
             <input
               type="text"
+              name="name"
+              required
               className="w-full p-2 border-[#c58cbe] border-2 rounded-md text-gray-600"
               placeholder="Name"
             />
@@ -19,14 +25,17 @@ const ContactUs = () => {
           <div>
             <input
               type="email"
+              name="email"
+              required
               className="w-full p-2 border-[#c58cbe] border-2 rounded-md text-gray-600"
-              placeholder="Mail"
+              placeholder="Email"
             />
           </div>
 
           <div>
             <input
               type="tel"
+              name="phone"
               className="w-full p-2 border-[#c58cbe] border-2 rounded-md text-gray-600"
               placeholder="Phone"
             />
@@ -35,6 +44,8 @@ const ContactUs = () => {
 
         <div>
           <textarea
+            name="message"
+            required
             className="w-full p-2 border-[#c58cbe] border-2 rounded-md text-gray-600"
             placeholder="Message"
             rows="6"
@@ -42,7 +53,10 @@ const ContactUs = () => {
         </div>
 
         <div className="col-span-2 text-center mt-4">
-          <button className="px-4 py-2 bg-[#ac7ba5] text-white rounded-md hover:bg-[#778d92]">
+          <button
+            type="submit"
+            className="px-4 py-2 bg-[#ac7ba5] text-white rounded-md hover:bg-[#778d92]"
+          >
             Submit
           </button>
         </div>

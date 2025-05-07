@@ -14,7 +14,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-gradient-to-r from-[#8A5082] to-[#A5CAD2] text-whi50 pt-10">
-      <div className="relative lg:mx-50 md:mx-30 sm:mx-10 pl-4">
+      <div className="relative lg:mx-50 md:mx-30 sm:mx-10 px-4">
         <div className="grid grid-cols-1 lg:grid-cols-5 font-[sansation] text-md">
           {['Home', 'What We Do', 'Join Us', 'Donate'].map((section) => (
             <div key={section}>
@@ -265,7 +265,11 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="x.svg" alt="xLogo" className="w-8 h-auto" />
+                <img
+                  src="socialMedia/c-x.svg"
+                  alt="xLogo"
+                  className="w-8 h-auto rounded-full opacity-60 hover:opacity-100 transform transition-transform duration-300 hover:scale-120"
+                />
               </a>
               <a
                 href="https://www.instagram.com/dreamcatchersworldwide/"
@@ -273,9 +277,9 @@ const Footer = () => {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="instagram.svg"
+                  src="socialMedia/c-instagram.svg"
                   alt="instagramLogo"
-                  className="w-8 h-auto"
+                  className="w-8 h-auto rounded-full opacity-60 hover:opacity-100 transform transition-transform duration-300 hover:scale-120"
                 />
               </a>
               <a
@@ -284,9 +288,9 @@ const Footer = () => {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="facebook.svg"
+                  src="socialMedia/c-facebook.svg"
                   alt="facebookLogo"
-                  className="w-8 h-auto"
+                  className="w-8 h-auto rounded-full opacity-60 hover:opacity-100 transform transition-transform duration-300 hover:scale-120"
                 />
               </a>
               <a
@@ -294,7 +298,11 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="tiktok.svg" alt="tiktokLogo" className="w-8 h-auto" />
+                <img
+                  src="socialMedia/c-tiktok.svg"
+                  alt="tiktokLogo"
+                  className="w-8 h-auto rounded-full opacity-60 hover:opacity-100 transform transition-transform duration-300 hover:scale-120"
+                />
               </a>
               <a
                 href="https://www.linkedin.com/company/dreamcatchers-worldwide"
@@ -302,26 +310,64 @@ const Footer = () => {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="linkedin.svg"
+                  src="socialMedia/c-linkedin.svg"
                   alt="linkedinLogo"
-                  className="w-8 h-auto"
+                  className="w-8 h-auto rounded-full opacity-60 hover:opacity-100 transform transition-transform duration-300 hover:scale-120"
                 />
               </a>
               <a
-                href="+44 7516 016 779"
+                href="https://wa.me/447516016779"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img
-                  src="whatsapp.svg"
-                  alt="linkedinLogo"
-                  className="w-8 h-auto"
+                  src="socialMedia/c-whatsapp.svg"
+                  alt="whatsappLogo"
+                  className="w-8 h-auto rounded-full opacity-60 hover:opacity-100 transform transition-transform duration-300 hover:scale-120"
                 />
               </a>
             </div>
           </div>
         </div>
-        <div className="grid lg:grid-cols-3 grid-rows-1 gap-1 pb-1 pt-10">
+
+        <div className="flex flex-col lg:grid lg:grid-cols-3 gap-2 s pb-1 pt-10 items-center pr-8">
+          {/* Left: Text Block */}
+          <div className="order-2 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-left">
+            <p className="font-[sansation] text-sm font-bold text-gray-100"></p>
+            <p className="font-[sansation] text-xs text-gray-100 pb-4">
+              <span className="font-bold pr-2"></span>
+              <br />
+              <span className="pt-40 block hidden lg:block">
+                © 2025 by DreamCatchers WorldWide
+              </span>
+            </p>
+          </div>
+
+          {/* Middle: Logo */}
+          <div className="order-1 lg:order-2 flex justify-center">
+            <a href="/">
+              <img
+                src="DCWhite.png"
+                alt="Logo"
+                className="h-auto max-h-24 object-contain"
+              />
+            </a>
+          </div>
+
+          {/* Right: Map */}
+          <div className="order-3 lg:order-3 flex justify-center lg:justify-end pb-4">
+            <div className="w-full max-w-xs">
+              <GoogleMapEmbed size="small" />
+            </div>
+          </div>
+
+          {/* Footer Text for small screens only */}
+          <div className="order-4 lg:hidden text-xs text-gray-100 text-center pt-2">
+            © 2025 by DreamCatchers WorldWide
+          </div>
+        </div>
+
+        {/* <div className="grid lg:grid-cols-3 grid-rows-1 gap-1 pb-1 pt-10">
           <div className="flex flex-col justify-between">
             <p className="font-[sansation] text-sm font-bold text-gray-100"></p>
             <p className="font-[sansation] text-xs text-gray-100 pb-4">
@@ -340,7 +386,7 @@ const Footer = () => {
           <div className="flex justify-end pb-4">
             <GoogleMapEmbed size="small" />
           </div>
-        </div>
+        </div> */}
       </div>
     </footer>
   )

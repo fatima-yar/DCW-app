@@ -49,12 +49,14 @@ export default function HamburgerMenu() {
         {/* Added margin-top to give space */}
         {activeMenu === 'home' && (
           <div className="bg-[#CADEE2] w-50 p-4 mt-0">
-            <a
-              href="/"
-              className="text-[#986100] text-md font-[Convergence] mb-2  font-bold"
-            >
-              Home
-            </a>
+            <div className="pb-2">
+              <a
+                href="/"
+                className="text-[#986100] text-md font-[Convergence] mb-2  font-bold"
+              >
+                Home
+              </a>
+            </div>
             <ul className="text-black text-sm font-[Convergence] space-y-2">
               <li>
                 <a href="about-us">About Us</a>
@@ -82,7 +84,7 @@ export default function HamburgerMenu() {
             >
               What We Do
             </a>
-            <div className="py-2">
+            <div className="pb-2">
               <a
                 href="what-we-do#projects"
                 className="text-[#986100] text-md font-[Convergence] mb-2 "
@@ -129,7 +131,7 @@ export default function HamburgerMenu() {
         )}
         {activeMenu === 'joinUs' && (
           <div className="bg-[#CADEE2] w-50 p-4 mt-0">
-            <div className="py-2">
+            <div className="pb-2">
               <a
                 href="join-us"
                 className="text-[#986100] text-md font-[Convergence] mb-2 font-bold"
@@ -149,7 +151,7 @@ export default function HamburgerMenu() {
         )}
         {activeMenu === 'donate' && (
           <div className="bg-[#CADEE2] w-50 p-4 mt-0">
-            <div className="py-2">
+            <div className="pb-2">
               <a
                 href="donate"
                 className="text-[#986100] text-md font-[Convergence] mb-2 font-bold"
