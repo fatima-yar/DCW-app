@@ -12,8 +12,8 @@ export default function ContactUsText() {
           information: <br />
           DreamCatchers WorldWide 272 New Windsor Street, New Windsor, Auckland
           0600 <br />
-          Email: support@dreamcatchersww.com Whatsapp: <br />
-          +64 21 083 74545 083 74545
+          Email:
+          <br /> support@dreamcatchersww.com <br /> Whatsapp: +64 21 083 74545
         </p>
       </div>
     </>

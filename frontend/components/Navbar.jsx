@@ -94,17 +94,34 @@ export default function Navbar() {
       )}
 
       {/* Mobile Hamburger Menu */}
-      <div>
-        <div className="block md:hidden sticky top-0 z-50 ml-4 pb-4">
+      <div className="ml-10">
+        <div className="block md:hidden sticky top-0 z-50 ml-4 pb-0">
           <div className="cursor-pointer" onClick={toggleMenu}>
-            <svg
-              className="block h-6 w-6 fill-current text-black"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>Mobile menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-            </svg>
+            {isMenuOpen ? (
+              // "X" icon
+              <svg
+                className="block h-6 w-6 fill-current text-black"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>Close menu</title>
+                <path d="M4.293 4.293L10 10l5.707-5.707 1.414 1.414L11.414 11.414l5.707 5.707-1.414 1.414L10 12.828l-5.707 5.707-1.414-1.414L8.586 11.414 2.879 5.707l1.414-1.414z" />
+              </svg>
+            ) : (
+              // Hamburger icon
+              <svg
+                className="block h-6 w-6 fill-current text-black"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>Mobile menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+              </svg>
+            )}
+
+            <p className="font-[Convergence] text-black text-sm">
+              {isMenuOpen ? 'Close' : 'Menu'}
+            </p>
           </div>
         </div>
 
