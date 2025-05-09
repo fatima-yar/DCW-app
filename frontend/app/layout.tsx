@@ -1,6 +1,7 @@
 // RootLayout.tsx
 import { Lora, Convergence, Dosis } from 'next/font/google' // Import the fonts
 import './globals.css'
+import { LocaleProvider } from '../components/LocaleContext'
 
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
@@ -54,14 +55,17 @@ export default function RootLayout({
           backgroundAttachment: 'fixed',
         }}
       >
-        <TopLogos />
-        <div className="lg:pt-5 pt-2  ">
-          <Toggle />
-          <Navbar />
-        </div>
-        {/* <main>{children}</main> */}
-        <PageWrapper>{children}</PageWrapper>
-        <Footer />
+        {' '}
+        <LocaleProvider>
+          <TopLogos />
+          <div className="lg:pt-5 pt-2  ">
+            <Toggle />
+            <Navbar />
+          </div>
+          {/* <main>{children}</main> */}
+          <PageWrapper>{children}</PageWrapper>
+          <Footer />
+        </LocaleProvider>
       </body>
     </html>
   )

@@ -6,6 +6,7 @@ export default function HeroBox({
   title,
   followingText,
   image,
+  imageUK,
   button,
   transparentBox,
 }) {
@@ -19,6 +20,7 @@ export default function HeroBox({
         title={title}
         followingText={followingText}
         image={image}
+        imageUK={imageUK}
         button={button}
         transparentBox={transparentBox}
       />

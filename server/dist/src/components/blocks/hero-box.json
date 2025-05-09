@@ -19,6 +19,14 @@
             "component": "elements.btn"
         },
         "image": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+                "images"
+            ]
+        },
+        "imageUK": {
             "allowedTypes": [
                 "images"
             ],

@@ -1,6 +1,7 @@
 import qs from 'qs'
 import { fetchAPI } from '../utils/fetch-api'
 import getStrapiURL from '../utils/get-strapi-url'
+import { Ultra } from 'next/font/google'
 
 const mainPageQuery = qs.stringify({
   populate: {
@@ -10,6 +11,9 @@ const mainPageQuery = qs.stringify({
         'blocks.hero-box': {
           populate: {
             image: {
+              fields: ['url', 'alternativeText'],
+            },
+            imageUK: {
               fields: ['url', 'alternativeText'],
             },
             cta: true,
@@ -64,6 +68,7 @@ export async function getMainPage() {
   const BASE_URL = getStrapiURL()
   const url = new URL(path, BASE_URL)
   url.search = mainPageQuery
+  console.log('query:', url.search)
 
   return await fetchAPI(url.href, { method: 'GET' })
 }

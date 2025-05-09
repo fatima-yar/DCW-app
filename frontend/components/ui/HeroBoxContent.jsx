@@ -1,28 +1,33 @@
+'use client'
 import DonateButton from './DonateButton'
-import { StrapiImage } from '../StrapiImage'
+// import { StrapiImage } from '../StrapiImage'
+import { useLocale } from '../LocaleContext'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 
+const StrapiImage = dynamic(
+  () => import('../StrapiImage').then((mod) => mod.StrapiImage),
+  {
+    ssr: false,
+  }
+)
 export default function HeroContent({
   title,
   followingText,
   image,
+  imageUK,
   button,
   transparentBox,
 }) {
+  const { isUK } = useLocale()
+  const selectedImage = isUK ? imageUK : image
   const colorCode = transparentBox?.colorCode || '#705F938F'
   return (
     <>
       <div className="relative lg:mx-50 md:mx-30 sm:mx-10 text-black overflow-hidden">
-        {/* Background image */}
-        {/* <img
-          src={image}
-          alt="bgImage"
-          className="w-full object-cover sm:h-[200px] md:h-[300px] lg:h-[400px]"
-        /> */}
-        {/* <Image src={imageUrl} alt={alt} className={className} {...rest} /> */}
         <StrapiImage
-          src={image?.url || '/bg.jpg'}
-          alt={image?.alternativeText || 'Background Image'}
+          src={selectedImage?.url || '/bg.jpg'}
+          alt={selectedImage?.alternativeText || 'Background Image'}
           className="w-full object-cover sm:h-[200px] md:h-[300px] lg:h-[400px]"
           width={1920}
           height={1080}

@@ -37,6 +37,7 @@ export interface BlocksHeroBox extends Struct.ComponentSchema {
     cta: Schema.Attribute.Component<'elements.btn', false>;
     followingText: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'>;
+    imageUK: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String;
   };
 }
