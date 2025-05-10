@@ -2,8 +2,11 @@
 import ContactUsText from './ui/ContactUsText'
 import ContactUsForm from './ui/ContactUsForm'
 import GoogleMapEmbed from './ui/GoogleMapEmbed'
+import GoogleMapEmbedUK from './ui/GoogleMapEmbedUK'
+import { useLocale } from './LocaleContext'
 
 export default function ContactUs({ text, textUK }) {
+  const { isUK } = useLocale()
   return (
     <div className=" flex flex-col gap-6 text-black overflow-hidden px-4 sm:px-10 md:px-20 lg:px-40">
       <div>
@@ -12,7 +15,7 @@ export default function ContactUs({ text, textUK }) {
           <ContactUsForm />
         </div>
         <div className="flex justify-center bg-white pt-5 pb-10 px-10">
-          <GoogleMapEmbed />
+          {isUK ? <GoogleMapEmbedUK /> : <GoogleMapEmbed />}
         </div>
       </div>
     </div>
