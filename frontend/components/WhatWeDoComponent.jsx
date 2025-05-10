@@ -2,6 +2,7 @@ import React from 'react'
 import Contents from './Contents'
 import Services from './ui/Services'
 import Events from './ui/Events'
+import Affiliations from './ui/Affiliations'
 import FadeInSection from './FadeInSection'
 
 export default function WhatWeDoComponent({ content }) {
@@ -18,6 +19,11 @@ export default function WhatWeDoComponent({ content }) {
       <FadeInSection delay={0.5}>
         <div id="events">
           <Events />
+        </div>
+      </FadeInSection>
+      <FadeInSection delay={0.5}>
+        <div id="affiliations">
+          <Affiliations />
         </div>
       </FadeInSection>
     </>

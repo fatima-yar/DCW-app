@@ -40,7 +40,10 @@ export default function Events() {
                 key={event.id || index}
                 src={image}
                 alt={alt}
-                caption={caption}
+                caption={event.caption}
+                captionUrl={event.captionUrl}
+                moreUrl={event.moreUrl}
+                moreText={event.moreText}
               />
             )
           })}
