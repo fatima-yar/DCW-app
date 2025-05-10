@@ -21,7 +21,12 @@ export default function InfoBox({
           missionUKImage={missionUKImage}
         />
         <div className="pt-20 ">
-          <WhatWeDo />
+          <WhatWeDo
+            serviceNZ={serviceNZ}
+            serviceUK={serviceUK}
+            serviceNZImage={serviceNZImage}
+            serviceUKImage={serviceUKImage}
+          />
         </div>
       </div>
     </>

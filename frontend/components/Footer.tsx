@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 import { useLocale } from './LocaleContext'
 import GoogleMapEmbed from './ui/GoogleMapEmbed'
@@ -9,6 +9,13 @@ import Link from 'next/link'
 const Footer = () => {
   const { isUK } = useLocale()
   const [openSection, setOpenSection] = useState(null)
+  const [hasMounted, setHasMounted] = useState(false)
+
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+
+  if (!hasMounted) return null
 
   const toggleSection = (section: any) => {
     setOpenSection(openSection === section ? null : section)

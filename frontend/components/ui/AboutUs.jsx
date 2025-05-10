@@ -1,24 +1,20 @@
 'use client'
 import OurMissionPhoto from './OurMissionPhoto'
 import dynamic from 'next/dynamic'
-import { StrapiImage } from '../StrapiImage'
+// import { StrapiImage } from '../StrapiImage'
 import Button from './Button'
 import { useLocale } from '../LocaleContext'
-// const StrapiImage = dynamic(
-//   () => import('../StrapiImage').then((mod) => mod.StrapiImage),
-//   {
-//     ssr: false,
-//   }
-// )
+const StrapiImage = dynamic(
+  () => import('../StrapiImage').then((mod) => mod.StrapiImage),
+  {
+    ssr: false,
+  }
+)
 export default function AboutUs({
   missionNZ,
-  serviceNZ,
   missionUK,
-  serviceUK,
   missionNZImage,
-  serviceNZImage,
   missionUKImage,
-  serviceUKImage,
 }) {
   const { isUK } = useLocale()
   const selectedImage = isUK ? missionUKImage : missionNZImage
