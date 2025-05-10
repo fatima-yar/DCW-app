@@ -38,7 +38,7 @@ export default function HeroContent({
           style={{
             backgroundColor: `${colorCode}${'80'}`,
           }} // Dynamically set background color from transparentBox
-          className="lg:mx-10 lg:my-15 mx-5 my-5 absolute bg-[#705F938F] inset-0 opacity-100 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-3 gap-1"
+          className="lg:mx-10 lg:my-15 mx-5 my-5 absolute bg-[#705f93be] inset-0 opacity-100 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-3 gap-1"
         >
           {/* Big Text */}
           <div className="col-span-1 md:col-span-2 lg:col-span-2 row-start-1">

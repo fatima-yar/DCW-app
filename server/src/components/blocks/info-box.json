@@ -7,11 +7,49 @@
   },
   "options": {},
   "attributes": {
-    "mission": {
+    "missionNZ": {
       "type": "text"
     },
-    "projects": {
+    "missionNZImage": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "serviceNZ": {
       "type": "text"
+    },
+    "serviceNZImage": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "missionUK": {
+      "type": "text"
+    },
+    "missionUKImage": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "serviceUK": {
+      "type": "text"
+    },
+    "serviceUKImage": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

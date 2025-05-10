@@ -1,7 +1,14 @@
 import WhatWeDoPhoto3in1 from './WhatWeDoPhoto3in1'
 import Button from './Button'
 
-export default function AboutUs() {
+export default function AboutUs({
+  missionUK,
+  serviceUK,
+  missionNZImage,
+  serviceNZImage,
+  missionUKImage,
+  serviceUKImage,
+}) {
   return (
     <div className="">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-1 lg:gap-4">

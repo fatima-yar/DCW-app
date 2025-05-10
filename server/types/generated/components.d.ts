@@ -50,8 +50,14 @@ export interface BlocksInfoBox extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    mission: Schema.Attribute.Text;
-    projects: Schema.Attribute.Text;
+    missionNZ: Schema.Attribute.Text;
+    missionNZImage: Schema.Attribute.Media<'images' | 'files'>;
+    missionUK: Schema.Attribute.Text;
+    missionUKImage: Schema.Attribute.Media<'images' | 'files'>;
+    serviceNZ: Schema.Attribute.Text;
+    serviceNZImage: Schema.Attribute.Media<'images' | 'files'>;
+    serviceUK: Schema.Attribute.Text;
+    serviceUKImage: Schema.Attribute.Media<'images' | 'files'>;
   };
 }
 

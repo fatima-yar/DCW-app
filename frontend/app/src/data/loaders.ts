@@ -19,7 +19,22 @@ const mainPageQuery = qs.stringify({
             cta: true,
           },
         },
-        'blocks.info-box': true,
+        'blocks.info-box': {
+          populate: {
+            missionNZImage: {
+              fields: ['url', 'alternativeText'],
+            },
+            serviceNZImage: {
+              fields: ['url', 'alternativeText'],
+            },
+            missionUKImage: {
+              fields: ['url', 'alternativeText'],
+            },
+            serviceUKImage: {
+              fields: ['url', 'alternativeText'],
+            },
+          },
+        },
       },
     },
   },
