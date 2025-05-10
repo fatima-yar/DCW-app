@@ -16,6 +16,12 @@
       "components": [
         "blocks.photo"
       ]
+    },
+    "blocksUK": {
+      "type": "dynamiczone",
+      "components": [
+        "blocks.photo"
+      ]
     }
   }
 }

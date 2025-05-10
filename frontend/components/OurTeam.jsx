@@ -3,16 +3,22 @@
 import { useEffect, useState } from 'react'
 import { getOurTeam } from '../app/src/data/loaders'
 import getStrapiURL from '../app/src/utils/get-strapi-url'
+import { useLocale } from './LocaleContext'
 
 export function OurTeam() {
-  const [team, setTeam] = useState([])
+  const [teamNZ, setTeamNZ] = useState([])
+  const [teamUK, setTeamUK] = useState([])
+  const { isUK } = useLocale()
+  const selectedTeam = isUK ? teamUK : teamNZ
 
   useEffect(() => {
     async function fetchTeam() {
       try {
         const res = await getOurTeam()
         const blocks = res?.data?.blocks || []
-        setTeam(blocks)
+        const blocksUK = res?.data?.blocksUK || []
+        setTeamNZ(blocks)
+        setTeamUK(blocksUK)
       } catch (error) {
         console.error('Failed to fetch team data:', error)
       }
@@ -27,7 +33,7 @@ export function OurTeam() {
         Our Team
       </div>
       <div className="bg-white py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10">
-        {team.map((member, index) => (
+        {selectedTeam.map((member, index) => (
           <div key={member.id} className="text-center">
             <div
               className={`${

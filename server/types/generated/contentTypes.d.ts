@@ -603,6 +603,7 @@ export interface ApiOurTeamOurTeam extends Struct.SingleTypeSchema {
   };
   attributes: {
     blocks: Schema.Attribute.DynamicZone<['blocks.photo']>;
+    blocksUK: Schema.Attribute.DynamicZone<['blocks.photo']>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

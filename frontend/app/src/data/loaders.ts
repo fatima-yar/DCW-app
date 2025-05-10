@@ -129,6 +129,17 @@ const photoQuery = qs.stringify(
           },
         },
       },
+      blocksUK: {
+        on: {
+          'blocks.photo': {
+            populate: {
+              image: {
+                fields: ['url', 'alternativeText'],
+              },
+            },
+          },
+        },
+      },
     },
   },
   { encodeValuesOnly: true }
