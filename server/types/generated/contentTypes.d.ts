@@ -382,6 +382,7 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
   };
   attributes: {
     contents: Schema.Attribute.Component<'blocks.content', false>;
+    contentsUK: Schema.Attribute.Component<'blocks.content', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

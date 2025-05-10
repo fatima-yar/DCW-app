@@ -105,6 +105,13 @@ const contentsQuery = qs.stringify({
         },
       },
     },
+    contentsUK: {
+      populate: {
+        image: {
+          fields: ['url', 'alternativeText'],
+        },
+      },
+    },
   },
 })
 
