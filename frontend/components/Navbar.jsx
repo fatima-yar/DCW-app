@@ -7,6 +7,7 @@ import NavbarJoinUsBox from './ui/NavbarJoinUsBox'
 import NavbarDonateBox from './ui/NavbarDonateBox'
 import HamburgerMenu from './ui/HamburgerMenu'
 import NavbarButton from './NavbarButtons'
+import { useLocale } from './LocaleContext'
 
 const navItems = [
   {
@@ -36,8 +37,14 @@ const navItems = [
 ]
 
 export default function Navbar() {
+  const { isUK } = useLocale()
   const [openBox, setOpenBox] = useState('')
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [hasMounted, setHasMounted] = useState(false)
+
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
 
   const handleClick = (key) => {
     setOpenBox((prev) => (prev === key ? '' : key))
@@ -71,7 +78,7 @@ export default function Navbar() {
                 isOpen={openBox === key}
                 handleClick={() => handleClick(key)}
                 label={label}
-                subLabel={subLabel}
+                subLabel={hasMounted && !isUK ? subLabel : ''}
               />
             </div>
           ))}
@@ -94,9 +101,9 @@ export default function Navbar() {
       )}
 
       {/* Mobile Hamburger Menu */}
-      <div className="ml-10">
+      <div className="ml-0">
         <div className="block md:hidden sticky top-0 z-50 ml-4 pb-0">
-          <div className="cursor-pointer" onClick={toggleMenu}>
+          <div className="cursor-pointer " onClick={toggleMenu}>
             {isMenuOpen ? (
               // "X" icon
               <svg
@@ -110,7 +117,7 @@ export default function Navbar() {
             ) : (
               // Hamburger icon
               <svg
-                className="block h-6 w-6 fill-current text-black"
+                className="block h-6 w-6 fill-current text-black  ml-1"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -119,7 +126,7 @@ export default function Navbar() {
               </svg>
             )}
 
-            <p className="font-[Convergence] text-black text-sm">
+            <p className="font-[Convergence] text-black text-xs pb-4">
               {isMenuOpen ? 'Close' : 'Menu'}
             </p>
           </div>

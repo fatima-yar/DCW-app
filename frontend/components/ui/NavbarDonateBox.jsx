@@ -1,4 +1,9 @@
+'use client'
+
+import { useLocale } from '../LocaleContext'
+
 export default function NavbarJoinUsBox() {
+  const { isUK } = useLocale()
   return (
     <div className="mx-16 sm:mx-8 lg:mx-50 bg-[#CADEE2] p-4 sm:p-6 mt-0 h-100">
       <div className="flex flex-wrap sm:flex-nowrap">
@@ -25,9 +30,15 @@ export default function NavbarJoinUsBox() {
           <div className="mt-6 sm:mt-8">
             <ul className="space-y-3 sm:space-y-4 text-xs sm:text-sm">
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                <a href="donate#givealittle" className="text-black">
-                  Give a little
-                </a>
+                {isUK ? (
+                  <a href="donate#givealittlegofundme" className="text-black">
+                    GoFundMe
+                  </a>
+                ) : (
+                  <a href="donate#givealittlegofundme" className="text-black">
+                    Givealittle
+                  </a>
+                )}
               </li>
               <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
                 <a href="donate#direct-donation" className="text-black">
