@@ -1,27 +1,23 @@
+'use client'
 import React from 'react'
+import { useLocale } from '../LocaleContext'
+import { useState, useEffect } from 'react'
 
-export default async function ContactUsText({ text }) {
-  // return (
-  //   <>
-  //     <div className="text-black">
-  //       <div className="font-[Convergence] text-3xl pt-10 pb-5">Contact Us</div>
-  //       <p>
-  //         Thank you for reaching out to us. <br />
-  //         If you need to get in touch with us, please use the following contact{' '}
-  //         <br />
-  //         information: <br />
-  //         DreamCatchers WorldWide 272 New Windsor Street, New Windsor, Auckland
-  //         0600 <br />
-  //         Email: support@dreamcatchersww.com Whatsapp: <br />
-  //         +64 21 083 74545 083 74545
-  //       </p>
-  //     </div>
-  //   </>
-  // )
+export default function ContactUsText({ text, textUK }) {
+  const { isUK } = useLocale()
+  const selectedText = isUK ? textUK : text
+  if (!selectedText) return null
+  const [hasMounted, setHasMounted] = useState(false)
+
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+
+  if (!hasMounted) return null
   return (
     <div className="text-black">
       <div className="font-[Convergence] text-3xl pt-10 pb-5">Contact Us</div>
-      <p className="whitespace-pre-line">{text}</p>
+      <p className="whitespace-pre-line">{selectedText}</p>
     </div>
   )
 }

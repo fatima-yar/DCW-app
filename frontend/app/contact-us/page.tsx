@@ -10,6 +10,7 @@ async function loader() {
 export default async function ContactUsPage() {
   const data = await loader()
   const text = data.text
+  const textUK = data.textUK
 
-  return <ContactUs text={text} />
+  return <ContactUs text={text} textUK={textUK} />
 }

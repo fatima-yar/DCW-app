@@ -13,6 +13,9 @@
   "attributes": {
     "text": {
       "type": "richtext"
+    },
+    "textUK": {
+      "type": "richtext"
     }
   }
 }

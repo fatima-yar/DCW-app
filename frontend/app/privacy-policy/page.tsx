@@ -11,5 +11,6 @@ async function loader() {
 export default async function privacyPolicy() {
   const data = await loader()
   const content = data?.contents
-  return <PrivacyPolicy content={content} />
+  const contentUK = data?.contentsUK
+  return <PrivacyPolicy content={content} contentUK={contentUK} />
 }

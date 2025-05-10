@@ -422,6 +422,7 @@ export interface ApiContactUsContactUs extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     text: Schema.Attribute.RichText;
+    textUK: Schema.Attribute.RichText;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -544,6 +545,7 @@ export interface ApiMissionStatementMissionStatement
   };
   attributes: {
     contents: Schema.Attribute.Component<'blocks.content', false>;
+    contentsUK: Schema.Attribute.Component<'blocks.content', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -623,6 +625,7 @@ export interface ApiOurTeamOurTeam extends Struct.SingleTypeSchema {
 export interface ApiPrivacyPolicyPrivacyPolicy extends Struct.SingleTypeSchema {
   collectionName: 'privacy_policies';
   info: {
+    description: '';
     displayName: 'Privacy Policy';
     pluralName: 'privacy-policies';
     singularName: 'privacy-policy';
@@ -632,6 +635,7 @@ export interface ApiPrivacyPolicyPrivacyPolicy extends Struct.SingleTypeSchema {
   };
   attributes: {
     contents: Schema.Attribute.Component<'blocks.content', false>;
+    contentsUK: Schema.Attribute.Component<'blocks.content', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

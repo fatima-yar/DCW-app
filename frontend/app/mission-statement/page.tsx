@@ -10,6 +10,7 @@ async function loader() {
 export default async function ourTeam() {
   const data = await loader()
   const content = data?.contents
+  const contentUK = data?.contentsUK
 
-  return <MissionStatement content={content} />
+  return <MissionStatement content={content} contentUK={contentUK} />
 }
