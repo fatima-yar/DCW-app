@@ -76,12 +76,28 @@ export interface BlocksMotto extends Struct.ComponentSchema {
 export interface BlocksPhoto extends Struct.ComponentSchema {
   collectionName: 'components_blocks_photos';
   info: {
+    description: '';
     displayName: 'photo';
     icon: 'landscape';
   };
   attributes: {
     description: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'>;
+  };
+}
+
+export interface BlocksServicePhoto extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_service_photos';
+  info: {
+    displayName: 'servicePhoto';
+    icon: 'landscape';
+  };
+  attributes: {
+    caption: Schema.Attribute.String;
+    captionUrl: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files'>;
+    moreText: Schema.Attribute.String;
+    moreUrl: Schema.Attribute.String;
   };
 }
 
@@ -117,6 +133,7 @@ declare module '@strapi/strapi' {
       'blocks.info-box': BlocksInfoBox;
       'blocks.motto': BlocksMotto;
       'blocks.photo': BlocksPhoto;
+      'blocks.service-photo': BlocksServicePhoto;
       'elements.btn': ElementsBtn;
       'elements.text': ElementsText;
     }

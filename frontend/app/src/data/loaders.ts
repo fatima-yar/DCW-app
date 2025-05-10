@@ -151,10 +151,25 @@ const whatWeDoQuery = qs.stringify(
       content: {
         populate: 'image',
       },
-      projects: {
+      services: {
         populate: 'image',
       },
       events: {
+        populate: 'image',
+      },
+      affiliations: {
+        populate: 'image',
+      },
+      contentUK: {
+        populate: 'image',
+      },
+      servicesUK: {
+        populate: 'image',
+      },
+      eventsUK: {
+        populate: 'image',
+      },
+      affiliationsUK: {
         populate: 'image',
       },
     },

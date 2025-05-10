@@ -16,15 +16,40 @@
       "repeatable": false,
       "component": "blocks.content"
     },
-    "projects": {
+    "services": {
       "type": "component",
       "repeatable": true,
-      "component": "blocks.photo"
+      "component": "blocks.service-photo"
     },
     "events": {
       "type": "component",
       "repeatable": true,
-      "component": "blocks.photo"
+      "component": "blocks.service-photo"
+    },
+    "affiliations": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.service-photo"
+    },
+    "contentUK": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.content"
+    },
+    "servicesUK": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.service-photo"
+    },
+    "eventsUK": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.service-photo"
+    },
+    "affiliationsUK": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.service-photo"
     }
   }
 }

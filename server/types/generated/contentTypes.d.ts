@@ -690,19 +690,24 @@ export interface ApiWhatWeDoWhatWeDo extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    affiliations: Schema.Attribute.Component<'blocks.service-photo', true>;
+    affiliationsUK: Schema.Attribute.Component<'blocks.service-photo', true>;
     content: Schema.Attribute.Component<'blocks.content', false>;
+    contentUK: Schema.Attribute.Component<'blocks.content', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    events: Schema.Attribute.Component<'blocks.photo', true>;
+    events: Schema.Attribute.Component<'blocks.service-photo', true>;
+    eventsUK: Schema.Attribute.Component<'blocks.service-photo', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::what-we-do.what-we-do'
     > &
       Schema.Attribute.Private;
-    projects: Schema.Attribute.Component<'blocks.photo', true>;
     publishedAt: Schema.Attribute.DateTime;
+    services: Schema.Attribute.Component<'blocks.service-photo', true>;
+    servicesUK: Schema.Attribute.Component<'blocks.service-photo', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
