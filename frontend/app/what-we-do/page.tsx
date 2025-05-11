@@ -4,11 +4,12 @@ import { getWhatWeDo } from '../src/data/loaders'
 
 async function loader() {
   const data = await getWhatWeDo()
-  if (!data) notFound
+  if (!data) notFound()
   return { ...data.data }
 }
 export default async function whatWeDo() {
   const data = await loader()
-  const content = data?.content
-  return <WhatWeDoComponent content={content} />
+  const content = data?.contents
+  const contentUK = data?.contentsUK
+  return <WhatWeDoComponent content={content} contentUK={contentUK} />
 }

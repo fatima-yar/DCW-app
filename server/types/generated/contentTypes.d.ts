@@ -382,7 +382,6 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
   };
   attributes: {
     contents: Schema.Attribute.Component<'blocks.content', false>;
-    contentsUK: Schema.Attribute.Component<'blocks.content', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -691,14 +690,11 @@ export interface ApiWhatWeDoWhatWeDo extends Struct.SingleTypeSchema {
   };
   attributes: {
     affiliations: Schema.Attribute.Component<'blocks.service-photo', true>;
-    affiliationsUK: Schema.Attribute.Component<'blocks.service-photo', true>;
-    content: Schema.Attribute.Component<'blocks.content', false>;
-    contentUK: Schema.Attribute.Component<'blocks.content', false>;
+    contents: Schema.Attribute.Component<'blocks.content', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     events: Schema.Attribute.Component<'blocks.service-photo', true>;
-    eventsUK: Schema.Attribute.Component<'blocks.service-photo', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -707,7 +703,6 @@ export interface ApiWhatWeDoWhatWeDo extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     services: Schema.Attribute.Component<'blocks.service-photo', true>;
-    servicesUK: Schema.Attribute.Component<'blocks.service-photo', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

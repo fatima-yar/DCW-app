@@ -19,7 +19,7 @@ export default function Affiliations() {
       }
     }
     fetchAffiliations()
-  })
+  }, [])
   return (
     <>
       <div className="text-black bg-white px-20 sm:px-10 md:mx-10 lg:mx-25 xl:mx-50 py-10">

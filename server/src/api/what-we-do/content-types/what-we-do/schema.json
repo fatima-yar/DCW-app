@@ -11,7 +11,7 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "content": {
+    "contents": {
       "type": "component",
       "repeatable": false,
       "component": "blocks.content"
@@ -27,26 +27,6 @@
       "component": "blocks.service-photo"
     },
     "affiliations": {
-      "type": "component",
-      "repeatable": true,
-      "component": "blocks.service-photo"
-    },
-    "contentUK": {
-      "type": "component",
-      "repeatable": false,
-      "component": "blocks.content"
-    },
-    "servicesUK": {
-      "type": "component",
-      "repeatable": true,
-      "component": "blocks.service-photo"
-    },
-    "eventsUK": {
-      "type": "component",
-      "repeatable": true,
-      "component": "blocks.service-photo"
-    },
-    "affiliationsUK": {
       "type": "component",
       "repeatable": true,
       "component": "blocks.service-photo"

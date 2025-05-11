@@ -148,30 +148,41 @@ const photoQuery = qs.stringify(
 const whatWeDoQuery = qs.stringify(
   {
     populate: {
-      content: {
-        populate: 'image',
+      contents: {
+        populate: {
+          image: {
+            fields: ['url', 'alternativeText'],
+          },
+        },
       },
       services: {
-        populate: 'image',
+        populate: {
+          image: {
+            fields: ['url', 'alternativeText'],
+          },
+        },
       },
       events: {
-        populate: 'image',
+        populate: {
+          image: {
+            fields: ['url', 'alternativeText'],
+          },
+        },
       },
       affiliations: {
-        populate: 'image',
+        populate: {
+          image: {
+            fields: ['url', 'alternativeText'],
+          },
+        },
       },
-      contentUK: {
-        populate: 'image',
-      },
-      servicesUK: {
-        populate: 'image',
-      },
-      eventsUK: {
-        populate: 'image',
-      },
-      affiliationsUK: {
-        populate: 'image',
-      },
+      // contentsUK: {
+      //   populate: {
+      //     image: {
+      //       fields: ['url', 'alternativeText'],
+      //     },
+      //   },
+      // },
     },
   },
   {
@@ -300,6 +311,7 @@ export async function getWhatWeDo() {
 
   return await fetchAPI(url.href, { method: 'GET' })
 }
+// export const getWhatWeDo = () => fetchContentPage('/api/what-we-do')
 
 export async function getJoinUs() {
   const path = '/api/join-us'

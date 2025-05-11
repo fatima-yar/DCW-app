@@ -8,7 +8,13 @@ export default function SquarePics({
 }) {
   return (
     <div className="text-center">
-      <img src={src} alt={alt} className="w-60 h-60 object-cover rounded-2xl" />
+      {src ? (
+        <img
+          src={src}
+          alt={alt}
+          className="w-60 h-60 object-cover rounded-2xl"
+        />
+      ) : null}
       <div className="mt-8 text-md text-gray-700 font-[Convergence] flex flex-col gap-2">
         {captionUrl ? (
           <a
