@@ -190,6 +190,13 @@ const whatWeDoQuery = qs.stringify(
           },
         },
       },
+      eventsUK: {
+        populate: {
+          image: {
+            fields: ['url', 'alternativeText'],
+          },
+        },
+      },
     },
   },
   {

@@ -13,6 +13,8 @@ export default function WhatWeDoComponent({
   contentUK,
   service,
   serviceUK,
+  event,
+  eventUK,
 }) {
   const { isUK } = useLocale()
   const selectedContent = isUK ? contentUK : content
@@ -44,7 +46,7 @@ export default function WhatWeDoComponent({
 
       <FadeInSection delay={0.5}>
         <div id="services">
-          <Events />
+          <Events event={event} eventUK={eventUK} />
         </div>
       </FadeInSection>
       <FadeInSection delay={0.5}>

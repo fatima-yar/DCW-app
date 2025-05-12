@@ -25,8 +25,6 @@ export default function Services({ service, serviceUK }) {
 
   const { isUK } = useLocale()
   const selectedService = isUK ? serviceUK : service
-  console.log('serviceeee', service)
-  console.log('serviceeeeUUUUK', serviceUK)
   if (!selectedService) return null
   const [hasMounted, setHasMounted] = useState(false)
 

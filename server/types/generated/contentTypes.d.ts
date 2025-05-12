@@ -696,6 +696,7 @@ export interface ApiWhatWeDoWhatWeDo extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     events: Schema.Attribute.Component<'blocks.service-photo', true>;
+    eventsUK: Schema.Attribute.Component<'blocks.service-photo', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

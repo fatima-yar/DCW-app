@@ -5,8 +5,9 @@ import { useEffect, useState } from 'react'
 import { getWhatWeDo } from '@/app/src/data/loaders'
 import getStrapiURL from '@/app/src/utils/get-strapi-url'
 import SquarePics from './SquarePics'
+import { useLocale } from '../LocaleContext'
 
-export default function Events() {
+export default function Events({ event, eventUK }) {
   const [events, setEvents] = useState([])
   useEffect(() => {
     async function fetchEvents() {
@@ -20,6 +21,18 @@ export default function Events() {
     }
     fetchEvents()
   }, [])
+
+  const { isUK } = useLocale()
+  const selectedEvent = isUK ? eventUK : event
+
+  if (!selectedEvent) return null
+  const [hasMounted, setHasMounted] = useState(false)
+
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+
+  if (!hasMounted) return null
   return (
     <>
       <div className="text-black bg-white px-20 sm:px-10 md:mx-10 lg:mx-25 xl:mx-50 py-10">
@@ -27,7 +40,7 @@ export default function Events() {
           Events
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center gap-y-16 lg:px-36 px-4">
-          {events.map((event, index) => {
+          {selectedEvent.map((event, index) => {
             const image = event.image?.url
               ? `${getStrapiURL()}${event.image.url}`
               : ''

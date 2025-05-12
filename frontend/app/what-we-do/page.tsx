@@ -19,6 +19,8 @@ export default async function whatWeDo() {
       contentUK={contentUK}
       service={data?.services}
       serviceUK={data?.servicesUK}
+      event={data?.events}
+      eventUK={data?.eventsUK}
     />
   )
 }

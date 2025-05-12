@@ -40,6 +40,11 @@
       "type": "component",
       "repeatable": true,
       "component": "blocks.service-photo"
+    },
+    "eventsUK": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.service-photo"
     }
   }
 }
