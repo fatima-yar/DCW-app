@@ -8,6 +8,12 @@ import { useLocale } from '../LocaleContext'
 
 export default function Services({ service, serviceUK }) {
   const [services, setServices] = useState([])
+  const [hasMounted, setHasMounted] = useState(false)
+  const { isUK } = useLocale()
+
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
 
   useEffect(() => {
     async function fetchServices() {
@@ -23,16 +29,8 @@ export default function Services({ service, serviceUK }) {
     fetchServices()
   }, [])
 
-  const { isUK } = useLocale()
   const selectedService = isUK ? serviceUK : service
-  if (!selectedService) return null
-  const [hasMounted, setHasMounted] = useState(false)
-
-  useEffect(() => {
-    setHasMounted(true)
-  }, [])
-
-  if (!hasMounted) return null
+  if (!hasMounted || !selectedService) return null
   return (
     <>
       <div className="text-black bg-white px-20 sm:px-10 md:mx-10 lg:mx-25 xl:mx-50 py-10">

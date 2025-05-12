@@ -45,6 +45,11 @@
       "type": "component",
       "repeatable": true,
       "component": "blocks.service-photo"
+    },
+    "affiliationsUK": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.service-photo"
     }
   }
 }

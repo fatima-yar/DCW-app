@@ -690,6 +690,7 @@ export interface ApiWhatWeDoWhatWeDo extends Struct.SingleTypeSchema {
   };
   attributes: {
     affiliations: Schema.Attribute.Component<'blocks.service-photo', true>;
+    affiliationsUK: Schema.Attribute.Component<'blocks.service-photo', true>;
     contents: Schema.Attribute.Component<'blocks.content', false>;
     contentsUK: Schema.Attribute.Component<'blocks.content', false>;
     createdAt: Schema.Attribute.DateTime;

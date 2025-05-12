@@ -197,6 +197,13 @@ const whatWeDoQuery = qs.stringify(
           },
         },
       },
+      affiliationsUK: {
+        populate: {
+          image: {
+            fields: ['url', 'alternativeText'],
+          },
+        },
+      },
     },
   },
   {

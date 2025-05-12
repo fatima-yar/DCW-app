@@ -5,21 +5,32 @@ import { useEffect, useState } from 'react'
 import { getWhatWeDo } from '@/app/src/data/loaders'
 import getStrapiURL from '@/app/src/utils/get-strapi-url'
 import SquarePics from './SquarePics'
+import { useLocale } from '../LocaleContext'
 
-export default function Affiliations() {
-  const [affiliations, setAffiliations] = useState([])
+export default function Affiliations({ affiliation, affiliationUK }) {
+  const [affiliations, seAffiliations] = useState([])
+  const [hasMounted, setHasMounted] = useState(false)
+  const { isUK } = useLocale()
+
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+
   useEffect(() => {
     async function fetchAffiliations() {
       try {
         const res = await getWhatWeDo()
-        const affiliationsBlocks = res?.data?.affiliations || []
-        setAffiliations(affiliationsBlocks)
+        const eventsBlocks = res?.data?.affiliations || []
+        setEvents(eventsBlocks)
       } catch (error) {
         console.error('Failed to fetch affiliations data:', error)
       }
     }
     fetchAffiliations()
   }, [])
+
+  const selectedAffiliations = isUK ? affiliationUK : affiliation
+  if (!hasMounted || !selectedAffiliations) return null
   return (
     <>
       <div className="text-black bg-white px-20 sm:px-10 md:mx-10 lg:mx-25 xl:mx-50 py-10">
@@ -27,7 +38,7 @@ export default function Affiliations() {
           Affiliations
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center gap-y-16 lg:px-36 px-4">
-          {affiliations.map((affiliation, index) => {
+          {selectedAffiliations.map((affiliation, index) => {
             const image = affiliation.image?.url
               ? `${getStrapiURL()}${affiliation.image.url}`
               : ''

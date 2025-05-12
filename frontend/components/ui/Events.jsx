@@ -9,6 +9,13 @@ import { useLocale } from '../LocaleContext'
 
 export default function Events({ event, eventUK }) {
   const [events, setEvents] = useState([])
+  const [hasMounted, setHasMounted] = useState(false)
+  const { isUK } = useLocale()
+
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+
   useEffect(() => {
     async function fetchEvents() {
       try {
@@ -22,17 +29,8 @@ export default function Events({ event, eventUK }) {
     fetchEvents()
   }, [])
 
-  const { isUK } = useLocale()
   const selectedEvent = isUK ? eventUK : event
-
-  if (!selectedEvent) return null
-  const [hasMounted, setHasMounted] = useState(false)
-
-  useEffect(() => {
-    setHasMounted(true)
-  }, [])
-
-  if (!hasMounted) return null
+  if (!hasMounted || !selectedEvent) return null
   return (
     <>
       <div className="text-black bg-white px-20 sm:px-10 md:mx-10 lg:mx-25 xl:mx-50 py-10">
