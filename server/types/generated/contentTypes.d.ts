@@ -487,6 +487,7 @@ export interface ApiJoinUsJoinUs extends Struct.SingleTypeSchema {
     ctaUK: Schema.Attribute.Component<'elements.btn', false>;
     image: Schema.Attribute.Media<'images'>;
     imageUK: Schema.Attribute.Media<'images'>;
+    imageVolunteer: Schema.Attribute.Media<'images' | 'files'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

@@ -18,6 +18,7 @@ export default async function joinUsPage() {
       textUK={data.textUK}
       imageUK={data.imageUK}
       buttonUK={data.ctaUK}
+      imageVolunteer={data.imageVolunteer}
     />
   )
 }

@@ -27,7 +27,7 @@ export default function Contents({
         }`}
       >
         {isImageLeft && imageUrl && (
-          <div className="lg:w-4/3">
+          <div className="lg:w-1/3">
             <img
               src={imageUrl}
               alt={header}
@@ -47,7 +47,7 @@ export default function Contents({
         </div>
 
         {isImageRight && imageUrl && (
-          <div className="lg:w-1/3">
+          <div className="lg:w-2/3">
             <img
               src={imageUrl}
               alt={header}

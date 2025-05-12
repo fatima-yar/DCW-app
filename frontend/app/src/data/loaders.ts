@@ -222,6 +222,9 @@ const joinUsQuery = qs.stringify(
         fields: ['url', 'alternativeText'],
       },
       ctaUK: true,
+      imageVolunteer: {
+        fields: ['url', 'alternativeText'],
+      },
     },
   },
 

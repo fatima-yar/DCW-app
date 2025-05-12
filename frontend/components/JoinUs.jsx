@@ -11,6 +11,7 @@ export default function JoinUs({
   textUK,
   imageUK,
   buttonUK,
+  imageVolunteer,
 }) {
   const { isUK } = useLocale()
   const selectedText = isUK ? textUK : text
@@ -43,7 +44,7 @@ export default function JoinUs({
                 alt={selectedImage?.alternativeText}
                 width={400}
                 height={240}
-                className="w-auto h-auto"
+                className="w-auto h-40"
               />
             </div>
           </div>
@@ -58,6 +59,14 @@ export default function JoinUs({
             <GeneralBtn cta={selectedButton} />
           </div>
         </div>
+
+        <StrapiImage
+          src={imageVolunteer?.url}
+          alt={imageVolunteer?.alternativeText}
+          width={400}
+          height={240}
+          className="w-full "
+        />
       </div>
     </>
   )
