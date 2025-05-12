@@ -10,5 +10,14 @@ async function loader() {
 export default async function joinUsPage() {
   const data = await loader()
 
-  return <JoinUs text={data.text} image={data.image} button={data.cta} />
+  return (
+    <JoinUs
+      text={data.text}
+      image={data.image}
+      button={data.cta}
+      textUK={data.textUK}
+      imageUK={data.imageUK}
+      buttonUK={data.ctaUK}
+    />
+  )
 }

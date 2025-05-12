@@ -12,7 +12,14 @@ export function StrapiImage({ src, alt, className, ...rest }) {
     )
   }
 
-  return <Image src={imageUrl} alt={alt} className={className} {...rest} />
+  return (
+    <Image
+      src={imageUrl}
+      alt={alt || 'Image'}
+      className={className}
+      {...rest}
+    />
+  )
 }
 
 export function getStrapiMedia(url) {

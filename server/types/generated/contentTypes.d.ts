@@ -484,7 +484,9 @@ export interface ApiJoinUsJoinUs extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     cta: Schema.Attribute.Component<'elements.btn', false>;
+    ctaUK: Schema.Attribute.Component<'elements.btn', false>;
     image: Schema.Attribute.Media<'images'>;
+    imageUK: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -493,6 +495,7 @@ export interface ApiJoinUsJoinUs extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     text: Schema.Attribute.RichText;
+    textUK: Schema.Attribute.RichText;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

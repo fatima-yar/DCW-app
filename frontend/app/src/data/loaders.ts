@@ -218,6 +218,10 @@ const joinUsQuery = qs.stringify(
         fields: ['url', 'alternativeText'],
       },
       cta: true,
+      imageUK: {
+        fields: ['url', 'alternativeText'],
+      },
+      ctaUK: true,
     },
   },
 
