@@ -4,8 +4,9 @@ import { useEffect, useState } from 'react'
 import { getWhatWeDo } from '@/app/src/data/loaders'
 import getStrapiURL from '@/app/src/utils/get-strapi-url'
 import SquarePics from './SquarePics'
+import { useLocale } from '../LocaleContext'
 
-export default function Services() {
+export default function Services({ service, serviceUK }) {
   const [services, setServices] = useState([])
 
   useEffect(() => {
@@ -21,6 +22,19 @@ export default function Services() {
 
     fetchServices()
   }, [])
+
+  const { isUK } = useLocale()
+  const selectedService = isUK ? serviceUK : service
+  console.log('serviceeee', service)
+  console.log('serviceeeeUUUUK', serviceUK)
+  if (!selectedService) return null
+  const [hasMounted, setHasMounted] = useState(false)
+
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+
+  if (!hasMounted) return null
   return (
     <>
       <div className="text-black bg-white px-20 sm:px-10 md:mx-10 lg:mx-25 xl:mx-50 py-10">
@@ -28,7 +42,7 @@ export default function Services() {
           Services
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center gap-y-16 lg:px-36 px-4">
-          {services.map((service, index) => {
+          {selectedService.map((service, index) => {
             const image = service.image?.url
               ? `${getStrapiURL()}${service.image.url}`
               : ''

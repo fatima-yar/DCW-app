@@ -704,6 +704,7 @@ export interface ApiWhatWeDoWhatWeDo extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     services: Schema.Attribute.Component<'blocks.service-photo', true>;
+    servicesUK: Schema.Attribute.Component<'blocks.service-photo', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

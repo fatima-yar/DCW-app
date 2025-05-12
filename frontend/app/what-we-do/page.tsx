@@ -5,6 +5,7 @@ import { getWhatWeDo } from '../src/data/loaders'
 async function loader() {
   const data = await getWhatWeDo()
   if (!data) notFound()
+
   return { ...data.data }
 }
 export default async function whatWeDo() {
@@ -12,6 +13,13 @@ export default async function whatWeDo() {
   const content = data?.contents
   const contentUK = data?.contentsUK
 
-  return <WhatWeDoComponent content={content} contentUK={contentUK} />
+  return (
+    <WhatWeDoComponent
+      content={content}
+      contentUK={contentUK}
+      service={data?.services}
+      serviceUK={data?.servicesUK}
+    />
+  )
 }
 // contentUK={contentUK}

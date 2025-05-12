@@ -35,6 +35,11 @@
       "type": "component",
       "repeatable": false,
       "component": "blocks.content"
+    },
+    "servicesUK": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.service-photo"
     }
   }
 }

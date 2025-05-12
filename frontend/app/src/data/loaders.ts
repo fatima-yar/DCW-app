@@ -183,6 +183,13 @@ const whatWeDoQuery = qs.stringify(
           },
         },
       },
+      servicesUK: {
+        populate: {
+          image: {
+            fields: ['url', 'alternativeText'],
+          },
+        },
+      },
     },
   },
   {

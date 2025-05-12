@@ -8,12 +8,18 @@ import FadeInSection from './FadeInSection'
 import { useLocale } from './LocaleContext'
 import { useState, useEffect } from 'react'
 
-export default function WhatWeDoComponent({ content, contentUK }) {
+export default function WhatWeDoComponent({
+  content,
+  contentUK,
+  service,
+  serviceUK,
+}) {
   const { isUK } = useLocale()
   const selectedContent = isUK ? contentUK : content
-  console.log('content', content)
-  console.log('contentUUUUKKK', contentUK)
-  if (!selectedContent) return null
+  const selectedService = isUK ? serviceUK : service
+
+  if (!selectedContent || !selectedService) return null
+
   const [hasMounted, setHasMounted] = useState(false)
 
   useEffect(() => {
@@ -32,7 +38,7 @@ export default function WhatWeDoComponent({ content, contentUK }) {
       </FadeInSection>
       <FadeInSection delay={0.5}>
         <div id="services">
-          <Services />
+          <Services service={service} serviceUK={serviceUK} />
         </div>
       </FadeInSection>
 
