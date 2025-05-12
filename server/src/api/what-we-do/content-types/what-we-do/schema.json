@@ -30,6 +30,11 @@
       "type": "component",
       "repeatable": true,
       "component": "blocks.service-photo"
+    },
+    "contentsUK": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.content"
     }
   }
 }

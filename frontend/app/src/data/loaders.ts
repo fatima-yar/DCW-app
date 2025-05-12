@@ -176,13 +176,13 @@ const whatWeDoQuery = qs.stringify(
           },
         },
       },
-      // contentsUK: {
-      //   populate: {
-      //     image: {
-      //       fields: ['url', 'alternativeText'],
-      //     },
-      //   },
-      // },
+      contentsUK: {
+        populate: {
+          image: {
+            fields: ['url', 'alternativeText'],
+          },
+        },
+      },
     },
   },
   {
@@ -308,6 +308,7 @@ export async function getWhatWeDo() {
   const BASE_URL = getStrapiURL()
   const url = new URL(path, BASE_URL)
   url.search = whatWeDoQuery
+  console.log('fetchhhh', url.href)
 
   return await fetchAPI(url.href, { method: 'GET' })
 }

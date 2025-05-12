@@ -11,5 +11,7 @@ export default async function whatWeDo() {
   const data = await loader()
   const content = data?.contents
   const contentUK = data?.contentsUK
+
   return <WhatWeDoComponent content={content} contentUK={contentUK} />
 }
+// contentUK={contentUK}

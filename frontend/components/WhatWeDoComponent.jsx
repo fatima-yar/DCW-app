@@ -8,49 +8,26 @@ import FadeInSection from './FadeInSection'
 import { useLocale } from './LocaleContext'
 import { useState, useEffect } from 'react'
 
-// export default function WhatWeDoComponent({ content }) {
-//   console.log(content)
-//   return (
-//     <>
-//       <FadeInSection delay={0.3}>
-//         <Contents header={content.header} content={content.content} />
-//       </FadeInSection>
-//       <FadeInSection delay={0.5}>
-//         <div id="services">
-//           <Services />
-//         </div>{' '}
-//       </FadeInSection>
-//       <FadeInSection delay={0.5}>
-//         <div id="events">
-//           <Events />
-//         </div>
-//       </FadeInSection>
-//       <FadeInSection delay={0.5}>
-//         <div id="affiliations">
-//           <Affiliations />
-//         </div>
-//       </FadeInSection>
-//     </>
-//   )
-// }
-export default function WhatWeDoComponent({ content }) {
+export default function WhatWeDoComponent({ content, contentUK }) {
   const { isUK } = useLocale()
-  // const selectedContent = isUK ? contentUK : content
-  // if (!selectedContent) return null
-  // const [hasMounted, setHasMounted] = useState(false)
+  const selectedContent = isUK ? contentUK : content
+  console.log('content', content)
+  console.log('contentUUUUKKK', contentUK)
+  if (!selectedContent) return null
+  const [hasMounted, setHasMounted] = useState(false)
 
-  // useEffect(() => {
-  //   setHasMounted(true)
-  // }, [])
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
 
-  // if (!hasMounted) return null
+  if (!hasMounted) return null
   return (
     <>
       <FadeInSection delay={0.3}>
         <Contents
-          header={content.header}
-          content={content.content}
-          image={content.image}
+          header={selectedContent.header}
+          content={selectedContent.content}
+          image={selectedContent.image}
         />
       </FadeInSection>
       <FadeInSection delay={0.5}>
