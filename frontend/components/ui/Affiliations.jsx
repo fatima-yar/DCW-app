@@ -8,7 +8,7 @@ import SquarePics from './SquarePics'
 import { useLocale } from '../LocaleContext'
 
 export default function Affiliations({ affiliation, affiliationUK }) {
-  const [affiliations, seAffiliations] = useState([])
+  const [affiliations, setAffiliations] = useState([])
   const [hasMounted, setHasMounted] = useState(false)
   const { isUK } = useLocale()
 
@@ -21,7 +21,7 @@ export default function Affiliations({ affiliation, affiliationUK }) {
       try {
         const res = await getWhatWeDo()
         const eventsBlocks = res?.data?.affiliations || []
-        setEvents(eventsBlocks)
+        setAffiliations(eventsBlocks)
       } catch (error) {
         console.error('Failed to fetch affiliations data:', error)
       }
