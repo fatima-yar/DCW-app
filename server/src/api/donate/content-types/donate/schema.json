@@ -33,7 +33,7 @@
       "repeatable": false,
       "component": "blocks.content"
     },
-    "partnrships": {
+    "partnerships": {
       "type": "dynamiczone",
       "components": [
         "elements.btn",

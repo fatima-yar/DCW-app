@@ -253,7 +253,7 @@ const donateQuery = qs.stringify({
         'elements.btn': true,
       },
     },
-    partnrships: {
+    partnerships: {
       on: {
         'blocks.content': {
           populate: {
@@ -274,6 +274,7 @@ const donateQuery = qs.stringify({
             },
           },
         },
+        'elements.btn': true,
       },
     },
     donate: {

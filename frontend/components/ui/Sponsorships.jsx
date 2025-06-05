@@ -1,21 +1,27 @@
 import Content from '../Contents'
 import Button from './Button'
 
-export default function sponsorships() {
+export default function sponsorships({ content }) {
+  const contentBlock = content.find((p) => p.__component === 'blocks.content')
+  const buttonBlock = content.find((p) => p.__component === 'elements.btn')
+
+  if (!contentBlock) return null
+
   return (
     <>
       <Content
-        header="sponsorships (CSR)"
-        content={[
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequa.',
-        ]}
+        header={contentBlock.header}
+        content={contentBlock.content}
+        image={contentBlock.image}
         bgColor="gray"
-        image="/sponsorship.jpg"
-        imagePosition="right"
       />
       <div className="text-black bg-gray-100 md:mx-10 lg:mx-25 xl:mx-50 pt-5">
         <div className="flex justify-center">
-          <Button text="GO!" link="contact-us" newTab={true} />
+          <Button
+            text={buttonBlock.text}
+            link={buttonBlock.href}
+            newTab={true}
+          />
         </div>
       </div>
     </>

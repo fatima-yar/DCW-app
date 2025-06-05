@@ -11,8 +11,6 @@ export default function Donate({ content }) {
   const givealittle = content?.givealittle || []
   const directDonation = content?.directDonation
   const gifts = content?.gifts || []
-  const partnerships = content?.partnerships || []
-  const sponsorships = content?.sponsorships || []
 
   console.log('gifts content:', gifts)
   return (
@@ -38,18 +36,19 @@ export default function Donate({ content }) {
           <Gifts content={gifts} />
         </div>
       </FadeInSection>
+      {/* 
 
       <FadeInSection delay={0.9}>
         <div id="partnerships">
-          <Partnerships content={partnerships} />
+          <Partnerships />
         </div>
       </FadeInSection>
 
       <FadeInSection delay={1}>
         <div id="sponsorships">
-          <Sponsorships content={sponsorships} />
+          <Sponsorships />
         </div>
-      </FadeInSection>
+      </FadeInSection> */}
     </>
   )
 }

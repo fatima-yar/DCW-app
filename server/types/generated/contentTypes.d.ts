@@ -455,7 +455,7 @@ export interface ApiDonateDonate extends Struct.SingleTypeSchema {
       'api::donate.donate'
     > &
       Schema.Attribute.Private;
-    partnrships: Schema.Attribute.DynamicZone<
+    partnerships: Schema.Attribute.DynamicZone<
       ['elements.btn', 'blocks.content']
     >;
     publishedAt: Schema.Attribute.DateTime;
