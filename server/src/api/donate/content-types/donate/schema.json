@@ -46,6 +46,42 @@
         "elements.btn",
         "blocks.content"
       ]
+    },
+    "donateUK": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.content"
+    },
+    "gofundme": {
+      "type": "dynamiczone",
+      "components": [
+        "elements.btn",
+        "blocks.content"
+      ]
+    },
+    "directDonationUK": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.content"
+    },
+    "giftsUK": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.content"
+    },
+    "partnershipsUK": {
+      "type": "dynamiczone",
+      "components": [
+        "elements.btn",
+        "blocks.content"
+      ]
+    },
+    "sponsorshipsUK": {
+      "type": "dynamiczone",
+      "components": [
+        "elements.btn",
+        "blocks.content"
+      ]
     }
   }
 }

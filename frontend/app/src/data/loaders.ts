@@ -298,6 +298,63 @@ const donateQuery = qs.stringify({
         },
       },
     },
+    gofundme: {
+      on: {
+        'blocks.content': {
+          populate: {
+            image: {
+              fields: ['url', 'alternativeText'],
+            },
+          },
+        },
+        'elements.btn': true,
+      },
+    },
+    partnershipsUK: {
+      on: {
+        'blocks.content': {
+          populate: {
+            image: {
+              fields: ['url', 'alternativeText'],
+            },
+          },
+        },
+        'elements.btn': true,
+      },
+    },
+    sponsorshipsUK: {
+      on: {
+        'blocks.content': {
+          populate: {
+            image: {
+              fields: ['url', 'alternativeText'],
+            },
+          },
+        },
+        'elements.btn': true,
+      },
+    },
+    donateUK: {
+      populate: {
+        image: {
+          fields: ['url', 'alternativeText'],
+        },
+      },
+    },
+    directDonationUK: {
+      populate: {
+        image: {
+          fields: ['url', 'alternativeText'],
+        },
+      },
+    },
+    giftsUK: {
+      populate: {
+        image: {
+          fields: ['url', 'alternativeText'],
+        },
+      },
+    },
   },
 })
 
