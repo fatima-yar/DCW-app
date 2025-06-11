@@ -34,7 +34,6 @@ export default function Donate({ content }) {
   const sponsorships = isUK
     ? content?.sponsorshipsUK
     : content?.sponsorships || []
-  const donateUK = content?.donateUK
 
   console.log('gifts content:', gifts)
   return (

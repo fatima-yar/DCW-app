@@ -7,7 +7,7 @@ async function loader() {
   if (!data) notFound
   return { ...data.data }
 }
-export default async function ourTeam() {
+export default async function missonstatement() {
   const data = await loader()
   const content = data?.contents
   const contentUK = data?.contentsUK
