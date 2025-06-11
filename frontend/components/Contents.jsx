@@ -8,10 +8,13 @@ export default function Contents({
   imagePosition = 'bottom',
   bgColor = 'white',
 }) {
-  const imageUrl = image?.url ? `${getStrapiURL()}${image.url}` : ''
+  const imageUrl = image?.url?.startsWith('http')
+    ? image.url
+    : `${getStrapiURL()}${image.url}`
   const isImageRight = image && imagePosition === 'right'
   const isImageLeft = image && imagePosition === 'left'
   const bgClass = bgColor === 'gray' ? 'bg-gray-100' : 'bg-white'
+  console.log(imageUrl)
 
   return (
     <div
