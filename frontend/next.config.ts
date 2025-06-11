@@ -21,7 +21,12 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https', // ✅ correct protocol
+        protocol: 'https',
+        hostname: 'ingenious-song-020dc68f16.media.strapiapp.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'ingenious-song-020dc68f16.strapiapp.com',
         pathname: '/**',
       },
