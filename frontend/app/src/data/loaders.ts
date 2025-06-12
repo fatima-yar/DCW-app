@@ -1,6 +1,6 @@
 import qs from 'qs'
-import { fetchAPI } from '../../../components/utils/fetch-api'
-import getStrapiURL from '../../../components/utils/get-strapi-url'
+import { fetchAPI } from '../utils/fetch-api'
+import getStrapiURL from '../utils/get-strapi-url'
 import { Ultra } from 'next/font/google'
 
 const mainPageQuery = qs.stringify({
