@@ -3,6 +3,10 @@ import { fetchAPI } from '../utils/fetch-api'
 import getStrapiURL from '../utils/get-strapi-url'
 import { Ultra } from 'next/font/google'
 
+export function stringifyQuery(query: object) {
+  return qs.stringify(query, { encodeValuesOnly: true })
+}
+
 const mainPageQuery = qs.stringify({
   populate: {
     blocks: {
