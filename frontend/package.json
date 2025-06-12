@@ -4,11 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-  "build": "next build && next export",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
     "test": "echo 'No tests configured' && exit 0"
-    
   },
   "dependencies": {
     "@material-tailwind/react": "^2.1.10",
@@ -24,6 +23,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/qs": "^6.14.0",
     "@types/react": "19.0.12",
     "@types/react-dom": "^19",
     "tailwindcss": "^4",
