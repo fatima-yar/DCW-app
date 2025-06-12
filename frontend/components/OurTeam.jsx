@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { getOurTeam } from '../app/src/data/loaders'
-import getStrapiURL from '../app/src/utils/get-strapi-url'
+import getStrapiURL from './utils/get-strapi-url'
 import { useLocale } from './LocaleContext'
 
 export function OurTeam() {

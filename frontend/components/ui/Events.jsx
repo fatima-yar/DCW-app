@@ -3,7 +3,7 @@
 // import events from '../../app/data/events.json'
 import { useEffect, useState } from 'react'
 import { getWhatWeDo } from '@/app/src/data/loaders'
-import getStrapiURL from '@/app/src/utils/get-strapi-url'
+import getStrapiURL from '@/components/utils/get-strapi-url'
 import SquarePics from './SquarePics'
 import { useLocale } from '../LocaleContext'
 

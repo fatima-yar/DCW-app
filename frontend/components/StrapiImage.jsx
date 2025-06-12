@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import getStrapiURL from '../app/src/utils/get-strapi-url'
+import getStrapiURL from './utils/get-strapi-url'
 
 export function StrapiImage({ src, alt, className, ...rest }) {
   const imageUrl = getStrapiMedia(src)

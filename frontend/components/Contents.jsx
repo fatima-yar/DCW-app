@@ -1,5 +1,5 @@
 import React from 'react'
-import getStrapiURL from '../app/src/utils/get-strapi-url'
+import getStrapiURL from './utils/get-strapi-url'
 
 export default function Contents({
   header,

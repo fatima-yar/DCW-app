@@ -1,4 +1,4 @@
-import getStrapiURL from '@/app/src/utils/get-strapi-url'
+import getStrapiURL from '@/components/utils/get-strapi-url'
 
 export default function SquarePics({
   src,
