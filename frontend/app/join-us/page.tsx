@@ -7,9 +7,10 @@ async function loader() {
   if (!data) notFound()
   return { ...data.data }
 }
+
 export default async function joinUsPage() {
   const data = await loader()
-
+  console.log('dataKoon:', data)
   return (
     <JoinUs
       text={data.text}

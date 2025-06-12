@@ -7,7 +7,7 @@ import GoogleMapEmbed from './ui/GoogleMapEmbed'
 import Link from 'next/link'
 
 const Footer = () => {
-  const { isUK } = useLocale()
+  const { isUK = false } = useLocale() ?? {}
   const [openSection, setOpenSection] = useState(null)
   const [hasMounted, setHasMounted] = useState(false)
 
