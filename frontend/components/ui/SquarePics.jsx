@@ -1,3 +1,5 @@
+import getStrapiURL from '@/app/src/utils/get-strapi-url'
+
 export default function SquarePics({
   src,
   alt,
@@ -6,11 +8,13 @@ export default function SquarePics({
   moreUrl,
   moreText,
 }) {
+  const imageSrc = src?.startsWith('http') ? src : `${getStrapiURL()}${src}`
+
   return (
     <div className="text-center">
-      {src ? (
+      {imageSrc ? (
         <img
-          src={src}
+          src={imageSrc}
           alt={alt}
           className="w-60 h-60 object-cover rounded-2xl"
         />

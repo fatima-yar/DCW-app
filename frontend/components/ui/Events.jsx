@@ -40,7 +40,9 @@ export default function Events({ event, eventUK }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center gap-y-16 lg:px-36 px-4">
           {selectedEvent.map((event, index) => {
             const image = event.image?.url
-              ? `${getStrapiURL()}${event.image.url}`
+              ? event.image.url.startsWith('http')
+                ? event.image.url
+                : `${getStrapiURL()}${event.image.url}`
               : ''
             const alt = event.image?.alternativeText || event.description || ''
 

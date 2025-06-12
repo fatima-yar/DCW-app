@@ -40,7 +40,9 @@ export default function Services({ service, serviceUK }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center gap-y-16 lg:px-36 px-4">
           {selectedService.map((service, index) => {
             const image = service.image?.url
-              ? `${getStrapiURL()}${service.image.url}`
+              ? service.image.url.startsWith('http')
+                ? service.image.url
+                : `${getStrapiURL()}${service.image.url}`
               : ''
             const alt =
               service.image?.alternativeText || service.description || ''
@@ -56,15 +58,6 @@ export default function Services({ service, serviceUK }) {
                 moreUrl={service.moreUrl}
                 moreText={service.moreText}
               />
-              // <SquarePics
-              //   key={index}
-              //   src={service.image}
-              //   alt={service.caption}
-              //   caption={service.caption}
-              //   url={service.url}
-              //   moreUrl={service.moreUrl}
-              //   moreText={service.moreText}
-              // />
             )
           })}
         </div>

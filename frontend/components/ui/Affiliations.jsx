@@ -40,13 +40,14 @@ export default function Affiliations({ affiliation, affiliationUK }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center gap-y-16 lg:px-36 px-4">
           {selectedAffiliations.map((affiliation, index) => {
             const image = affiliation.image?.url
-              ? `${getStrapiURL()}${affiliation.image.url}`
+              ? affiliation.image.url.startsWith('http')
+                ? affiliation.image.url
+                : `${getStrapiURL()}${affiliation.image.url}`
               : ''
             const alt =
               affiliation.image?.alternativeText ||
               affiliation.description ||
               ''
-
             const caption = affiliation.description
 
             return (

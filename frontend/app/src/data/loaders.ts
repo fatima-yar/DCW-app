@@ -390,11 +390,11 @@ export async function getContactUs() {
 }
 
 export async function getWhatWeDo() {
+  ;``
   const path = '/api/what-we-do'
   const BASE_URL = getStrapiURL()
   const url = new URL(path, BASE_URL)
   url.search = whatWeDoQuery
-  console.log('fetchhhh', url.href)
 
   return await fetchAPI(url.href, { method: 'GET' })
 }
@@ -422,7 +422,6 @@ export async function getDonate() {
   const BASE_URL = getStrapiURL()
   const url = new URL(path, BASE_URL)
   url.search = donateQuery
-  console.log('Donate API URL:', url.href)
 
   return await fetchAPI(url.href, { method: 'GET' })
 }

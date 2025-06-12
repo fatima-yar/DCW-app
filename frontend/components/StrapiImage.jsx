@@ -22,9 +22,17 @@ export function StrapiImage({ src, alt, className, ...rest }) {
   )
 }
 
+// export function getStrapiMedia(url) {
+//   if (url == null) return null
+//   if (url.startsWith('data:')) return url
+//   if (url.startsWith('http') || url.startsWith('//')) return url
+//   return getStrapiURL() + url
+// }
 export function getStrapiMedia(url) {
-  if (url == null) return null
-  if (url.startsWith('data:')) return url
-  if (url.startsWith('http') || url.startsWith('//')) return url
-  return getStrapiURL() + url
+  if (!url) return null
+
+  const finalUrl = url.startsWith('http') ? url : `${getStrapiURL()}${url}`
+  console.log('📸 Image URL passed to <Image>:', finalUrl)
+
+  return finalUrl
 }
