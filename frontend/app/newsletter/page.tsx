@@ -2,7 +2,6 @@ import Newsletter from '@/components/Newsletter'
 import { getNewsletter } from '../src/data/loaders'
 import { notFound } from 'next/navigation'
 
-export const revalidate = 60
 async function loader() {
   const data = await getNewsletter()
   if (!data) notFound

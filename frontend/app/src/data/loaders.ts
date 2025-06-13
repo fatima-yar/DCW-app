@@ -92,7 +92,7 @@ export async function getMainPage() {
   // return await fetchAPI(url.href, { method: 'GET' })
   return await fetchAPI(url.href, {
     method: 'GET',
-    next: { revalidate: 60 },
+    next: { cache: 'no-store' },
   })
 }
 
@@ -103,7 +103,7 @@ export async function getPageBySlug(slug: string) {
   url.search = pageBySlugQuery(slug)
   return await fetchAPI(url.href, {
     method: 'GET',
-    next: { revalidate: 60 },
+    next: { cache: 'no-store' },
   })
 }
 
@@ -378,7 +378,7 @@ export async function getOurTeam() {
 
   return await fetchAPI(url.href, {
     method: 'GET',
-    next: { revalidate: 60 },
+    next: { cache: 'no-store' },
   })
 }
 
@@ -388,7 +388,7 @@ async function fetchContentPage(path: string) {
   url.search = contentsQuery
   return await fetchAPI(url.href, {
     method: 'GET',
-    next: { revalidate: 60 },
+    next: { cache: 'no-store' },
   })
 }
 
@@ -405,7 +405,7 @@ export async function getContactUs() {
   const url = new URL(path, BASE_URL)
   return await fetchAPI(url.href, {
     method: 'GET',
-    next: { revalidate: 60 },
+    next: { cache: 'no-store' },
   })
 }
 
@@ -418,7 +418,7 @@ export async function getWhatWeDo() {
 
   return await fetchAPI(url.href, {
     method: 'GET',
-    next: { revalidate: 60 },
+    next: { cache: 'no-store' },
   })
 }
 // export const getWhatWeDo = () => fetchContentPage('/api/what-we-do')
@@ -431,7 +431,7 @@ export async function getJoinUs() {
 
   return await fetchAPI(url.href, {
     method: 'GET',
-    next: { revalidate: 60 },
+    next: { cache: 'no-store' },
   })
 }
 
@@ -442,7 +442,7 @@ export async function getNewsletter() {
   url.search = newsletterQuery
   return await fetchAPI(url.href, {
     method: 'GET',
-    next: { revalidate: 60 },
+    next: { cache: 'no-store' },
   })
 }
 
@@ -454,6 +454,6 @@ export async function getDonate() {
 
   return await fetchAPI(url.href, {
     method: 'GET',
-    next: { revalidate: 60 },
+    next: { cache: 'no-store' },
   })
 }

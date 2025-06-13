@@ -1,14 +1,15 @@
 type NextFetchRequestConfig = {
   revalidate?: number | false
   tags?: string[]
+  cache?: 'no-store' | 'force-cache'
 }
-
 interface FetchAPIOptions {
   method: 'GET' | 'POST' | 'PUT' | 'DELETE'
   authToken?: string
   body?: Record<string, unknown>
   next?: NextFetchRequestConfig
 }
+
 export async function fetchAPI(url: string, options: FetchAPIOptions) {
   const { method, authToken, body, next } = options
 

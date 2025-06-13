@@ -2,8 +2,6 @@ import { getMainPage } from './src/data/loaders'
 import { notFound } from 'next/navigation'
 import { BlockRenderer } from '@/components/BlockRenderer'
 
-export const revalidate = 60
-
 async function loader() {
   const data = await getMainPage()
   if (!data) notFound

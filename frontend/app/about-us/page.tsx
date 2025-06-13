@@ -1,7 +1,7 @@
 import AboutUs from '@/components/AboutUs'
 import { notFound } from 'next/navigation'
 import { getAboutUs } from '../src/data/loaders'
-export const revalidate = 60
+
 async function loader() {
   const data = await getAboutUs()
   if (!data) notFound()
