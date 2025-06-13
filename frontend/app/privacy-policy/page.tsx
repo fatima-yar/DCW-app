@@ -1,7 +1,7 @@
 import PrivacyPolicy from '@/components/PrivacyPolicy'
 import { getPrivacyPolicy } from '../src/data/loaders'
 import { notFound } from 'next/navigation'
-
+export const revalidate = 60
 async function loader() {
   const data = await getPrivacyPolicy()
   if (!data) notFound

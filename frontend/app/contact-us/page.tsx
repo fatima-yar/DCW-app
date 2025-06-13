@@ -1,7 +1,7 @@
 import ContactUs from '@/components/ContactUs'
 import { getContactUs } from '../src/data/loaders'
 import { notFound } from 'next/navigation'
-
+export const revalidate = 60
 async function loader() {
   const response = await getContactUs()
   if (!response?.data) notFound()

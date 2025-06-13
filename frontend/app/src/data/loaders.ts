@@ -101,7 +101,10 @@ export async function getPageBySlug(slug: string) {
   const BASE_URL = getStrapiURL()
   const url = new URL(path, BASE_URL)
   url.search = pageBySlugQuery(slug)
-  return await fetchAPI(url.href, { method: 'GET' })
+  return await fetchAPI(url.href, {
+    method: 'GET',
+    next: { revalidate: 60 },
+  })
 }
 
 const contentsQuery = qs.stringify({
@@ -373,14 +376,20 @@ export async function getOurTeam() {
   const url = new URL(path, BASE_URL)
   url.search = photoQuery
 
-  return await fetchAPI(url.href, { method: 'GET' })
+  return await fetchAPI(url.href, {
+    method: 'GET',
+    next: { revalidate: 60 },
+  })
 }
 
 async function fetchContentPage(path: string) {
   const BASE_URL = getStrapiURL()
   const url = new URL(path, BASE_URL)
   url.search = contentsQuery
-  return await fetchAPI(url.href, { method: 'GET' })
+  return await fetchAPI(url.href, {
+    method: 'GET',
+    next: { revalidate: 60 },
+  })
 }
 
 export const getAboutUs = () => fetchContentPage('/api/about-us')
@@ -394,7 +403,10 @@ export async function getContactUs() {
   const path = '/api/contact-us'
   const BASE_URL = getStrapiURL()
   const url = new URL(path, BASE_URL)
-  return await fetchAPI(url.href, { method: 'GET' })
+  return await fetchAPI(url.href, {
+    method: 'GET',
+    next: { revalidate: 60 },
+  })
 }
 
 export async function getWhatWeDo() {
@@ -404,7 +416,10 @@ export async function getWhatWeDo() {
   const url = new URL(path, BASE_URL)
   url.search = whatWeDoQuery
 
-  return await fetchAPI(url.href, { method: 'GET' })
+  return await fetchAPI(url.href, {
+    method: 'GET',
+    next: { revalidate: 60 },
+  })
 }
 // export const getWhatWeDo = () => fetchContentPage('/api/what-we-do')
 
@@ -414,7 +429,10 @@ export async function getJoinUs() {
   const url = new URL(path, BASE_URL)
   url.search = joinUsQuery
 
-  return await fetchAPI(url.href, { method: 'GET' })
+  return await fetchAPI(url.href, {
+    method: 'GET',
+    next: { revalidate: 60 },
+  })
 }
 
 export async function getNewsletter() {
@@ -422,7 +440,10 @@ export async function getNewsletter() {
   const BASE_URL = getStrapiURL()
   const url = new URL(path, BASE_URL)
   url.search = newsletterQuery
-  return await fetchAPI(url.href, { method: 'GET' })
+  return await fetchAPI(url.href, {
+    method: 'GET',
+    next: { revalidate: 60 },
+  })
 }
 
 export async function getDonate() {
@@ -431,5 +452,8 @@ export async function getDonate() {
   const url = new URL(path, BASE_URL)
   url.search = donateQuery
 
-  return await fetchAPI(url.href, { method: 'GET' })
+  return await fetchAPI(url.href, {
+    method: 'GET',
+    next: { revalidate: 60 },
+  })
 }

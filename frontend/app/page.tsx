@@ -13,8 +13,7 @@ async function loader() {
 export default async function mainPage() {
   const data = await loader()
   const blocks = data?.blocks || []
-  // console.log(data)
-  // console.log('blocks:', blocks)
+
   return (
     <div className="space-y-0">
       <BlockRenderer blocks={blocks} />

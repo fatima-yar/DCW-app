@@ -1,7 +1,7 @@
 import JoinUs from '@/components/JoinUs'
 import { notFound } from 'next/navigation'
 import { getJoinUs } from '../src/data/loaders'
-
+export const revalidate = 60
 async function loader() {
   const data = await getJoinUs()
   if (!data) notFound()
