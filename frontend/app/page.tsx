@@ -4,7 +4,7 @@ import { BlockRenderer } from '@/components/BlockRenderer'
 
 async function loader() {
   const data = await getMainPage()
-  if (!data) notFound
+  if (!data) notFound()
   return { ...data.data }
 }
 
