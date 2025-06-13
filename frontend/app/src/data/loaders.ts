@@ -89,7 +89,11 @@ export async function getMainPage() {
   url.search = mainPageQuery
   console.log('query:', url.search)
 
-  return await fetchAPI(url.href, { method: 'GET' })
+  // return await fetchAPI(url.href, { method: 'GET' })
+  return await fetchAPI(url.href, {
+    method: 'GET',
+    next: { revalidate: 60 },
+  })
 }
 
 export async function getPageBySlug(slug: string) {
