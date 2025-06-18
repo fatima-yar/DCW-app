@@ -6,7 +6,6 @@ import Events from './ui/Events'
 import Affiliations from './ui/Affiliations'
 import FadeInSection from './FadeInSection'
 import { useLocale } from './LocaleContext'
-import { useState, useEffect } from 'react'
 
 export default function WhatWeDoComponent({
   content,
@@ -21,44 +20,47 @@ export default function WhatWeDoComponent({
   const { isUK } = useLocale()
   const selectedContent = isUK ? contentUK : content
   const selectedService = isUK ? serviceUK : service
+  const selectedEvent = isUK ? eventUK : event
+  const selectedAffiliation = isUK ? affiliationUK : affiliation
 
-  if (!selectedContent || !selectedService) return null
-
-  const [hasMounted, setHasMounted] = useState(false)
-
-  useEffect(() => {
-    setHasMounted(true)
-  }, [])
-
-  if (!hasMounted) return null
   return (
     <>
-      <FadeInSection delay={0.3}>
-        <Contents
-          header={selectedContent.header}
-          content={selectedContent.content}
-          image={selectedContent.image}
-        />
-      </FadeInSection>
-      <FadeInSection delay={0.5}>
-        <div id="services">
-          <Services service={service} serviceUK={serviceUK} />
-        </div>
-      </FadeInSection>
-
-      <FadeInSection delay={0.5}>
-        <div id="services">
-          <Events event={event} eventUK={eventUK} />
-        </div>
-      </FadeInSection>
-      <FadeInSection delay={0.5}>
-        <div id="affiliations">
-          <Affiliations
-            affiliation={affiliation}
-            affiliationUK={affiliationUK}
+      {selectedContent && (
+        <FadeInSection delay={0.3}>
+          <Contents
+            header={selectedContent.header}
+            content={selectedContent.content}
+            image={selectedContent.image}
           />
-        </div>
-      </FadeInSection>
+        </FadeInSection>
+      )}
+
+      {selectedService && (
+        <FadeInSection delay={0.5}>
+          <div id="services">
+            <Services service={service} serviceUK={serviceUK} />
+          </div>
+        </FadeInSection>
+      )}
+
+      {selectedEvent && (
+        <FadeInSection delay={0.5}>
+          <div id="events">
+            <Events event={event} eventUK={eventUK} />
+          </div>
+        </FadeInSection>
+      )}
+
+      {selectedAffiliation && (
+        <FadeInSection delay={0.5}>
+          <div id="affiliations">
+            <Affiliations
+              affiliation={affiliation}
+              affiliationUK={affiliationUK}
+            />
+          </div>
+        </FadeInSection>
+      )}
     </>
   )
 }
