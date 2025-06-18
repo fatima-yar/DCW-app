@@ -275,7 +275,7 @@ const Footer = () => {
                             href="donate#direct-donation"
                             className="hover:text-base transition-all duration-200"
                           >
-                            Direct donations
+                            Direct Donations
                           </a>
                         </li>
                         <li>
@@ -318,7 +318,7 @@ const Footer = () => {
                             href="donate#direct-donation"
                             className="hover:text-base transition-all duration-200"
                           >
-                            Direct donations
+                            Direct Donations
                           </a>
                         </li>
                         <li>
@@ -428,7 +428,7 @@ const Footer = () => {
                     />
                   </a>
                   <a
-                    href="https://www.linkedin.com/company/dreamcatchers-worldwide-uk"
+                    href="https://ww.linkedin.com/company/dreamcatchers-worldwide"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
