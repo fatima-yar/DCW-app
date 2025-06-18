@@ -45,7 +45,7 @@ export default function Navbar() {
   useEffect(() => {
     setHasMounted(true)
   }, [])
-
+  if (!hasMounted) return null
   const handleClick = (key) => {
     setOpenBox((prev) => (prev === key ? '' : key))
   }
