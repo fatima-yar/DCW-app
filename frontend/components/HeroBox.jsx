@@ -1,6 +1,8 @@
+'use client'
 import React from 'react'
 import MaoriStrip from './ui/MaoriStrip'
 import HeroBoxContent from './ui/HeroBoxContent'
+import { useLocale } from './LocaleContext'
 
 export default function HeroBox({
   title,
@@ -10,11 +12,15 @@ export default function HeroBox({
   button,
   transparentBox,
 }) {
+  const { isUK } = useLocale()
+
   return (
     <>
-      <div className="lg:mx-50 md:mx-30 sm:mx:10 ">
-        <MaoriStrip />
-      </div>
+      {!isUK && (
+        <div className="lg:mx-50 md:mx-30 sm:mx:10">
+          <MaoriStrip />
+        </div>
+      )}
 
       <HeroBoxContent
         title={title}
@@ -24,9 +30,11 @@ export default function HeroBox({
         button={button}
         transparentBox={transparentBox}
       />
-      <div className="lg:mx-50 md:mx-30 sm:mx:10 ">
-        <MaoriStrip />
-      </div>
+      {!isUK && (
+        <div className="lg:mx-50 md:mx-30 sm:mx:10">
+          <MaoriStrip />
+        </div>
+      )}
     </>
   )
 }
