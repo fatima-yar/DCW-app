@@ -91,7 +91,7 @@ export default function NavbarWhatWeDo() {
                 </a>
 
                 <div className="mt-6 sm:mt-8">
-                  <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm">
+                  <ul className="space-y-2 sm:space-y-3 text-xs sm:text-sm">
                     <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
                       <a
                         target="_blank"
