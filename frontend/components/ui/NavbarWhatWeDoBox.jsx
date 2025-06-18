@@ -61,17 +61,17 @@ export default function NavbarWhatWeDo() {
                   </li>
                   <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
                     <a href="what-we-do#services" className="text-black">
-                      Dance Classes
+                      Community Exercise and Dance Classes
                     </a>
                   </li>
                   <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
                     <a href="what-we-do#services" className="text-black">
-                      Financial Literacy
+                      Financial Literacy Classes
                     </a>
                   </li>
                   <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
                     <a href="what-we-do#services" className="text-black">
-                      Employment Rights
+                      Career/Employment Advice and Support
                     </a>
                   </li>
                 </ul>
@@ -91,7 +91,7 @@ export default function NavbarWhatWeDo() {
                 </a>
 
                 <div className="mt-6 sm:mt-8">
-                  <ul className="space-y-2 sm:space-y-3 text-xs sm:text-sm">
+                  <ul className="space-y-2 sm:space-y-2 text-xs sm:text-sm">
                     <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
                       <a
                         target="_blank"
@@ -194,7 +194,7 @@ export default function NavbarWhatWeDo() {
                   </li>
                   <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
                     <a href="what-we-do#services" className="text-black">
-                      Dance Classes
+                      Community Exercise and Dance Classes
                     </a>
                   </li>
                 </ul>
