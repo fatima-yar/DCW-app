@@ -37,7 +37,7 @@ export default function AboutUs({
         <div className="lg:pr-20 pl-4 font-[sansation] pt-5">
           <p className="text-md lg:text-xl text-red-700">What We Do</p>
           <p className="text-md text-black lg:text-3xl font-bold pt-3 pb-4">
-            Our Projects
+            Our Services
           </p>
           <p className="text-md text-black lg:text-lg pr-10">{selectedText}</p>
           <div className="pt-8">
