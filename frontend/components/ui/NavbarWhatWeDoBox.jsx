@@ -85,13 +85,13 @@ export default function NavbarWhatWeDo() {
             <div className="flex-1 p-2 sm:p-4">
               <div className="flex-1 p-2 sm:p-4 font-[Convergence]">
                 <a href="what-we-do#events" className="block">
-                  <h2 className="text-lg sm:text-xl text-[#986100] mt-6 sm:mt-9 hover:underline cursor-pointer hover:scale-105 hover:translate-x-1 transition-transform duration-200">
+                  <h2 className="text-lg sm:text-xl text-[#986100] mt-0  sm:mt-0 hover:underline cursor-pointer hover:scale-105 hover:translate-x-1 transition-transform duration-200">
                     Events
                   </h2>
                 </a>
 
                 <div className="mt-6 sm:mt-8">
-                  <ul className="space-y-3 sm:space-y-4 text-xs sm:text-sm">
+                  <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm">
                     <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
                       <a
                         target="_blank"
@@ -108,13 +108,28 @@ export default function NavbarWhatWeDo() {
                       </h2>
                     </a>
                     <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                      <a href="what-we-do#events" className="text-black">
-                        Foreign Exchange NZ
+                      <a href="what-we-do#affiliations" className="text-black">
+                        London Ambassador - (Tuition/Tourism)
                       </a>
                     </li>
                     <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
-                      <a href="what-we-do#events" className="text-black">
-                        House Dance NZ
+                      <a href="what-we-do#affiliations" className="text-black">
+                        JC Consult Group (Consulting/Property)
+                      </a>
+                    </li>
+                    <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
+                      <a href="what-we-do#affiliations" className="text-black">
+                        Lost in Love (Podcast)
+                      </a>
+                    </li>
+                    <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
+                      <a href="what-we-do#affiliations" className="text-black">
+                        GURL PWR (Female Focus Events)
+                      </a>
+                    </li>
+                    <li className="hover:scale-105 hover:translate-x-1 transition-transform duration-200">
+                      <a href="what-we-do#affiliations" className="text-black">
+                        Chin International (Hospitality Recruitment)
                       </a>
                     </li>
                   </ul>
@@ -193,7 +208,7 @@ export default function NavbarWhatWeDo() {
             <div className="flex-1 p-2 sm:p-4">
               <div className="flex-1 p-2 sm:p-4 font-[Convergence]">
                 <a href="what-we-do#events" className="block">
-                  <h2 className="text-lg sm:text-xl text-[#986100] mt-6 sm:mt-9 hover:underline cursor-pointer hover:scale-105 hover:translate-x-1 transition-transform duration-200">
+                  <h2 className="text-lg sm:text-xl text-[#986100] mt-6 sm:mt-1 hover:underline cursor-pointer hover:scale-105 hover:translate-x-1 transition-transform duration-200">
                     Events
                   </h2>
                 </a>
