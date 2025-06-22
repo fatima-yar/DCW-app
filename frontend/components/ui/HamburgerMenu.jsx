@@ -15,7 +15,7 @@ export default function HamburgerMenu() {
       {' '}
       {/* Changed to flex column */}
       {/* Menu */}
-      <div className="bg-gradient-to-b from-[#8A5082] to-[#A5CAD2] w-50 ml-4 mt-4">
+      <div className="bg-gradient-to-b from-[#8A5082] to-[#A5CAD2] w-50 drop-shadow-lg shadow-gray-400 shadow-md p-4">
         <div className="ml-4">
           <div
             className="py-2 text-white font-[Convergence] hover:scale-105 hover:text-[#FFB635] hover:translate-x-1 transition-transform duration-200"
@@ -44,11 +44,11 @@ export default function HamburgerMenu() {
         </div>
       </div>
       {/* Box that appears underneath the menu */}
-      <div className="mt-4 ml-4">
+      <div className="mt-4 ">
         {' '}
         {/* Added margin-top to give space */}
         {activeMenu === 'home' && (
-          <div className="bg-[#CADEE2] w-50 p-4 mt-0">
+          <div className="bg-[#CADEE2] w-50 p-4 mt-0 mb-6 drop-shadow-lg shadow-gray-400 shadow-md">
             <div className="pb-2">
               <a
                 href="/"
@@ -77,7 +77,7 @@ export default function HamburgerMenu() {
           </div>
         )}
         {activeMenu === 'whatWeDo' && (
-          <div className="bg-[#CADEE2] w-50 p-4 mt-0">
+          <div className="bg-[#CADEE2] w-50 p-4 mt-0 mb-6 drop-shadow-lg shadow-gray-400 shadow-md">
             <a
               href="what-we-do"
               className="text-[#986100] text-md font-[Convergence] mb-2 font-bold"
@@ -130,7 +130,7 @@ export default function HamburgerMenu() {
           </div>
         )}
         {activeMenu === 'joinUs' && (
-          <div className="bg-[#CADEE2] w-50 p-4 mt-0">
+          <div className="bg-[#CADEE2] w-50 p-4 mt-0 mb-6 drop-shadow-lg shadow-gray-400 shadow-md">
             <div className="pb-2">
               <a
                 href="join-us"
@@ -150,7 +150,7 @@ export default function HamburgerMenu() {
           </div>
         )}
         {activeMenu === 'donate' && (
-          <div className="bg-[#CADEE2] w-50 p-4 mt-0">
+          <div className="bg-[#CADEE2] w-50 p-4 mt-0 mb-6 drop-shadow-lg shadow-gray-400 shadow-md">
             <div className="pb-2">
               <a
                 href="donate"
