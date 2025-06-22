@@ -7,6 +7,7 @@ import Navbar from './Navbar'
 import TopLogos from './TopLogos'
 import Toggle from './Toggle'
 import PageWrapper from './PageWrapper'
+import MobileMenuToggle from './MobileMenuToggle'
 
 export default function RootClientLayout({
   children,
@@ -35,10 +36,22 @@ export default function RootClientLayout({
   return (
     <div style={backgroundStyle}>
       <TopLogos />
-      <div className="lg:pt-5 pt-2">
+
+      {/* Mobile Header: Hamburger Left + Toggle Right */}
+      <div className="flex items-center justify-between md:hidden px-4 sticky top-0 z-50 bg-gradient-to-r from-[#8A5082] to-[#A5CAD2] py-1 my-4">
+        {/* Left: Hamburger */}
+        <MobileMenuToggle />
+
+        {/* Right: Toggle */}
+        <Toggle />
+      </div>
+
+      {/* Desktop Navbar */}
+      <div className="lg:pt-5 pt-2 hidden md:block">
         <Toggle />
         <Navbar />
       </div>
+
       <PageWrapper>{children}</PageWrapper>
       <Footer />
     </div>
