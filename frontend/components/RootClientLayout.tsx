@@ -37,12 +37,8 @@ export default function RootClientLayout({
     <div style={backgroundStyle}>
       <TopLogos />
 
-      {/* Mobile Header: Hamburger Left + Toggle Right */}
-      <div className="flex items-center justify-between md:hidden px-6 sticky top-0 z-50 bg-gradient-to-r from-[#8A5082] to-[#A5CAD2] py-1 my-4">
-        {/* Left: Hamburger */}
+      <div className="flex items-center justify-between md:hidden px-6 top-0 z-50 bg-gradient-to-r from-[#8A5082] to-[#A5CAD2] py-1 my-4">
         <MobileMenuToggle />
-
-        {/* Right: Toggle */}
         <Toggle />
       </div>
 

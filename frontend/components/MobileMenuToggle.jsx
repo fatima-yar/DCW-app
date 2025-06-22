@@ -1,5 +1,4 @@
 'use client'
-
 import { useState } from 'react'
 import HamburgerMenu from './ui/HamburgerMenu'
 
@@ -11,7 +10,8 @@ export default function MobileMenuToggle() {
   }
 
   return (
-    <div>
+    <div className="relative">
+      {/* Hamburger Icon */}
       <div className="cursor-pointer" onClick={toggleMenu}>
         {isMenuOpen ? (
           <svg className="h-6 w-6 fill-current text-black" viewBox="0 0 20 20">
@@ -28,7 +28,13 @@ export default function MobileMenuToggle() {
           {isMenuOpen ? 'Close' : 'Menu'}
         </p>
       </div>
-      {isMenuOpen && <HamburgerMenu />}
+
+      {/* Absolute-positioned menu below the header */}
+      {isMenuOpen && (
+        <div className="absolute top-full left-0 w-[300px] z-40">
+          <HamburgerMenu />
+        </div>
+      )}
     </div>
   )
 }
