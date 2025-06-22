@@ -31,7 +31,7 @@ export default function MobileMenuToggle() {
 
       {/* Absolute-positioned menu below the header */}
       {isMenuOpen && (
-        <div className="absolute top-full left-0 z-40 ml-4 mt-4">
+        <div className="absolute top-full left-0 z-40 mt-4">
           <HamburgerMenu />
         </div>
       )}
