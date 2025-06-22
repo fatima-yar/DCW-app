@@ -14,7 +14,7 @@ export default function ToggleSwitch() {
 
   return (
     <div className="flex justify-end md:justify-start">
-      <div className="pr-4 md:pl-30 lg:pl-50 flex items-center space-x-2 relative text-black overflow-hidden pb-0">
+      <div className="pr-4 md:pl-30 lg:pl-50 flex items-center space-x-2 relative text-black overflow-hidden lg:pb-4 md:pb-4 sm:pb-0">
         {/* NZ Flag */}
         <img
           src="/nzFlag.svg"
