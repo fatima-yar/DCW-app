@@ -1,6 +1,6 @@
 export default function getStrapiURL() {
   return (
     process.env.NEXT_PUBLIC_API_URL ??
-    'https://ingenious-song-020dc68f16.strapiapp.com'
+    'https://respected-example-0f150a69b7.strapiapp.com'
   )
 }

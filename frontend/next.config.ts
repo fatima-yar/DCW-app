@@ -7,12 +7,12 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'ingenious-song-020dc68f16.media.strapiapp.com',
+        hostname: 'respected-example-0f150a69b7.media.strapiapp.com',
         pathname: '/**',
       },
       {
         protocol: 'https',
-        hostname: 'ingenious-song-020dc68f16.strapiapp.com',
+        hostname: 'respected-example-0f150a69b7.strapiapp.com',
         pathname: '/**',
       },
     ],
