@@ -19,11 +19,12 @@ export default function SquarePics({
           className="w-60 h-60 object-cover rounded-2xl"
         />
       ) : null}
-      <div className="mt-8 text-md text-gray-700 font-[Convergence] flex flex-col gap-2">
+
+      <div className="mt-8 text-md text-gray-700 font-[Convergence] flex flex-col gap-2 w-60 mx-auto break-words">
         {captionUrl ? (
           <a
             href={captionUrl}
-            className=" hover:scale-110 transform transition-all"
+            className="hover:scale-110 transform transition-all"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -35,7 +36,7 @@ export default function SquarePics({
         {moreUrl && moreText && (
           <a
             href={moreUrl}
-            className=" text-[#ac7ba5] hover:scale-110 transform transition-all text-sm"
+            className="text-[#ac7ba5] hover:scale-110 transform transition-all text-sm"
             target="_blank"
             rel="noopener noreferrer"
           >
