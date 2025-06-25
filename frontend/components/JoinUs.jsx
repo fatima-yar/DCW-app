@@ -52,11 +52,11 @@ export default function JoinUs({
       </div>
 
       <div className="grid grid-cols-2 grid-rows-1 gap-1 mt-4 text-center">
-        <div className="font-[Convergence] lg:text-xl text-md ">
+        <div className="font-[Convergence] lg:text-xl text-md">
           Check for Current vacancies!
         </div>
 
-        <div>
+        <div className="px-15">
           <GeneralBtn cta={selectedButton} />
         </div>
       </div>
