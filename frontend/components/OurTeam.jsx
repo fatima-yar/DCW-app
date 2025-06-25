@@ -28,8 +28,8 @@ export function OurTeam() {
   }, [])
 
   return (
-    <section className="px-10 sm:px-10 md:px-10 lg:px-25 xl:px-50">
-      <div className="text-black bg-white pt-10 font-[Convergence] pl-12 text-3xl">
+    <section className="px-0 md:px-10 lg:px-25 xl:px-50">
+      <div className="text-black pl-12  w-full bg-white pt-10 font-[Convergence] text-3xl">
         Our Team
       </div>
       <div className="bg-white py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10">

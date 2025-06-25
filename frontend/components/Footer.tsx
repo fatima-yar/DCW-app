@@ -497,7 +497,7 @@ const Footer = () => {
                     />
                   </a>
                   <a
-                    href="https://ww.linkedin.com/company/dreamcatchers-worldwide"
+                    href="https://www.linkedin.com/company/dreamcatchers-worldwide"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
