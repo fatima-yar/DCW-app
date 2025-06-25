@@ -29,7 +29,7 @@ export default function JoinUs({
   if (!selectedText || !selectedButton) return null
 
   return (
-    <div className="text-black bg-white px-20 sm:px-10 md:mx-10 lg:mx-25 xl:mx-50 py-10">
+    <div className="text-black bg-white px-6 sm:px-4 md:mx-10 lg:mx-25 xl:mx-50 py-10">
       <div className="font-[Convergence] text-3xl">Join Us</div>
       <div className="font-[Convergence] text-2xl pt-10">Volunteer</div>
 

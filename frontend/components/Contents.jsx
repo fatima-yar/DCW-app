@@ -19,7 +19,7 @@ export default function Contents({
 
   return (
     <div
-      className={`text-black ${bgClass} px-8 sm:px-10 md:mx-10 lg:mx-25 xl:mx-50 pt-10`}
+      className={`text-black ${bgClass} px-0 sm:px-2 md:mx-10 lg:mx-25 xl:mx-50 pt-10`}
     >
       <div className="font-[Convergence] text-3xl pl-4 lg:pl-36">{header}</div>
 
@@ -62,7 +62,7 @@ export default function Contents({
       </div>
 
       {image && imagePosition === 'bottom' && imageUrl && (
-        <div className="pb-5 flex justify-center lg:px-36">
+        <div className="pb-5 flex justify-center sm:px-4 lg:px-36">
           <img src={imageUrl} alt={header} className="object-contain" />
         </div>
       )}
