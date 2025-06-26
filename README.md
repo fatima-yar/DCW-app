@@ -6,7 +6,7 @@ A modern, responsive website built for DreamCatchers WorldWide—a non-profit or
 
 ## ✨ Live Site
 
-👉 [Visit the Live Website]([https://your-custom-domain.com](https://www.dreamcatchersww.com/))
+👉 [Visit the Live Website](https://www.dreamcatchersww.com/))
 
 ---
 
