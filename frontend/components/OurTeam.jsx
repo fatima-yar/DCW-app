@@ -4,10 +4,12 @@ import { useEffect, useState } from 'react'
 import { getOurTeam } from '../app/src/data/loaders'
 import getStrapiURL from '../app/src/utils/get-strapi-url'
 import { useLocale } from './LocaleContext'
+import { SiAwselasticloadbalancing } from 'react-icons/si'
 
 export function OurTeam() {
   const [teamNZ, setTeamNZ] = useState([])
   const [teamUK, setTeamUK] = useState([])
+   const [loading, setLoading] = useState(true)
   const { isUK } = useLocale()
   const selectedTeam = isUK ? teamUK : teamNZ
 
@@ -21,12 +23,21 @@ export function OurTeam() {
         setTeamUK(blocksUK)
       } catch (error) {
         console.error('Failed to fetch team data:', error)
+      } finally {
+       setLoading (false)
       }
     }
 
     fetchTeam()
   }, [])
-
+  if (loading) {
+    return (
+      <section className="flex flex-col items-center justify-center min-h-[50vh] bg-white py-20">
+        <img src="/loading.gif" alt="Loading..." className="w-16 h-16 mb-4" />
+        <p className="text-gray-600 font-[Convergence] text-lg">Please wait while the page loads…</p>
+      </section>
+    )
+  }
   return (
     <section className="px-0 md:px-10 lg:px-25 xl:px-50">
       <div className="text-black pl-12  w-full bg-white pt-10 font-[Convergence] text-3xl">
