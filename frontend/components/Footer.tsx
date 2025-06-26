@@ -25,13 +25,13 @@ const Footer = () => {
     <footer className="bg-gradient-to-r from-[#8A5082] to-[#A5CAD2] text-whi50 pt-10">
       <div className="relative lg:mx-50 md:mx-30 sm:mx-10 px-4">
         <div className="grid grid-cols-1 lg:grid-cols-5 font-[sansation] text-md">
-          {['Home', 'What We Do', 'Join Us', 'Donate'].map((section) => (
+          {['About', 'What We Do', 'Join Us', 'Donate'].map((section) => (
             <div key={section}>
               <div
                 className="flex justify-between items-center cursor-pointer lg:cursor-default"
                 onClick={() => toggleSection(section)}
               >
-                {section === 'Home' ? (
+                {section === 'About' ? (
                   <a
                     href="/"
                     className="font-bold pb-4 hover:text-base transition-all duration-200"
@@ -72,7 +72,7 @@ const Footer = () => {
                   openSection === section ? 'block' : 'hidden'
                 } lg:block`}
               >
-                {section === 'Home' && (
+                {section === 'About' && (
                   <>
                     <div className="w-40 space-y-2 text-sm">
                       <li>

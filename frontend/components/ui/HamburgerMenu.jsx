@@ -19,9 +19,9 @@ export default function HamburgerMenu() {
         <div className="ml-4">
           <div
             className="py-2 text-white font-[Convergence] hover:scale-105 hover:text-[#FFB635] hover:translate-x-1 transition-transform duration-200"
-            onClick={() => handleClick('home')}
+            onClick={() => handleClick('about')}
           >
-            Home
+            About
           </div>
           <div
             className="py-2 text-white font-[Convergence] hover:scale-105 hover:text-[#FFB635] hover:translate-x-1 transition-transform duration-200"
@@ -47,14 +47,14 @@ export default function HamburgerMenu() {
       <div className="mt-4 ">
         {' '}
         {/* Added margin-top to give space */}
-        {activeMenu === 'home' && (
+        {activeMenu === 'about' && (
           <div className="bg-[#CADEE2] w-50 p-4 mt-0 mb-6 drop-shadow-lg shadow-gray-400 shadow-md">
             <div className="pb-2">
               <a
                 href="/"
                 className="text-[#986100] text-md font-[Convergence] mb-2  font-bold"
               >
-                Home
+                About
               </a>
             </div>
             <ul className="text-black text-sm font-[Convergence] space-y-2">

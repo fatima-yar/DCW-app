@@ -1,4 +1,4 @@
-export default function NavbarHomeBox() {
+export default function NavbarAboutBox() {
   return (
     <div className="mx-16 sm:mx-8 lg:mx-50 bg-[#CADEE2] p-4 sm:p-6 mt-0 h-100">
       <div className="flex flex-wrap sm:flex-nowrap">
@@ -19,7 +19,7 @@ export default function NavbarHomeBox() {
               href="/"
               className="text-lg sm:text-xl text-[#986100] mt-6 sm:mt-8 "
             >
-              Home
+              About
             </a>
           </div>
           <div className="mt-6 sm:mt-8">
