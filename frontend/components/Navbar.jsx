@@ -12,7 +12,7 @@ const navItems = [
   {
     key: 'about',
     label: 'About',
-    subLabel: 'Kāinga',
+    subLabel: 'Mō',
     BoxComponent: NavbarAboutBox,
   },
   {
