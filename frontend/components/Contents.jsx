@@ -40,7 +40,7 @@ export default function Contents({
           </div>
         )}
 
-        <div className="space-y-3 sm:space-y-4 text-md">
+        <div className="space-y-3 sm:space-y-4 text-justify text-md">
           {typeof content === 'string' ? (
             content
               .split('\n\n')

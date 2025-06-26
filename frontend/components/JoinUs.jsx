@@ -34,7 +34,7 @@ export default function JoinUs({
       <div className="font-[Convergence] text-2xl pt-10">Volunteer</div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 items-start">
-        <div className="sm:col-span-2 space-y-3 sm:space-y-4 text-md py-5 font-[Convergence]">
+        <div className="sm:col-span-2 space-y-3 sm:space-y-4 text-justify text-md py-5 font-[Convergence]">
           {selectedText}
         </div>
 
