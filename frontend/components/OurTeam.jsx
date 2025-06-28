@@ -1,75 +1,65 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import { getOurTeam } from '../app/src/data/loaders'
 import getStrapiURL from '../app/src/utils/get-strapi-url'
-import { useLocale } from './LocaleContext'
+import Image from 'next/image'
 
-export function OurTeam() {
-  const [teamNZ, setTeamNZ] = useState([])
-  const [teamUK, setTeamUK] = useState([])
-  const { isUK } = useLocale()
+export async function getStaticProps() {
+  const res = await getOurTeam()
+  const blocks = res?.data?.blocks || []
+  const blocksUK = res?.data?.blocksUK || []
+
+  return {
+    props: {
+      teamNZ: blocks,
+      teamUK: blocksUK,
+    },
+}
+}
+
+export default function OurTeam({ teamNZ, teamUK }) {
+  const isUK = false // Replace with context or locale logic if needed
   const selectedTeam = isUK ? teamUK : teamNZ
 
-  useEffect(() => {
-    async function fetchTeam() {
-      try {
-        const res = await getOurTeam()
-        const blocks = res?.data?.blocks || []
-        const blocksUK = res?.data?.blocksUK || []
-        setTeamNZ(blocks)
-        setTeamUK(blocksUK)
-      } catch (error) {
-        console.error('Failed to fetch team data:', error)
-      }
-    }
-
-    fetchTeam()
-  }, [])
-
   return (
-    <section className="px-10 sm:px-10 md:px-10 lg:px-25 xl:px-50">
-      <div className="text-black bg-white pt-10 font-[Convergence] pl-12 text-3xl">
+    <section className="px-0 md:px-10 lg:px-25 xl:px-50">
+      <div className="text-black pl-12 w-full bg-white pt-10 font-[Convergence] text-3xl">
         Our Team
       </div>
       <div className="bg-white py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {selectedTeam.map((member, index) => {
-          const imageUrl = member.image?.url?.startsWith('http')
-            ? member.image.url
-            : `${getStrapiURL()}${member.image?.url || ''}`
+          const rawUrl =
+            member.image?.formats?.thumbnail?.url || member.image?.url
+          const imageUrl = rawUrl?.startsWith('http')
+            ? rawUrl
+            : `${getStrapiURL()}${rawUrl || ''}`
+
+          const borderClasses =
+            index % 2 === 0
+              ? 'rounded-tl-4xl rounded-br-4xl'
+              : 'rounded-tr-4xl rounded-bl-4xl'
 
           return (
             <div key={member.id} className="text-center">
               <div
-                className={`${
-                  index % 2 === 0
-                    ? 'rounded-tl-4xl rounded-br-4xl object-cover'
-                    : 'rounded-tr-4xl rounded-bl-4xl object-cover'
-                } bg-[#ad9bce65] p-4 inline-block mx-auto transition-all transform hover:scale-110 hover:bg-[#7a9ab465] duration-500 ease-in-out`}
+                className={`bg-[#ad9bce65] p-4 inline-block mx-auto transition-all transform hover:scale-110 hover:bg-[#7a9ab465] duration-500 ease-in-out ${borderClasses}`}
               >
-                {member.image?.url ? (
-                  <img
+                {imageUrl ? (
+                  <Image
                     src={imageUrl}
                     alt={
-                      member.image.alternativeText ||
+                      member.image?.alternativeText ||
                       member.description ||
                       'Team member'
                     }
-                    height={800}
-                    width={800}
-                    className={`${
-                      index % 2 === 0
-                        ? 'rounded-tl-4xl rounded-br-4xl w-60 h-60 object-cover'
-                        : 'rounded-tr-4xl rounded-bl-4xl w-60 h-60 object-cover'
-                    }`}
+                    width={240}
+                    height={240}
+                    className={`w-60 h-60 object-cover ${borderClasses}`}
+                    loading="lazy"
                   />
                 ) : (
                   <div
-                    className={`bg-gray-300 flex items-center justify-center text-gray-600 text-sm w-60 h-60 ${
-                      index % 2 === 0
-                        ? 'rounded-tl-4xl rounded-br-4xl'
-                        : 'rounded-tr-4xl rounded-bl-4xl'
-                    }`}
+                    className={`bg-gray-300 flex items-center justify-center text-gray-600 text-sm w-60 h-60 ${borderClasses}`}
                   >
                     No Image
                   </div>
