@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { getOurTeam } from '../app/src/data/loaders'
 import getStrapiURL from '../app/src/utils/get-strapi-url'
 import { useLocale } from './LocaleContext'
-import { SiAwselasticloadbalancing } from 'react-icons/si'
+import Image from 'next/image'
 
 export function OurTeam() {
   const [teamNZ, setTeamNZ] = useState([])
@@ -49,46 +49,46 @@ export function OurTeam() {
       </div>
       <div className="bg-white py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {selectedTeam.map((member, index) => {
-          const imageUrl = member.image?.url?.startsWith('http')
-            ? member.image.url
-            : `${getStrapiURL()}${member.image?.url || ''}`
+          // ✅ Prefer thumbnail image if available
+          const rawUrl =
+            member.image?.formats?.thumbnail?.url || member.image?.url
+
+          // ✅ Prefix with Strapi base URL if it's a relative path
+          const imageUrl = rawUrl?.startsWith('http')
+            ? rawUrl
+            : `${getStrapiURL()}${rawUrl || ''}`
+
+          const borderClasses =
+            index % 2 === 0
+              ? 'rounded-tl-4xl rounded-br-4xl'
+              : 'rounded-tr-4xl rounded-bl-4xl'
 
           return (
             <div key={member.id} className="text-center">
               <div
-                className={`${
-                  index % 2 === 0
-                    ? 'rounded-tl-4xl rounded-br-4xl object-cover'
-                    : 'rounded-tr-4xl rounded-bl-4xl object-cover'
-                } bg-[#ad9bce65] p-4 inline-block mx-auto transition-all transform hover:scale-110 hover:bg-[#7a9ab465] duration-500 ease-in-out`}
+                className={`bg-[#ad9bce65] p-4 inline-block mx-auto transition-all transform hover:scale-110 hover:bg-[#7a9ab465] duration-500 ease-in-out ${borderClasses}`}
               >
-                {member.image?.url ? (
-                  <img
+                {imageUrl ? (
+                  <Image
                     src={imageUrl}
                     alt={
-                      member.image.alternativeText ||
+                      member.image?.alternativeText ||
                       member.description ||
                       'Team member'
                     }
-                    height={800}
-                    width={800}
-                    className={`${
-                      index % 2 === 0
-                        ? 'rounded-tl-4xl rounded-br-4xl w-60 h-60 object-cover'
-                        : 'rounded-tr-4xl rounded-bl-4xl w-60 h-60 object-cover'
-                    }`}
+                    width={240}
+                    height={240}
+                    className={`w-60 h-60 object-cover ${borderClasses}`}
+                    loading="lazy"
                   />
                 ) : (
                   <div
-                    className={`bg-gray-300 flex items-center justify-center text-gray-600 text-sm w-60 h-60 ${
-                      index % 2 === 0
-                        ? 'rounded-tl-4xl rounded-br-4xl'
-                        : 'rounded-tr-4xl rounded-bl-4xl'
-                    }`}
+                    className={`bg-gray-300 flex items-center justify-center text-gray-600 text-sm w-60 h-60 ${borderClasses}`}
                   >
                     No Image
                   </div>
                 )}
+
                 <h3 className="mt-4 text-sm text-center text-black w-58 font-[Convergence]">
                   {member.description}
                 </h3>
