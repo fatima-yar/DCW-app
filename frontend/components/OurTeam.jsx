@@ -10,6 +10,7 @@ export function OurTeam() {
   const [teamNZ, setTeamNZ] = useState([])
   const [teamUK, setTeamUK] = useState([])
   const [loading, setLoading] = useState(true)
+  const [timeLeft, setTimeLeft] = useState(40)
   const { isUK } = useLocale()
   const selectedTeam = isUK ? teamUK : teamNZ
 
@@ -31,8 +32,7 @@ export function OurTeam() {
     fetchTeam()
   }, [])
 
-  
-useEffect(() => {
+  useEffect(() => {
     if (!loading || timeLeft === 0) return
     const timer = setTimeout(() => {
       setTimeLeft((prev) => prev - 1)
@@ -52,31 +52,16 @@ useEffect(() => {
     )
   }
 
-
-  return (
-    <section className="flex flex-col items-center justify-center min-h-[50vh] bg-white py-20">
-      <img src="/loading.gif" alt="Loading..." className="w-16 h-16 mb-4" />
-      <p className="text-gray-600 font-[Convergence] text-lg">
-        Please wait while the page loads…
-      </p>
-      <p className="text-gray-500 mt-2 text-sm">Time left: {timeLeft}s</p>
-    </section>
-  )
-}
-
-
   return (
     <section className="px-0 md:px-10 lg:px-25 xl:px-50">
-      <div className="text-black pl-12  w-full bg-white pt-10 font-[Convergence] text-3xl">
+      <div className="text-black pl-12 w-full bg-white pt-10 font-[Convergence] text-3xl">
         Our Team
       </div>
       <div className="bg-white py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {selectedTeam.map((member, index) => {
-          // ✅ Prefer thumbnail image if available
           const rawUrl =
             member.image?.formats?.thumbnail?.url || member.image?.url
 
-          // ✅ Prefix with Strapi base URL if it's a relative path
           const imageUrl = rawUrl?.startsWith('http')
             ? rawUrl
             : `${getStrapiURL()}${rawUrl || ''}`
@@ -111,7 +96,6 @@ useEffect(() => {
                     No Image
                   </div>
                 )}
-
                 <h3 className="mt-4 text-sm text-center text-black w-58 font-[Convergence]">
                   {member.description}
                 </h3>
