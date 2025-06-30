@@ -39,6 +39,14 @@ export function OurTeam() {
     return () => clearTimeout(timer)
   }, [timeLeft, loading])
 
+  useEffect(() => {
+    if (!loading || timeLeft === 0) return
+    const timer = setTimeout(() => {
+      setTimeLeft((prev) => prev - 1)
+    }, 1000)
+    return () => clearTimeout(timer)
+  }, [timeLeft, loading])
+
   if (loading) {
     return (
       <section className="flex flex-col items-center justify-center min-h-[50vh] bg-white py-20">
