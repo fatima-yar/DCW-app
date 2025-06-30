@@ -32,15 +32,27 @@ export function OurTeam() {
   }, [])
 
   if (loading) {
-    return (
-      <section className="flex flex-col items-center justify-center min-h-[50vh] bg-white py-20">
-        <img src="/loading.gif" alt="Loading..." className="w-16 h-16 mb-4" />
-        <p className="text-gray-600 font-[Convergence] text-lg">
-          Please wait while the page loads…
-        </p>
-      </section>
-    )
-  }
+  const [timeLeft, setTimeLeft] = useState(40)
+
+  useEffect(() => {
+    if (timeLeft === 0) return
+    const timer = setTimeout(() => {
+      setTimeLeft((prev) => prev - 1)
+    }, 1000)
+    return () => clearTimeout(timer)
+  }, [timeLeft])
+
+  return (
+    <section className="flex flex-col items-center justify-center min-h-[50vh] bg-white py-20">
+      <img src="/loading.gif" alt="Loading..." className="w-16 h-16 mb-4" />
+      <p className="text-gray-600 font-[Convergence] text-lg">
+        Please wait while the page loads…
+      </p>
+      <p className="text-gray-500 mt-2 text-sm">Time left: {timeLeft}s</p>
+    </section>
+  )
+}
+
 
   return (
     <section className="px-0 md:px-10 lg:px-25 xl:px-50">
